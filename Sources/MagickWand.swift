@@ -16,7 +16,7 @@ extension MagickBooleanType {
 enum WandFilter {
 	case lanczos
 
-	var filter: FilterType {
+	var filter: FilterTypes {
 		switch self {
 		default:
 			return LanczosFilter
@@ -111,14 +111,14 @@ public class Wand {
 	}
 
 	public func read(data: Data) {
-//		let bytes = data.bytes
-
 		let length = data.count
 		let bytes = UnsafeMutablePointer<UInt8>.allocate(capacity: length)
 
 		data.copyBytes(to: bytes, count: length)
 
 		self.read(bytes: bytes, length: length)
+		
+		bytes.deallocate(capacity: length)
 	}
 
 	public func read<T>(bytes: UnsafePointer<T>, length: Int) {
@@ -135,6 +135,18 @@ public class Wand {
 	}
 
 	public func resize() {
+		MagickResizeImage(self.pointer, 90, 90, LanczosFilter, 0)
+//MagickBooleanType MagickResizeImage(MagickWand *wand, const size_t columns,const size_t rows,const FilterType filter)
+//MagickBooleanType MagickAdaptiveResizeImage(MagickWand *wand, const size_t columns,const size_t rows)
+//MagickBooleanType MagickInterpolativeResizeImage(MagickWand *wand, const size_t columns,const size_t rows, const PixelInterpolateMethod method)
+//
 
+/*
+ Bessel   Blackman   Box
+    Catrom   CubicGaussian
+    Hanning  Hermite    Lanczos
+    Mitchell PointQuandratic
+    Sinc     Triangle
+*/
 	}
 }

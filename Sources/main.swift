@@ -9,7 +9,7 @@ do {
    let dataWand = Wand(data: Data())
 
     let cloned = wand?.clone()
-
+wand?.resize()
     print(wand?.isMagickWand)
     print(wand)
 }
