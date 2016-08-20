@@ -35,8 +35,7 @@ public struct MagickWand {
 
 public class Wand {
 	
-	
-	enum Filter {
+	public enum Filter {
 		case blackman
 		case box
 		case catrom
@@ -171,9 +170,8 @@ public class Wand {
 		MagickReadImageBlob(self.pointer, bytes, bytes.count)
 	}
 
-	public func resize() {
-		MagickResizeImage(self.pointer, 90, 90, LanczosFilter, 0)
-//MagickBooleanType MagickResizeImage(MagickWand *wand, const size_t columns,const size_t rows,const FilterType filter)
+	public func resize(width: Int, height: Int, filter: Filter, blur: Double = 1.0) {
+		MagickResizeImage(self.pointer, width, height, filter.filter, blur)
 //MagickBooleanType MagickAdaptiveResizeImage(MagickWand *wand, const size_t columns,const size_t rows)
 //MagickBooleanType MagickInterpolativeResizeImage(MagickWand *wand, const size_t columns,const size_t rows, const PixelInterpolateMethod method)
 //
