@@ -12,7 +12,7 @@ extension MagickBooleanType {
 		return self.rawValue == 1
 	}
 }
-
+/*
 enum WandFilter {
 	case lanczos
 
@@ -23,7 +23,7 @@ enum WandFilter {
 		}
 	}
 }
-
+*/
 public struct MagickWand {
 
 	public static func genesis() {
@@ -54,18 +54,18 @@ public class Wand {
 
 	public var imageBytes: [UInt8] {
 		var size: Int = 0
-        let imageBlob = MagickWriteImageBlob(wand, &size)
-        var result = [UInt8](count: size, repeatedValue: 0)
-        for i in 0..<size {
-            result[i] = imageBlob[i]
-        }
+        	guard let imageBlob = MagickGetImageBlob(self.pointer, &size) else { return [] }
+        	var result = [UInt8](repeating: 0, count: size)
+        	for i in 0..<size {
+            		result[i] = imageBlob[i]
+        	}
 
-        return result
+        	return result
 	}
 
 	public var data: Data {
 		let array = self.imageBytes
-		return Data(bytes: array, length: array.count)
+		return Data(bytes: array)
 	}
 
 	deinit {
@@ -89,7 +89,7 @@ public class Wand {
 		self.read(data: data)
 	}
 
-	public convenience init?(bytes: UnsafePointer<T>, length: Int) {
+	public convenience init?<T>(bytes: UnsafePointer<T>, length: Int) {
 		self.init()
 
 		self.read(bytes: bytes, length: length)
@@ -110,16 +110,20 @@ public class Wand {
 	}
 
 	public func read(data: Data) {
-		let bytes = data.bytes
-		let length = data.length
+//		let bytes = data.bytes
+
+		let length = data.count
+		let bytes = UnsafeMutablePointer<UInt8>.allocate(capacity: length)
+
+		data.copyBytes(to: bytes, count: length)
 
 		self.read(bytes: bytes, length: length)
 	}
 
-	public func read(bytes: UnsafePointer<T>, length: Int) {
+	public func read<T>(bytes: UnsafePointer<T>, length: Int) {
 		let bytes = UnsafePointer<UInt8>(bytes)
 
-		let bufferPointer = UnsafeBufferPointer(bytes)
+		let bufferPointer = UnsafeBufferPointer(start: bytes, count: length)
 		let array = Array(bufferPointer)
 
 		self.read(bytes: array)

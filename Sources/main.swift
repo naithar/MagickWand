@@ -1,17 +1,17 @@
-
+import Foundation
 
 MagickWand.genesis()
 
 do {
     let wand = Wand()
-    wand.clear()
+//    wand?.clear()
 
-    let dataWand = Wand(data: Data())
+//   let dataWand = Wand(data: Data())
 
-    let cloned = wand.clone()
+    let cloned = wand?.clone()
 
-    print(dataWand.isMagickWand)
+    print(wand?.isMagickWand)
     print(wand)
 }
-print(MagickWand.instantiated)
+print(MagickWand.isInstantiated)
 print(MagickWand.version)
