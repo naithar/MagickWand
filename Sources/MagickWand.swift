@@ -105,7 +105,8 @@ public class Wand {
 		ClearMagickWand(self.pointer)
 	}
 
-	public func clone() -> Wand {
+	public func clone() -> Wand? {
+		guard let pointer = CloneMagickWand(self.pointer) else { return nil }
 		return Wand(pointer: pointer)
 	}
 

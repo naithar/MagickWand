@@ -4,9 +4,9 @@ MagickWand.genesis()
 
 do {
     let wand = Wand()
-//    wand?.clear()
+    wand?.clear()
 
-//   let dataWand = Wand(data: Data())
+   let dataWand = Wand(data: Data())
 
     let cloned = wand?.clone()
 
