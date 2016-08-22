@@ -24,7 +24,11 @@ public struct MagickWand {
 	}
 
 	public static var isInstantiated: Bool {
+	#if os(Linux)
 		return IsMagickInstantiated().bool
+	#else
+		return IsMagickWandInstantiated().bool
+	#endif
 	}
 
 	public static var version: String {
@@ -34,7 +38,7 @@ public struct MagickWand {
 }
 
 public class Wand {
-	
+
 	public enum Filter {
 		case blackman
 		case box
@@ -104,6 +108,14 @@ public class Wand {
 		return Data(bytes: array)
 	}
 
+	public var size: (width: Int, height: Int) {
+		var width = 0, height = 0
+
+		MagickGetSize(self.pointer, &width, &height)
+
+		return (width, height)
+	}
+
 	deinit {
 		print("deinit")
 		DestroyMagickWand(self.pointer)
@@ -153,7 +165,7 @@ public class Wand {
 		data.copyBytes(to: bytes, count: length)
 
 		self.read(bytes: bytes, length: length)
-		
+
 		bytes.deallocate(capacity: length)
 	}
 
@@ -172,16 +184,5 @@ public class Wand {
 
 	public func resize(width: Int, height: Int, filter: Filter, blur: Double = 1.0) {
 		MagickResizeImage(self.pointer, width, height, filter.filter, blur)
-//MagickBooleanType MagickAdaptiveResizeImage(MagickWand *wand, const size_t columns,const size_t rows)
-//MagickBooleanType MagickInterpolativeResizeImage(MagickWand *wand, const size_t columns,const size_t rows, const PixelInterpolateMethod method)
-//
-
-/*
- Bessel   Blackman   Box
-    Catrom   CubicGaussian
-    Hanning  Hermite    Lanczos
-    Mitchell PointQuandratic
-    Sinc     Triangle
-*/
 	}
 }
