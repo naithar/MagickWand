@@ -37,7 +37,11 @@ public struct MagickWand {
 	}
 }
 
+
+
 public class Wand {
+
+	public typealias Size = (width: Int, height: Int)
 
 	public enum Filter {
 		case blackman
@@ -108,12 +112,37 @@ public class Wand {
 		return Data(bytes: array)
 	}
 
-	public var size: (width: Int, height: Int) {
+	public var size: Size {
 		var width = 0, height = 0
 
 		MagickGetSize(self.pointer, &width, &height)
 
 		return (width, height)
+	}
+
+	public func size(for dimention: Int) -> Size {
+		let size = self.size
+		var result = (width: 0, height: 0)
+
+		if size.width == 0
+			|| size.height == 0 {
+				return (0, 0)
+		}
+
+		let ratio = Double(size.height) / Double(size.width)
+
+		if ratio > 1 {
+			result.height = dimention
+			result.width = Int(Double(result.height) / ratio)
+		} else if ratio < 1 {
+			result.width = dimention
+			result.height = Int(ratio * Double(result.width))
+		} else {
+			result.width = dimention
+			result.height = dimention
+		}
+
+		return result
 	}
 
 	deinit {
