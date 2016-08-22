@@ -113,9 +113,12 @@ public class Wand {
 	}
 
 	public var size: Size {
-		var width = 0, height = 0
+		let (width, height) = (
+			Int(MagickGetImageWidth(self.pointer)),
+			Int(MagickGetImageHeight(self.pointer))
+		)
 
-		MagickGetSize(self.pointer, &width, &height)
+		// MagickGetSize(self.pointer, &width, &height)
 
 		return (width, height)
 	}
