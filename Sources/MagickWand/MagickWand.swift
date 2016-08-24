@@ -28,6 +28,8 @@ import CMagickWandOSX
 
 public struct MagickWand {
 
+	static let unknownVersion = "unknown"
+
 	public static func genesis() {
 		MagickWandGenesis()
 	}
@@ -45,7 +47,10 @@ public struct MagickWand {
 	}
 
 	public static var version: String {
-		guard let pointer = MagickGetVersion(nil) else { return "unknown" }
+		guard let pointer = MagickGetVersion(nil) else {
+			return MagickWand.unknownVersion
+		}
+		
 		return String(cString: pointer)
 	}
 }

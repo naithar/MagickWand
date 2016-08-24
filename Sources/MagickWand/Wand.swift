@@ -61,7 +61,7 @@ public class Wand {
 		return (width, height)
 	}
 
-	public func size(for dimention: Int) -> Size {
+	public func size(for dimension: Int) -> Size {
 		let size = self.size
 		var result = (width: 0, height: 0)
 
@@ -73,14 +73,14 @@ public class Wand {
 		let ratio = Double(size.height) / Double(size.width)
 
 		if ratio > 1 {
-			result.height = dimention
+			result.height = dimension
 			result.width = Int(Double(result.height) / ratio)
 		} else if ratio < 1 {
-			result.width = dimention
+			result.width = dimension
 			result.height = Int(ratio * Double(result.width))
 		} else {
-			result.width = dimention
-			result.height = dimention
+			result.width = dimension
+			result.height = dimension
 		}
 
 		return result
