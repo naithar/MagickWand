@@ -1,5 +1,5 @@
 import XCTest
-@testable import MagickWandTestSuite
+@testable import MagickWandTests
 
 XCTMain([
      testCase(MagickWandTests.allTests),
