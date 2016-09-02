@@ -138,7 +138,7 @@ public class Wand {
 	}
 
 	public func read<T>(bytes: UnsafePointer<T>, length: Int) {
-		let bytes = bytes.withMemoryRebound(to: UInt8.self, capacity: length) { $0 }
+		let bytes = UnsafePointer<UInt8>(OpaquePointer(bytes))
 
 		let bufferPointer = UnsafeBufferPointer(start: bytes, count: length)
 		let array = Array(bufferPointer)
