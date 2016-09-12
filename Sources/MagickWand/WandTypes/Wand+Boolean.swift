@@ -1,4 +1,4 @@
-// MagickWand+Extensions.swift
+// Wand+Boolean.swift
 //
 // Copyright (c) 2016 Sergey Minakov
 //

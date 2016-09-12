@@ -68,6 +68,11 @@ class MagickWandTests: XCTestCase {
 
             XCTAssertEqual(size.width, 80, "wrong size for dimension")
             XCTAssertEqual(size.height, 40, "wrong size for dimension")
+
+
+            print(wand.identify())
+            print(wand.format)
+            // print(wand.interlace)
         }
 
         #if os(Linux) //IsMagicInstantiated() method returns false

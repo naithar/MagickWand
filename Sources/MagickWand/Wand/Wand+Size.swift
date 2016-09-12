@@ -1,4 +1,4 @@
-// Wand+Types.swift
+// Wand+Size.swift
 //
 // Copyright (c) 2016 Sergey Minakov
 //
@@ -20,60 +20,50 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+import Foundation
+
 #if os(Linux)
 import CMagickWandLinux
 #else
 import CMagickWandOSX
 #endif
 
+
 extension Wand {
 
     public typealias Size = (width: Int, height: Int)
 
-    public enum Filter {
-		case blackman
-		case box
-		case catrom
-		case gaussian
-		case hanning
-		case hermite
-		case lanczos
-		case mitchell
-		case sinc
-		case triangle
-		case kaiser
-		case sentinel
-		case welsh
+    public var size: Size {
+		let (width, height) = (
+			Int(MagickGetImageWidth(self.pointer)),
+			Int(MagickGetImageHeight(self.pointer))
+		)
 
-		var filter: FilterTypes {
-			switch self {
-            case .blackman:
-				return BlackmanFilter
-        	case .box:
-				return BoxFilter
-        	case .catrom:
-				return CatromFilter
-        	case .gaussian:
-				return GaussianFilter
-        	case .hanning:
-				return HanningFilter
-        	case .hermite:
-				return HermiteFilter
-        	case .lanczos:
-				return LanczosFilter
-        	case .mitchell:
-				return MitchellFilter
-           	case .sinc:
-				return SincFilter
-        	case .triangle:
-				return TriangleFilter
-			case .kaiser:
-				return KaiserFilter
-			case .sentinel:
-				return SentinelFilter
-			case .welsh:
-				return WelshFilter
-			}
+		return (width, height)
+	}
+
+	public func size(for dimension: Int) -> Size {
+		let size = self.size
+		var result = (width: 0, height: 0)
+
+		if size.width == 0
+			|| size.height == 0 {
+				return (0, 0)
 		}
+
+		let ratio = Double(size.height) / Double(size.width)
+
+		if ratio > 1 {
+			result.height = dimension
+			result.width = Int(Double(result.height) / ratio)
+		} else if ratio < 1 {
+			result.width = dimension
+			result.height = Int(ratio * Double(result.width))
+		} else {
+			result.width = dimension
+			result.height = dimension
+		}
+
+		return result
 	}
 }
