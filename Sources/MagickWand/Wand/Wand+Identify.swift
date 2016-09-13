@@ -62,6 +62,10 @@ extension Wand {
         return Wand.Gravity(MagickGetGravity(self.pointer))
     }
 
+    var colorspace: Wand.Colorspace {
+        return Wand.Colorspace(MagickGetColorspace(self.pointer))
+    }
+
     private func getString(from method: (OpaquePointer!) -> (UnsafeMutablePointer<Int8>!)) -> String? {
         guard let pointer = method(self.pointer) else {
             return nil

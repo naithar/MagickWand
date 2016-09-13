@@ -79,6 +79,7 @@ class MagickWandTests: XCTestCase {
             print(wand.resolution)
             print(wand.compression)
             print(wand.gravity)
+            print(wand.colorspace)
         }
 
         #if os(Linux) //IsMagicInstantiated() method returns false
