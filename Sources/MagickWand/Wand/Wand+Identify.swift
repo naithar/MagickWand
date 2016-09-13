@@ -31,24 +31,39 @@ import CMagickWandOSX
 extension Wand {
 
     func identify() -> String? {
-        guard let pointer = MagickIdentifyImage(self.pointer) else {
-            return nil
-        }
-
-        defer {
-            MagickRelinquishMemory(pointer)
-        }
-
-        return String(cString: pointer)
+        return self.getString(from: MagickIdentifyImage)
     }
 
-    //v7
-    // var interlace: Wand.Interlace {
-    //     return Wand.Interlace(MagickIdentifyImageType(self.pointer))
-    // }
-
     var format: String? {
-        guard let pointer = MagickGetFormat(self.pointer) else {
+        return self.getString(from: MagickGetFormat)
+    }
+
+    var filename: String? {
+        return self.getString(from: MagickGetFilename)
+    }
+
+    var interlace: Wand.Interlace {
+        //v7 // MagickIdentifyImageType
+        // MagickGetImageInterlaceScheme
+        return Wand.Interlace(MagickGetImageInterlaceScheme(self.pointer))
+    }
+
+    var orientation: Wand.Orientation {
+        return Wand.Orientation(MagickGetOrientation(self.pointer))
+    }
+
+    var compression: CompressionInfo {
+        let type = Wand.Compression(MagickGetCompression(self.pointer))
+        let quality = MagickGetCompressionQuality(self.pointer)
+        return (type, quality)
+    }
+
+    var gravity: Wand.Gravity {
+        return Wand.Gravity(MagickGetGravity(self.pointer))
+    }
+
+    private func getString(from method: (OpaquePointer!) -> (UnsafeMutablePointer<Int8>!)) -> String? {
+        guard let pointer = method(self.pointer) else {
             return nil
         }
 

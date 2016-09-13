@@ -72,7 +72,13 @@ class MagickWandTests: XCTestCase {
 
             print(wand.identify())
             print(wand.format)
-            // print(wand.interlace)
+            print(wand.filename)
+            print(wand.interlace)
+            print(wand.orientation)
+            print(wand.size)
+            print(wand.resolution)
+            print(wand.compression)
+            print(wand.gravity)
         }
 
         #if os(Linux) //IsMagicInstantiated() method returns false

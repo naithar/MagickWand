@@ -32,6 +32,7 @@ import CMagickWandOSX
 extension Wand {
 
     public typealias Size = (width: Int, height: Int)
+    public typealias Resolution = (width: Double, height: Double)
 
     public var size: Size {
 		let (width, height) = (
@@ -41,6 +42,15 @@ extension Wand {
 
 		return (width, height)
 	}
+
+    public var resolution: Resolution {
+        var width: Double = 0
+        var height: Double = 0
+
+        MagickGetImageResolution(self.pointer, &width, &height)
+
+        return (width, height)
+    }
 
 	public func size(for dimension: Int) -> Size {
 		let size = self.size

@@ -55,10 +55,8 @@ extension Wand {
         // PNGInterlace
         case png
 
-        init?(_ type: InterlaceType) {
+        init(_ type: InterlaceType) {
             switch type {
-            case UndefinedInterlace:
-                self = .undefined
             case NoInterlace:
                 self = .none
             case LineInterlace:
@@ -74,7 +72,7 @@ extension Wand {
             case PNGInterlace:
                 self = .png
             default:
-                return nil
+                self = .undefined
             }
         }
 

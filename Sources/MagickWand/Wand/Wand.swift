@@ -28,6 +28,9 @@ import CMagickWandLinux
 import CMagickWandOSX
 #endif
 
+//protocol Wand
+// pointer, init, clear, clone, deinit, destroy
+//rename to ImageWand
 public class Wand {
 
 	internal var pointer: OpaquePointer
@@ -41,7 +44,7 @@ public class Wand {
         	guard let imageBlob = MagickGetImageBlob(self.pointer, &size) else {
 				return []
 			}
-			
+
 			defer {
 				MagickRelinquishMemory(imageBlob)
 			}
