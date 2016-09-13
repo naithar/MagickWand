@@ -1,4 +1,4 @@
-// Wand+Resize.swift
+// MagickWand+Filter.swift
 //
 // Copyright (c) 2016 Sergey Minakov
 //
@@ -20,26 +20,58 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import Foundation
-
 #if os(Linux)
 import CMagickWandLinux
 #else
 import CMagickWandOSX
 #endif
 
+extension MagickWand {
 
-extension Wand {
+    public enum Filter {
+		case blackman
+		case box
+		case catrom
+		case gaussian
+		case hanning
+		case hermite
+		case lanczos
+		case mitchell
+		case sinc
+		case triangle
+		case kaiser
+		case sentinel
+		case welsh
 
-    public func resize(width: Int, height: Int, filter: Filter, blur: Double = 1.0) {
-		MagickResizeImage(self.pointer, width, height, filter.filter, blur)
-	}
-
-	public func adaptiveResize(width: Int, height: Int) {
-		MagickAdaptiveResizeImage(self.pointer, width, height)
-	}
-
-	public func scale(width: Int, height: Int) {
-		MagickScaleImage(self.pointer, width, height)
+		var filter: FilterTypes {
+			switch self {
+            case .blackman:
+				return BlackmanFilter
+        	case .box:
+				return BoxFilter
+        	case .catrom:
+				return CatromFilter
+        	case .gaussian:
+				return GaussianFilter
+        	case .hanning:
+				return HanningFilter
+        	case .hermite:
+				return HermiteFilter
+        	case .lanczos:
+				return LanczosFilter
+        	case .mitchell:
+				return MitchellFilter
+           	case .sinc:
+				return SincFilter
+        	case .triangle:
+				return TriangleFilter
+			case .kaiser:
+				return KaiserFilter
+			case .sentinel:
+				return SentinelFilter
+			case .welsh:
+				return WelshFilter
+			}
+		}
 	}
 }

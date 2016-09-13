@@ -1,4 +1,4 @@
-// Wand+Read.swift
+// ImageWand+Read.swift
 //
 // Copyright (c) 2016 Sergey Minakov
 //
@@ -28,7 +28,7 @@ import CMagickWandLinux
 import CMagickWandOSX
 #endif
 
-extension Wand {
+extension ImageWand {
 
     func identify() -> String? {
         return self.getString(from: MagickIdentifyImage)
@@ -42,29 +42,31 @@ extension Wand {
         return self.getString(from: MagickGetFilename)
     }
 
-    var interlace: Wand.Interlace {
+    var interlace: MagickWand.Interlace {
         //v7 // MagickIdentifyImageType
         // MagickGetImageInterlaceScheme
-        return Wand.Interlace(MagickGetImageInterlaceScheme(self.pointer))
+        return MagickWand.Interlace(MagickGetImageInterlaceScheme(self.pointer))
     }
 
-    var orientation: Wand.Orientation {
-        return Wand.Orientation(MagickGetOrientation(self.pointer))
+    var orientation: MagickWand.Orientation {
+        return MagickWand.Orientation(MagickGetOrientation(self.pointer))
     }
 
-    var compression: CompressionInfo {
-        let type = Wand.Compression(MagickGetCompression(self.pointer))
+    var compression: MagickWand.CompressionInfo {
+        let type = MagickWand.Compression(MagickGetCompression(self.pointer))
         let quality = MagickGetCompressionQuality(self.pointer)
         return (type, quality)
     }
 
-    var gravity: Wand.Gravity {
-        return Wand.Gravity(MagickGetGravity(self.pointer))
+    var gravity: MagickWand.Gravity {
+        return MagickWand.Gravity(MagickGetGravity(self.pointer))
     }
 
-    var colorspace: Wand.Colorspace {
-        return Wand.Colorspace(MagickGetColorspace(self.pointer))
+    var colorspace: MagickWand.Colorspace {
+        return MagickWand.Colorspace(MagickGetColorspace(self.pointer))
     }
+
+    //PixelWand *MagickGetBackgroundColor(MagickWand *wand)
 
     private func getString(from method: (OpaquePointer!) -> (UnsafeMutablePointer<Int8>!)) -> String? {
         guard let pointer = method(self.pointer) else {

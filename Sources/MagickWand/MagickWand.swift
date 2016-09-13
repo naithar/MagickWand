@@ -50,7 +50,7 @@ public struct MagickWand {
 		guard let pointer = MagickGetVersion(nil) else {
 			return MagickWand.unknownVersion
 		}
-		
+
 		return String(cString: pointer)
 	}
 }

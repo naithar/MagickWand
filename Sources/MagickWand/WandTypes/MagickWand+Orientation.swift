@@ -1,4 +1,4 @@
-// Wand+Orientation.swift
+// MagickWand+Orientation.swift
 //
 // Copyright (c) 2016 Sergey Minakov
 //
@@ -26,7 +26,7 @@ import CMagickWandLinux
 import CMagickWandOSX
 #endif
 
-extension Wand {
+extension MagickWand {
 
     public enum Orientation {
 

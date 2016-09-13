@@ -1,4 +1,4 @@
-// Wand+Interlace.swift
+// MagickWand+Interlace.swift
 //
 // Copyright (c) 2016 Sergey Minakov
 //
@@ -26,7 +26,7 @@ import CMagickWandLinux
 import CMagickWandOSX
 #endif
 
-extension Wand {
+extension MagickWand {
 
     //InterlaceType
     public enum Interlace {

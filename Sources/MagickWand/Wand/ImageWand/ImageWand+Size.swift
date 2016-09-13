@@ -1,4 +1,4 @@
-// Wand+Size.swift
+// ImageWand+Size.swift
 //
 // Copyright (c) 2016 Sergey Minakov
 //
@@ -29,7 +29,7 @@ import CMagickWandOSX
 #endif
 
 
-extension Wand {
+extension ImageWand {
 
     public typealias Size = (width: Int, height: Int)
     public typealias Resolution = (width: Double, height: Double)

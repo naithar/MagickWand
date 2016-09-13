@@ -20,7 +20,7 @@ class MagickWandTests: XCTestCase {
         }
 
         do { //wand should not exist on terminus
-            guard let wand = Wand(data: data) else {
+            guard let wand = ImageWand(data: data) else {
                 XCTFail("image should not be nil")
                 return
             }

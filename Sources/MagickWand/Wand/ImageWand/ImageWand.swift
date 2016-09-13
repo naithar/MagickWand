@@ -1,4 +1,4 @@
-// Wand+Read.swift
+// ImageWand.swift
 //
 // Copyright (c) 2016 Sergey Minakov
 //
@@ -28,48 +28,60 @@ import CMagickWandLinux
 import CMagickWandOSX
 #endif
 
+public class ImageWand: Wand {
 
-extension Wand {
+	internal var pointer: OpaquePointer
 
-    public convenience init?(data: Data) {
-		self.init()
-
-		self.read(data: data)
+	public var isMagickWand: Bool {
+		return IsMagickWand(self.pointer).bool
 	}
 
-	public convenience init?<T>(bytes: UnsafePointer<T>, length: Int) {
-		self.init()
+	public var imageBytes: [UInt8] {
+		var size: Int = 0
+        	guard let imageBlob = MagickGetImageBlob(self.pointer, &size) else {
+				return []
+			}
 
-		self.read(bytes: bytes, length: length)
+			defer {
+				MagickRelinquishMemory(imageBlob)
+			}
+
+        	var result = [UInt8](repeating: 0, count: size)
+        	for i in 0..<size {
+            	result[i] = imageBlob[i]
+        	}
+
+        	return result
 	}
 
-	public convenience init?(bytes: [UInt8]) {
-		self.init()
-
-		self.read(bytes: bytes)
-	}
-    
-    public func read(data: Data) {
-		let length = data.count
-		let bytes = UnsafeMutablePointer<UInt8>.allocate(capacity: length)
-
-		data.copyBytes(to: bytes, count: length)
-
-		self.read(bytes: bytes, length: length)
-
-		bytes.deallocate(capacity: length)
+	public var data: Data {
+		let array = self.imageBytes
+		return Data(bytes: array)
 	}
 
-	public func read<T>(bytes: UnsafePointer<T>, length: Int) {
-		let bytes = UnsafePointer<UInt8>(OpaquePointer(bytes))
-
-		let bufferPointer = UnsafeBufferPointer(start: bytes, count: length)
-		let array = Array(bufferPointer)
-
-		self.read(bytes: array)
+	deinit {
+		self.destroy()
 	}
 
-	public func read(bytes: [UInt8]) {
-		MagickReadImageBlob(self.pointer, bytes, bytes.count)
+	public required init?() {
+		guard let pointer = NewMagickWand() else { return nil }
+		self.pointer = pointer
 	}
+
+	public required init(pointer: OpaquePointer) {
+		self.pointer = pointer
+	}
+
+	public func clear() {
+		ClearMagickWand(self.pointer)
+	}
+
+	public func clone() -> Self? {
+		guard let pointer = CloneMagickWand(self.pointer) else { return nil }
+		return type(of: self).init(pointer: pointer)
+	}
+
+    public func destroy() {
+        DestroyMagickWand(self.pointer)
+    }
 }
