@@ -21,15 +21,15 @@
 // THE SOFTWARE.
 
 #if os(Linux)
-import CMagickWandLinux
+    import CMagickWandLinux
 #else
-import CMagickWandOSX
+    import CMagickWandOSX
 #endif
 
 extension MagickWand {
-
+    
     public enum Orientation {
-
+        
         // UndefinedOrientation,
         case undefined
         // TopLeftOrientation,
@@ -48,7 +48,7 @@ extension MagickWand {
         case rightBottom
         // LeftBottomOrientation
         case leftBottom
-
+        
         init(_ type: OrientationType) {
             switch type {
             case TopLeftOrientation:
@@ -71,7 +71,7 @@ extension MagickWand {
                 self = .undefined
             }
         }
-
+        
         var type: OrientationType {
             switch self {
             case .undefined:

@@ -21,17 +21,17 @@
 // THE SOFTWARE.
 
 #if os(Linux)
-import CMagickWandLinux
+    import CMagickWandLinux
 #else
-import CMagickWandOSX
+    import CMagickWandOSX
 #endif
 
 extension MagickWand {
-
+    
     public typealias CompressionInfo = (type: Compression, quality: Int)
-
+    
     public enum Compression {
-
+        
         case undefined
         // UndefinedCompression,
         case B44A
@@ -76,7 +76,7 @@ extension MagickWand {
         // ZipCompression,
         case zipS
         // ZipSCompression
-
+        
         init(_ type: CompressionType) {
             switch type {
             case B44ACompression:
@@ -125,7 +125,7 @@ extension MagickWand {
                 self = .undefined
             }
         }
-
+        
         var type: CompressionType {
             switch self {
             case .undefined:

@@ -23,57 +23,56 @@
 import Foundation
 
 #if os(Linux)
-import CMagickWandLinux
+    import CMagickWandLinux
 #else
-import CMagickWandOSX
+    import CMagickWandOSX
 #endif
 
-
 extension ImageWand {
-
+    
     public typealias Size = (width: Int, height: Int)
     public typealias Resolution = (width: Double, height: Double)
-
+    
     public var size: Size {
-		let (width, height) = (
-			Int(MagickGetImageWidth(self.pointer)),
-			Int(MagickGetImageHeight(self.pointer))
-		)
-
-		return (width, height)
-	}
-
+        let (width, height) = (
+            Int(MagickGetImageWidth(self.pointer)),
+            Int(MagickGetImageHeight(self.pointer))
+        )
+        
+        return (width, height)
+    }
+    
     public var resolution: Resolution {
         var width: Double = 0
         var height: Double = 0
-
+        
         MagickGetImageResolution(self.pointer, &width, &height)
-
+        
         return (width, height)
     }
-
-	public func size(for dimension: Int) -> Size {
-		let size = self.size
-		var result = (width: 0, height: 0)
-
-		if size.width == 0
-			|| size.height == 0 {
-				return (0, 0)
-		}
-
-		let ratio = Double(size.height) / Double(size.width)
-
-		if ratio > 1 {
-			result.height = dimension
-			result.width = Int(Double(result.height) / ratio)
-		} else if ratio < 1 {
-			result.width = dimension
-			result.height = Int(ratio * Double(result.width))
-		} else {
-			result.width = dimension
-			result.height = dimension
-		}
-
-		return result
-	}
+    
+    public func size(for dimension: Int) -> Size {
+        let size = self.size
+        var result = (width: 0, height: 0)
+        
+        if size.width == 0
+            || size.height == 0 {
+            return (0, 0)
+        }
+        
+        let ratio = Double(size.height) / Double(size.width)
+        
+        if ratio > 1 {
+            result.height = dimension
+            result.width = Int(Double(result.height) / ratio)
+        } else if ratio < 1 {
+            result.width = dimension
+            result.height = Int(ratio * Double(result.width))
+        } else {
+            result.width = dimension
+            result.height = dimension
+        }
+        
+        return result
+    }
 }

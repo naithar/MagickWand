@@ -23,64 +23,64 @@
 import Foundation
 
 #if os(Linux)
-import CMagickWandLinux
+    import CMagickWandLinux
 #else
-import CMagickWandOSX
+    import CMagickWandOSX
 #endif
 
 public class ImageWand: Wand {
-
-	internal var pointer: OpaquePointer
-
-	public var isMagickWand: Bool {
-		return IsMagickWand(self.pointer).bool
-	}
-
-	public var imageBytes: [UInt8] {
-		var size: Int = 0
-        	guard let imageBlob = MagickGetImageBlob(self.pointer, &size) else {
-				return []
-			}
-
-			defer {
-				MagickRelinquishMemory(imageBlob)
-			}
-
-        	var result = [UInt8](repeating: 0, count: size)
-        	for i in 0..<size {
-            	result[i] = imageBlob[i]
-        	}
-
-        	return result
-	}
-
-	public var data: Data {
-		let array = self.imageBytes
-		return Data(bytes: array)
-	}
-
-	deinit {
-		self.destroy()
-	}
-
-	public required init?() {
-		guard let pointer = NewMagickWand() else { return nil }
-		self.pointer = pointer
-	}
-
-	public required init(pointer: OpaquePointer) {
-		self.pointer = pointer
-	}
-
-	public func clear() {
-		ClearMagickWand(self.pointer)
-	}
-
-	public func clone() -> Self? {
-		guard let pointer = CloneMagickWand(self.pointer) else { return nil }
-		return type(of: self).init(pointer: pointer)
-	}
-
+    
+    internal var pointer: OpaquePointer
+    
+    public var isMagickWand: Bool {
+        return IsMagickWand(self.pointer).bool
+    }
+    
+    public var imageBytes: [UInt8] {
+        var size: Int = 0
+        guard let imageBlob = MagickGetImageBlob(self.pointer, &size) else {
+            return []
+        }
+        
+        defer {
+            MagickRelinquishMemory(imageBlob)
+        }
+        
+        var result = [UInt8](repeating: 0, count: size)
+        for i in 0..<size {
+            result[i] = imageBlob[i]
+        }
+        
+        return result
+    }
+    
+    public var data: Data {
+        let array = self.imageBytes
+        return Data(bytes: array)
+    }
+    
+    deinit {
+        self.destroy()
+    }
+    
+    public required init?() {
+        guard let pointer = NewMagickWand() else { return nil }
+        self.pointer = pointer
+    }
+    
+    public required init(pointer: OpaquePointer) {
+        self.pointer = pointer
+    }
+    
+    public func clear() {
+        ClearMagickWand(self.pointer)
+    }
+    
+    public func clone() -> Self? {
+        guard let pointer = CloneMagickWand(self.pointer) else { return nil }
+        return type(of: self).init(pointer: pointer)
+    }
+    
     public func destroy() {
         DestroyMagickWand(self.pointer)
     }

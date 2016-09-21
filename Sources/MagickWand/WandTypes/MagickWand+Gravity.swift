@@ -21,15 +21,15 @@
 // THE SOFTWARE.
 
 #if os(Linux)
-import CMagickWandLinux
+    import CMagickWandLinux
 #else
-import CMagickWandOSX
+    import CMagickWandOSX
 #endif
 
 extension MagickWand {
-
+    
     public enum Gravity {
-
+        
         case undefined
         // UndefinedGravity,
         case forget
@@ -52,7 +52,7 @@ extension MagickWand {
         // SouthGravity = 8,
         case southEast
         // SouthEastGravity = 9
-
+        
         init(_ type: GravityType) {
             switch type {
             case ForgetGravity:
@@ -79,7 +79,7 @@ extension MagickWand {
                 self = .undefined
             }
         }
-
+        
         var type: GravityType {
             switch self {
             case .undefined:

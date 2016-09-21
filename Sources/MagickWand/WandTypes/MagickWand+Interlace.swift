@@ -21,40 +21,40 @@
 // THE SOFTWARE.
 
 #if os(Linux)
-import CMagickWandLinux
+    import CMagickWandLinux
 #else
-import CMagickWandOSX
+    import CMagickWandOSX
 #endif
 
 extension MagickWand {
-
+    
     //InterlaceType
     public enum Interlace {
-
+        
         // UndefinedInterlace,
         case undefined
-
+        
         // NoInterlace,
         case none
-
+        
         // LineInterlace,
         case line
-
+        
         // PlaneInterlace,
         case plane
-
+        
         // PartitionInterlace,
         case partition
-
+        
         // GIFInterlace,
         case gif
-
+        
         // JPEGInterlace,
         case jpeg
-
+        
         // PNGInterlace
         case png
-
+        
         init(_ type: InterlaceType) {
             switch type {
             case NoInterlace:
@@ -75,7 +75,7 @@ extension MagickWand {
                 self = .undefined
             }
         }
-
+        
         var type: InterlaceType {
             switch self {
             case .undefined:

@@ -21,14 +21,14 @@
 // THE SOFTWARE.
 
 #if os(Linux)
-import CMagickWandLinux
+    import CMagickWandLinux
 #else
-import CMagickWandOSX
+    import CMagickWandOSX
 #endif
 
 extension MagickBooleanType {
-
+    
     var bool: Bool {
-		return self.rawValue == 1
-	}
+        return self.rawValue == 1
+    }
 }

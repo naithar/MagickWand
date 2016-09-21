@@ -23,11 +23,11 @@
 import Foundation
 
 public protocol Wand {
-
-	init?()
-	init(pointer: OpaquePointer)
-
-	func clear()
-	func clone() -> Self?
-	func destroy()
+    
+    init?()
+    init(pointer: OpaquePointer)
+    
+    func clear()
+    func clone() -> Self?
+    func destroy()
 }

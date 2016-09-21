@@ -23,53 +23,52 @@
 import Foundation
 
 #if os(Linux)
-import CMagickWandLinux
+    import CMagickWandLinux
 #else
-import CMagickWandOSX
+    import CMagickWandOSX
 #endif
 
-
 extension ImageWand {
-
+    
     public convenience init?(data: Data) {
-		self.init()
-
-		self.read(data: data)
-	}
-
-	public convenience init?<T>(bytes: UnsafePointer<T>, length: Int) {
-		self.init()
-
-		self.read(bytes: bytes, length: length)
-	}
-
-	public convenience init?(bytes: [UInt8]) {
-		self.init()
-
-		self.read(bytes: bytes)
-	}
-
+        self.init()
+        
+        self.read(data: data)
+    }
+    
+    public convenience init?<T>(bytes: UnsafePointer<T>, length: Int) {
+        self.init()
+        
+        self.read(bytes: bytes, length: length)
+    }
+    
+    public convenience init?(bytes: [UInt8]) {
+        self.init()
+        
+        self.read(bytes: bytes)
+    }
+    
     public func read(data: Data) {
-		let length = data.count
-		let bytes = UnsafeMutablePointer<UInt8>.allocate(capacity: length)
-
-		data.copyBytes(to: bytes, count: length)
-
-		self.read(bytes: bytes, length: length)
-
-		bytes.deallocate(capacity: length)
-	}
-
-	public func read<T>(bytes: UnsafePointer<T>, length: Int) {
-		let bytes = UnsafePointer<UInt8>(OpaquePointer(bytes))
-
-		let bufferPointer = UnsafeBufferPointer(start: bytes, count: length)
-		let array = Array(bufferPointer)
-
-		self.read(bytes: array)
-	}
-
-	public func read(bytes: [UInt8]) {
-		MagickReadImageBlob(self.pointer, bytes, bytes.count)
-	}
+        let length = data.count
+        let bytes = UnsafeMutablePointer<UInt8>.allocate(capacity: length)
+        
+        data.copyBytes(to: bytes, count: length)
+        
+        self.read(bytes: bytes, length: length)
+        
+        bytes.deallocate(capacity: length)
+    }
+    
+    public func read<T>(bytes: UnsafePointer<T>, length: Int) {
+        let bytes = UnsafePointer<UInt8>(OpaquePointer(bytes))
+        
+        let bufferPointer = UnsafeBufferPointer(start: bytes, count: length)
+        let array = Array(bufferPointer)
+        
+        self.read(bytes: array)
+    }
+    
+    public func read(bytes: [UInt8]) {
+        MagickReadImageBlob(self.pointer, bytes, bytes.count)
+    }
 }

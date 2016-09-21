@@ -21,15 +21,15 @@
 // THE SOFTWARE.
 
 #if os(Linux)
-import CMagickWandLinux
+    import CMagickWandLinux
 #else
-import CMagickWandOSX
+    import CMagickWandOSX
 #endif
 
 extension MagickWand {
-
+    
     public enum Colorspace {
-
+        
         case undefined
         // UndefinedColorspace,
         case CMY
@@ -96,7 +96,7 @@ extension MagickWand {
         // YPbPrColorspace,
         case YUV
         // YUVColorspace
-
+        
         init(_ type: ColorspaceType) {
             switch type {
             case CMYColorspace:
@@ -167,7 +167,7 @@ extension MagickWand {
                 self = .undefined
             }
         }
-
+        
         var type: ColorspaceType {
             switch self {
             case .undefined:

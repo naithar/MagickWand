@@ -23,19 +23,19 @@
 import Foundation
 
 #if os(Linux)
-import CMagickWandLinux
+    import CMagickWandLinux
 #else
-import CMagickWandOSX
+    import CMagickWandOSX
 #endif
 
 extension PixelWand {
-
+    
     //double PixelGetAlpha(const PixelWand *wand)
     //Quantum PixelGetAlphaQuantum(const PixelWand *wand)
-
+    
     //double PixelGetBlack(const PixelWand *wand)
     //Quantum PixelGetBlackQuantum(const PixelWand *wand)
-
+    
     //rgb
     //double PixelGetRed(const PixelWand *wand)
     //Quantum PixelGetRedQuantum(const PixelWand *wand)
@@ -43,29 +43,29 @@ extension PixelWand {
     //Quantum PixelGetBlueQuantum(const PixelWand *wand)
     //double PixelGetGreen(const PixelWand *wand)
     //Quantum PixelGetGreenQuantum(const PixelWand *wand)
-
+    
     //double PixelGetYellow(const PixelWand *wand)
     //Quantum PixelGetYellowQuantum(const PixelWand *wand)
-
-
+    
+    
     //double PixelGetCyan(const PixelWand *wand)
     //Quantum PixelGetCyanQuantum(const PixelWand *wand)
-
+    
     //char *PixelGetColorAsString(PixelWand *wand)
     //char *PixelGetColorAsNormalizedString(PixelWand *wand)
-
+    
     //size_t PixelGetColorCount(const PixelWand *wand)
-
+    
     //double PixelGetFuzz(const PixelWand *wand)
-
+    
     //void PixelGetHSL(const PixelWand *wand,double *hue,double *saturation, double *lightness)
-
+    
     //Quantum PixelGetIndex(const PixelWand *wand)
-
+    
     //double PixelGetMagenta(const PixelWand *wand)
     //Quantum PixelGetMagentaQuantum(const PixelWand *wand)
-
-
+    
+    
     //void PixelGetMagickColor(PixelWand *wand,PixelInfo *color)
     //PixelInfo PixelGetPixel(const PixelWand *wand)
 }

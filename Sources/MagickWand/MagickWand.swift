@@ -21,36 +21,36 @@
 // THE SOFTWARE.
 
 #if os(Linux)
-import CMagickWandLinux
+    import CMagickWandLinux
 #else
-import CMagickWandOSX
+    import CMagickWandOSX
 #endif
 
 public struct MagickWand {
-
-	static let unknownVersion = "unknown"
-
-	public static func genesis() {
-		MagickWandGenesis()
-	}
-
-	public static func terminus() {
-		MagickWandTerminus()
-	}
-
-	public static var isInstantiated: Bool {
-	#if os(Linux)
-		return IsMagickInstantiated().bool
-	#else
-		return IsMagickWandInstantiated().bool
-	#endif
-	}
-
-	public static var version: String {
-		guard let pointer = MagickGetVersion(nil) else {
-			return MagickWand.unknownVersion
-		}
-
-		return String(cString: pointer)
-	}
+    
+    static let unknownVersion = "unknown"
+    
+    public static func genesis() {
+        MagickWandGenesis()
+    }
+    
+    public static func terminus() {
+        MagickWandTerminus()
+    }
+    
+    public static var isInstantiated: Bool {
+        #if os(Linux)
+            return IsMagickInstantiated().bool
+        #else
+            return IsMagickWandInstantiated().bool
+        #endif
+    }
+    
+    public static var version: String {
+        guard let pointer = MagickGetVersion(nil) else {
+            return MagickWand.unknownVersion
+        }
+        
+        return String(cString: pointer)
+    }
 }
