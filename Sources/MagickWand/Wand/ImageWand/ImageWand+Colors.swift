@@ -1,4 +1,4 @@
-// ImageWand+Size.swift
+// ImageWand+Read.swift
 //
 // Copyright (c) 2016 Sergey Minakov
 //
@@ -30,46 +30,33 @@ import Foundation
 
 extension ImageWand {
 
-    public var size: MagickWand.Size {
-        let (width, height) = (
-            Int(MagickGetImageWidth(self.pointer)),
-            Int(MagickGetImageHeight(self.pointer))
-        )
+    var background: PixelWand? {
+        let background = PixelWand()
 
-        return (width, height)
-    }
-
-    public var resolution: MagickWand.Resolution {
-        var width: Double = 0
-        var height: Double = 0
-
-        MagickGetImageResolution(self.pointer, &width, &height)
-
-        return (width, height)
-    }
-
-    public func size(for dimension: Int) -> MagickWand.Size {
-        let size = self.size
-        var result = (width: 0, height: 0)
-
-        if size.width == 0
-            || size.height == 0 {
-            return (0, 0)
+        guard MagickGetImageBackgroundColor(self.pointer, background?.pointer).bool else {
+            return nil
         }
 
-        let ratio = Double(size.height) / Double(size.width)
+        return background
+    }
 
-        if ratio > 1 {
-            result.height = dimension
-            result.width = Int(Double(result.height) / ratio)
-        } else if ratio < 1 {
-            result.width = dimension
-            result.height = Int(ratio * Double(result.width))
-        } else {
-            result.width = dimension
-            result.height = dimension
+    var border: PixelWand? {
+        let border = PixelWand()
+
+        guard MagickGetImageBackgroundColor(self.pointer, border?.pointer).bool else {
+            return nil
         }
 
-        return result
+        return border
+    }
+
+    var matte: PixelWand? {
+        let matte = PixelWand()
+
+        guard MagickGetImageMatteColor(self.pointer, matte?.pointer).bool else {
+            return nil
+        }
+
+        return matte
     }
 }
