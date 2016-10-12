@@ -43,8 +43,6 @@ extension ImageWand {
     }
 
     var interlace: MagickWand.Interlace {
-        //v7 // MagickIdentifyImageType
-        // MagickGetImageInterlaceScheme
         return MagickWand.Interlace(MagickGetImageInterlaceScheme(self.pointer))
     }
 

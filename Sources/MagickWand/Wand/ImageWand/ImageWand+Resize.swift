@@ -29,15 +29,15 @@ import Foundation
 #endif
 
 extension ImageWand {
-    
+
     public func resize(width: Int, height: Int, filter: MagickWand.Filter, blur: Double = 1.0) {
         MagickResizeImage(self.pointer, width, height, filter.filter, blur)
     }
-    
+
     public func adaptiveResize(width: Int, height: Int) {
         MagickAdaptiveResizeImage(self.pointer, width, height)
     }
-    
+
     public func scale(width: Int, height: Int) {
         MagickScaleImage(self.pointer, width, height)
     }

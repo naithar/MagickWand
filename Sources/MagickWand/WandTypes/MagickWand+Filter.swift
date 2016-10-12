@@ -27,8 +27,9 @@
 #endif
 
 extension MagickWand {
-    
+
     public enum Filter {
+        
         case blackman
         case box
         case catrom
@@ -42,7 +43,7 @@ extension MagickWand {
         case kaiser
         case sentinel
         case welsh
-        
+
         var filter: FilterTypes {
             switch self {
             case .blackman:

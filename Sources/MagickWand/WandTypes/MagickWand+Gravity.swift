@@ -27,32 +27,14 @@
 #endif
 
 extension MagickWand {
-    
+
     public enum Gravity {
-        
+
         case undefined
-        // UndefinedGravity,
         case forget
-        // ForgetGravity = 0,
-        case northWest
-        // NorthWestGravity = 1,
-        case north
-        // NorthGravity = 2,
-        case northEast
-        // NorthEastGravity = 3,
-        case west
-        // WestGravity = 4,
         case center
-        // CenterGravity = 5,
-        case east
-        // EastGravity = 6,
-        case southWest
-        // SouthWestGravity = 7,
-        case south
-        // SouthGravity = 8,
-        case southEast
-        // SouthEastGravity = 9
-        
+        case south, north, west, east, northWest, northEast, southWest, southEast
+
         init(_ type: GravityType) {
             switch type {
             case ForgetGravity:
@@ -79,7 +61,7 @@ extension MagickWand {
                 self = .undefined
             }
         }
-        
+
         var type: GravityType {
             switch self {
             case .undefined:

@@ -27,7 +27,7 @@
 #endif
 
 extension MagickBooleanType {
-    
+
     var bool: Bool {
         return self.rawValue == 1
     }

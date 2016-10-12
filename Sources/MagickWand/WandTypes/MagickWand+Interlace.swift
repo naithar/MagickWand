@@ -27,34 +27,15 @@
 #endif
 
 extension MagickWand {
-    
-    //InterlaceType
+
     public enum Interlace {
-        
-        // UndefinedInterlace,
+
         case undefined
-        
-        // NoInterlace,
         case none
-        
-        // LineInterlace,
-        case line
-        
-        // PlaneInterlace,
-        case plane
-        
-        // PartitionInterlace,
+        case line, plane
         case partition
-        
-        // GIFInterlace,
-        case gif
-        
-        // JPEGInterlace,
-        case jpeg
-        
-        // PNGInterlace
-        case png
-        
+        case gif, jpeg, png
+
         init(_ type: InterlaceType) {
             switch type {
             case NoInterlace:
@@ -75,7 +56,7 @@ extension MagickWand {
                 self = .undefined
             }
         }
-        
+
         var type: InterlaceType {
             switch self {
             case .undefined:

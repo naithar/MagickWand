@@ -27,56 +27,27 @@
 #endif
 
 extension MagickWand {
-    
+
     public typealias CompressionInfo = (type: Compression, quality: Int)
-    
+
     public enum Compression {
-        
+
         case undefined
-        // UndefinedCompression,
-        case B44A
-        // B44ACompression,
-        case B44
-        // B44Compression,
-        case BZip
-        // BZipCompression,
-        case DXT1
-        // DXT1Compression,
-        case DXT3
-        // DXT3Compression,
-        case DXT5
-        // DXT5Compression,
-        case fax
-        // FaxCompression,
-        case group4
-        // Group4Compression,
-        case JBIG1
-        // JBIG1Compression,        /* ISO/IEC std 11544 / ITU-T rec T.82 */
-        case JBIG2
-        // JBIG2Compression,        /* ISO/IEC std 14492 / ITU-T rec T.88 */
-        case jpeg2000
-        // JPEG2000Compression,     /* ISO/IEC std 15444-1 */
-        case jpeg
-        // JPEGCompression,
-        case lessless
-        // LosslessJPEGCompression,
-        case LZMA
-        // LZMACompression,         /* Lempel-Ziv-Markov chain algorithm */
-        case LZW
-        // LZWCompression,
         case none
-        // NoCompression,
+        case B44A, B44
+        case BZip
+        case DXT1, DXT3, DXT5
+        case fax
+        case group4
+        case JBIG1, JBIG2
+        case jpeg2000, jpeg
+        case lessless
+        case LZMA, LZW
         case piz
-        // PizCompression,
         case pxr24
-        // Pxr24Compression,
         case RLE
-        // RLECompression,
-        case zip
-        // ZipCompression,
-        case zipS
-        // ZipSCompression
-        
+        case zip, zipS
+
         init(_ type: CompressionType) {
             switch type {
             case B44ACompression:
@@ -125,7 +96,7 @@ extension MagickWand {
                 self = .undefined
             }
         }
-        
+
         var type: CompressionType {
             switch self {
             case .undefined:

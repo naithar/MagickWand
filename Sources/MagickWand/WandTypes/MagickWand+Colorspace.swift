@@ -27,76 +27,28 @@
 #endif
 
 extension MagickWand {
-    
+
     public enum Colorspace {
-        
+
         case undefined
-        // UndefinedColorspace,
-        case CMY
-        // CMYColorspace,           /* negated linear RGB colorspace */
-        case CMYK
-        // CMYKColorspace,          /* CMY with Black separation */
+        case CMY, CMYK
         case gray
-        // GRAYColorspace,          /* Single Channel greyscale (linear) image */
-        case HCL
-        // HCLColorspace,
-        case HCLp
-        // HCLpColorspace,
-        case HSB
-        // HSBColorspace,
-        case HSI
-        // HSIColorspace,
-        case HSL
-        // HSLColorspace,
-        case HSV
-        // HSVColorspace,           /* alias for HSB */
+        case HCL, HCLp
+        case HSB, HSI, HSL, HSV
         case HWB
-        // HWBColorspace,
         case lab
-        // LabColorspace,
-        case LCH
-        // LCHColorspace,           /* alias for LCHuv */
-        case LCHab
-        // LCHabColorspace,         /* Cylindrical (Polar) Lab */
-        case LCHub
-        // LCHuvColorspace,         /* Cylindrical (Polar) Luv */
+        case LCH, LCHab, LCHub
         case log
-        // LogColorspace,
         case LMS
-        // LMSColorspace,
         case luv
-        // LuvColorspace,
         case OHTA
-        // OHTAColorspace,
-        case rec601YCbCr
-        // Rec601YCbCrColorspace,
-        case rec709YCbCr
-        // Rec709YCbCrColorspace,
-        case RGB
-        // RGBColorspace,           /* Linear RGB colorspace */
-        case scRGB
-        // scRGBColorspace,         /* ??? */
-        case sRGB
-        // sRGBColorspace,          /* Default: non-linear sRGB colorspace */
+        case rec601YCbCr, rec709YCbCr
+        case RGB, scRGB, sRGB
         case transparent
-        // TransparentColorspace,
         case xyY
-        // xyYColorspace,
         case XYZ
-        // XYZColorspace,           /* IEEE Color Reference colorspace */
-        case YCbCr
-        // YCbCrColorspace,
-        case YCC
-        // YCCColorspace,
-        case YDbDr
-        // YDbDrColorspace,
-        case YIQ
-        // YIQColorspace,
-        case YPbPr
-        // YPbPrColorspace,
-        case YUV
-        // YUVColorspace
-        
+        case YCbCr, YCC, YDbDr, YIQ, YPbPr, YUV
+
         init(_ type: ColorspaceType) {
             switch type {
             case CMYColorspace:
@@ -167,7 +119,7 @@ extension MagickWand {
                 self = .undefined
             }
         }
-        
+
         var type: ColorspaceType {
             switch self {
             case .undefined:

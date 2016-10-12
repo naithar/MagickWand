@@ -27,28 +27,15 @@
 #endif
 
 extension MagickWand {
-    
+
     public enum Orientation {
-        
-        // UndefinedOrientation,
+
         case undefined
-        // TopLeftOrientation,
-        case topLeft
-        // TopRightOrientation,
-        case topRight
-        // BottomRightOrientation,
-        case bottomRight
-        // BottomLeftOrientation,
-        case bottomLeft
-        // LeftTopOrientation,
-        case leftTop
-        // RightTopOrientation,
-        case rightTop
-        // RightBottomOrientation,
-        case rightBottom
-        // LeftBottomOrientation
-        case leftBottom
-        
+        case topLeft, topRight
+        case bottomRight, bottomLeft
+        case leftTop, leftBottom
+        case rightTop, rightBottom
+
         init(_ type: OrientationType) {
             switch type {
             case TopLeftOrientation:
@@ -71,7 +58,7 @@ extension MagickWand {
                 self = .undefined
             }
         }
-        
+
         var type: OrientationType {
             switch self {
             case .undefined:
