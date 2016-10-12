@@ -78,19 +78,13 @@ public struct Quantums {
         return magenta
     }
 
-    public var info: PixelPacket {
+    public var info: MagickWand.PixelInfo {
         var infoPacket = PixelPacket()
 
-        //PixelGetQuantumPacket
         PixelGetQuantumColor(self.pointer, &infoPacket)
 
-        return infoPacket//MagickWand.PixelInfo(infoPacket)
+        return MagickWand.PixelInfo(infoPacket)
     }
-
-    //Quantum PixelGetYellowQuantum(const PixelWand *wand)
-    //Quantum PixelGetCyanQuantum(const PixelWand *wand)
-    //Quantum PixelGetIndex(const PixelWand *wand)
-    //Quantum PixelGetMagentaQuantum(const PixelWand *wand)
 }
 extension PixelWand {
 
