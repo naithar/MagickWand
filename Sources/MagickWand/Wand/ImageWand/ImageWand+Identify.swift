@@ -29,54 +29,40 @@ import Foundation
 #endif
 
 extension ImageWand {
-    
+
     func identify() -> String? {
-        return self.getString(from: MagickIdentifyImage)
+        return MagickWand.getString(from: self.pointer, using: MagickIdentifyImage)
     }
-    
+
     var format: String? {
-        return self.getString(from: MagickGetFormat)
+        return MagickWand.getString(from: self.pointer, using: MagickGetFormat)
     }
-    
+
     var filename: String? {
-        return self.getString(from: MagickGetFilename)
+        return MagickWand.getString(from: self.pointer, using: MagickGetFilename)
     }
-    
+
     var interlace: MagickWand.Interlace {
         //v7 // MagickIdentifyImageType
         // MagickGetImageInterlaceScheme
         return MagickWand.Interlace(MagickGetImageInterlaceScheme(self.pointer))
     }
-    
+
     var orientation: MagickWand.Orientation {
         return MagickWand.Orientation(MagickGetOrientation(self.pointer))
     }
-    
+
     var compression: MagickWand.CompressionInfo {
         let type = MagickWand.Compression(MagickGetCompression(self.pointer))
         let quality = MagickGetCompressionQuality(self.pointer)
         return (type, quality)
     }
-    
+
     var gravity: MagickWand.Gravity {
         return MagickWand.Gravity(MagickGetGravity(self.pointer))
     }
-    
+
     var colorspace: MagickWand.Colorspace {
         return MagickWand.Colorspace(MagickGetColorspace(self.pointer))
-    }
-    
-    //PixelWand *MagickGetBackgroundColor(MagickWand *wand)
-    
-    private func getString(from method: (OpaquePointer!) -> (UnsafeMutablePointer<Int8>!)) -> String? {
-        guard let pointer = method(self.pointer) else {
-            return nil
-        }
-        
-        defer {
-            MagickRelinquishMemory(pointer)
-        }
-        
-        return String(cString: pointer)
     }
 }

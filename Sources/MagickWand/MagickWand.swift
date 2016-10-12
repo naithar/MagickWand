@@ -27,17 +27,23 @@
 #endif
 
 public struct MagickWand {
-    
+
+    public typealias Size = (width: Int, height: Int)
+    public typealias Resolution = (width: Double, height: Double)
+
+    public typealias RGB = (red: Double, green: Double, blue: Double)
+    public typealias HSL = (hue: Double, saturation: Double, lightness: Double)
+
     static let unknownVersion = "unknown"
-    
+
     public static func genesis() {
         MagickWandGenesis()
     }
-    
+
     public static func terminus() {
         MagickWandTerminus()
     }
-    
+
     public static var isInstantiated: Bool {
         #if os(Linux)
             return IsMagickInstantiated().bool
@@ -45,12 +51,24 @@ public struct MagickWand {
             return IsMagickWandInstantiated().bool
         #endif
     }
-    
+
     public static var version: String {
         guard let pointer = MagickGetVersion(nil) else {
             return MagickWand.unknownVersion
         }
-        
+
+        return String(cString: pointer)
+    }
+
+    internal static func getString(from wandPointer: OpaquePointer, using method: (OpaquePointer!) -> (UnsafeMutablePointer<Int8>!)) -> String? {
+        guard let pointer = method(wandPointer) else {
+            return nil
+        }
+
+        defer {
+            MagickRelinquishMemory(pointer)
+        }
+
         return String(cString: pointer)
     }
 }
