@@ -28,44 +28,87 @@ import Foundation
     import CMagickWandOSX
 #endif
 
+public struct Colors {
+
+    private var pointer: OpaquePointer
+
+    init(_ wand: PixelWand) {
+        self.init(wand.pointer)
+    }
+
+    init(_ pointer: OpaquePointer) {
+        self.pointer = pointer
+    }
+
+    public var rgb: MagickWand.RGB {
+        let red = PixelGetRed(self.pointer)
+        let green = PixelGetGreen(self.pointer)
+        let blue = PixelGetBlue(self.pointer)
+
+        return (red, green, blue)
+    }
+
+    public var hsl: MagickWand.HSL {
+        var hue: Double = 0
+        var saturation: Double = 0
+        var lightness: Double = 0
+
+        PixelGetHSL(self.pointer, &hue, &saturation, &lightness)
+
+        return (hue, saturation, lightness)
+    }
+
+    public var alpha: Double {
+        let alpha = PixelGetAlpha(self.pointer)
+        return alpha
+    }
+
+    public var yellow: Double {
+        let yellow = PixelGetYellow(self.pointer)
+
+        return yellow
+    }
+
+    public var cyan: Double {
+        let cyan = PixelGetCyan(self.pointer)
+
+        return cyan
+    }
+
+    public var magenta: Double {
+        let magenta = PixelGetMagenta(self.pointer)
+
+        return magenta
+    }
+
+    public var string: String? {
+        return MagickWand.getString(from: self.pointer, using: PixelGetColorAsString)
+    }
+
+    public var normalizedString: String? {
+        return MagickWand.getString(from: self.pointer, using: PixelGetColorAsNormalizedString)
+    }
+
+    public var count: Int {
+        return PixelGetColorCount(self.pointer)
+    }
+
+    public var fuzz: Double {
+        return PixelGetFuzz(self.pointer)
+    }
+
+    public var info: MagickWand.PixelInfo {
+        var infoPacket = MagickPixelPacket()
+
+        PixelGetMagickColor(self.pointer, &infoPacket)
+
+        return MagickWand.PixelInfo(infoPacket)
+    }
+}
+
 extension PixelWand {
-    
-    //double PixelGetAlpha(const PixelWand *wand)
-    //Quantum PixelGetAlphaQuantum(const PixelWand *wand)
-    
-    //double PixelGetBlack(const PixelWand *wand)
-    //Quantum PixelGetBlackQuantum(const PixelWand *wand)
-    
-    //rgb
-    //double PixelGetRed(const PixelWand *wand)
-    //Quantum PixelGetRedQuantum(const PixelWand *wand)
-    //double PixelGetBlue(const PixelWand *wand)
-    //Quantum PixelGetBlueQuantum(const PixelWand *wand)
-    //double PixelGetGreen(const PixelWand *wand)
-    //Quantum PixelGetGreenQuantum(const PixelWand *wand)
-    
-    //double PixelGetYellow(const PixelWand *wand)
-    //Quantum PixelGetYellowQuantum(const PixelWand *wand)
-    
-    
-    //double PixelGetCyan(const PixelWand *wand)
-    //Quantum PixelGetCyanQuantum(const PixelWand *wand)
-    
-    //char *PixelGetColorAsString(PixelWand *wand)
-    //char *PixelGetColorAsNormalizedString(PixelWand *wand)
-    
-    //size_t PixelGetColorCount(const PixelWand *wand)
-    
-    //double PixelGetFuzz(const PixelWand *wand)
-    
-    //void PixelGetHSL(const PixelWand *wand,double *hue,double *saturation, double *lightness)
-    
-    //Quantum PixelGetIndex(const PixelWand *wand)
-    
-    //double PixelGetMagenta(const PixelWand *wand)
-    //Quantum PixelGetMagentaQuantum(const PixelWand *wand)
-    
-    
-    //void PixelGetMagickColor(PixelWand *wand,PixelInfo *color)
-    //PixelInfo PixelGetPixel(const PixelWand *wand)
+
+    public var colors: Colors {
+        return Colors(self)
+    }
 }
