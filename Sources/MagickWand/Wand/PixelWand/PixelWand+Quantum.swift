@@ -41,17 +41,13 @@ public struct Quantums {
         self.pointer = pointer
     }
 
-    public var rgb: (Quantum, Quantum, Quantum) {
+    public var rgba: (red: Quantum, green: Quantum, blue: Quantum, alpha: Quantum) {
         let red = PixelGetRedQuantum(self.pointer)
         let green = PixelGetGreenQuantum(self.pointer)
         let blue = PixelGetBlueQuantum(self.pointer)
-        return (red, green, blue)
-    }
-
-    public var alpha: Quantum {
         let alpha = PixelGetAlphaQuantum(self.pointer)
 
-        return alpha
+        return (red, green, blue, alpha)
     }
 
     public var black: Quantum {

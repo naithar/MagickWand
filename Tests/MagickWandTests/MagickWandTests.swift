@@ -82,7 +82,6 @@ class MagickWandTests: XCTestCase {
             print(wand.colorspace)
 
             func showColors(_ color: PixelWand?) {
-                print(color?.colors.alpha)
                 print(color?.colors.rgb)
                 print(color?.colors.hsl)
                 print(color?.colors.black)
@@ -101,9 +100,8 @@ class MagickWandTests: XCTestCase {
 
             func showQuantums(_ color: PixelWand?) {
                 print(color?.index)
-                
-                print(color?.quantums.rgb)
-                print(color?.quantums.alpha)
+
+                print(color?.quantums.rgba)
                 print(color?.quantums.black)
 
                 print(color?.quantums.info)

@@ -1,4 +1,4 @@
-// MagickWand.swift
+// MagickWand+Orientation.swift
 //
 // Copyright (c) 2016 Sergey Minakov
 //
@@ -26,48 +26,24 @@
     import CMagickWandOSX
 #endif
 
-public struct MagickWand {
+extension MagickWand {
 
-    public typealias Size = (width: Int, height: Int)
-    public typealias Resolution = (width: Double, height: Double)
+    public struct RGB {
 
-    public typealias HSL = (hue: Double, saturation: Double, lightness: Double)
+        private(set) var red: Double
+        private(set) var green: Double
+        private(set) var blue: Double
+        private(set) var alpha: Double
 
-    static let unknownVersion = "unknown"
-
-    public static func genesis() {
-        MagickWandGenesis()
-    }
-
-    public static func terminus() {
-        MagickWandTerminus()
-    }
-
-    public static var isInstantiated: Bool {
-        #if os(Linux)
-            return IsMagickInstantiated().bool
-        #else
-            return IsMagickWandInstantiated().bool
-        #endif
-    }
-
-    public static var version: String {
-        guard let pointer = MagickGetVersion(nil) else {
-            return MagickWand.unknownVersion
+        public init(_ red: Double, _ green: Double, _ blue: Double) {
+            self.init(red, green, blue, 1)
         }
 
-        return String(cString: pointer)
-    }
-
-    internal static func getString(from wandPointer: OpaquePointer, using method: (OpaquePointer!) -> (UnsafeMutablePointer<Int8>!)) -> String? {
-        guard let pointer = method(wandPointer) else {
-            return nil
+        public init(_ red: Double, _ green: Double, _ blue: Double, _ alpha: Double) {
+            self.red = red
+            self.green = green
+            self.blue = blue
+            self.alpha = alpha
         }
-
-        defer {
-            MagickRelinquishMemory(pointer)
-        }
-
-        return String(cString: pointer)
     }
 }

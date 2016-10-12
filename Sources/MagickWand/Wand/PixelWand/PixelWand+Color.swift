@@ -44,8 +44,9 @@ public struct Colors {
         let red = PixelGetRed(self.pointer)
         let green = PixelGetGreen(self.pointer)
         let blue = PixelGetBlue(self.pointer)
+        let alpha = PixelGetAlpha(self.pointer)
 
-        return (red, green, blue)
+        return MagickWand.RGB(red, green, blue, alpha)
     }
 
     public var hsl: MagickWand.HSL {
@@ -56,11 +57,6 @@ public struct Colors {
         PixelGetHSL(self.pointer, &hue, &saturation, &lightness)
 
         return (hue, saturation, lightness)
-    }
-
-    public var alpha: Double {
-        let alpha = PixelGetAlpha(self.pointer)
-        return alpha
     }
 
     public var black: Double {
