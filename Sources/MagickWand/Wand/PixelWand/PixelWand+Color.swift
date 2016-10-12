@@ -63,6 +63,12 @@ public struct Colors {
         return alpha
     }
 
+    public var black: Double {
+        let black = PixelGetBlack(self.pointer)
+
+        return black
+    }
+
     public var yellow: Double {
         let yellow = PixelGetYellow(self.pointer)
 
@@ -98,8 +104,9 @@ public struct Colors {
     }
 
     public var info: MagickWand.PixelInfo {
+        // PixelGetPixel(self.pointer)
         var infoPacket = MagickPixelPacket()
-
+        
         PixelGetMagickColor(self.pointer, &infoPacket)
 
         return MagickWand.PixelInfo(infoPacket)

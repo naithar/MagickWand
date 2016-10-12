@@ -47,15 +47,20 @@ public struct Quantums {
         let blue = PixelGetBlueQuantum(self.pointer)
         return (red, green, blue)
     }
+
+
+    // PixelGetBlackQuantum
+    // PixelGetQuantumPacket
+    // PixelGetQuantumPixel
+    // PixelSetAlphaQuantum
+    //Quantum PixelGetYellowQuantum(const PixelWand *wand)
+    //Quantum PixelGetCyanQuantum(const PixelWand *wand)
+    //Quantum PixelGetIndex(const PixelWand *wand)
+    //Quantum PixelGetMagentaQuantum(const PixelWand *wand)
 }
 extension PixelWand {
 
     public var quantums: Quantums {
         return Quantums(self)
     }
-
-    //Quantum PixelGetYellowQuantum(const PixelWand *wand)
-    //Quantum PixelGetCyanQuantum(const PixelWand *wand)
-    //Quantum PixelGetIndex(const PixelWand *wand)
-    //Quantum PixelGetMagentaQuantum(const PixelWand *wand)
 }
