@@ -30,22 +30,17 @@ extension MagickWand {
 
     public struct PixelInfo {
 
+        private(set) var red: Quantum
+        private(set) var green: Quantum
+        private(set) var blue: Quantum
+
+        private(set) var opacity: Quantum
 
         init(_ info: PixelPacket) {
-            // self.colorspace = MagickWand.Colorspace(info.colorspace)
-            //
-            // self.isMatte = info.matte.bool
-            //
-            // self.fuzz = Double(info.fuzz)
-            //
-            // self.depth = info.depth
-            //
-            // self.red = Double(info.red)
-            // self.green = Double(info.green)
-            // self.blue = Double(info.blue)
-            // self.opacity = Double(info.opacity)
-            //
-            // self.index = Double(info.index)
+            self.red = info.red
+            self.green = info.green
+            self.blue = info.blue
+            self.opacity = info.opacity
         }
     }
 }
