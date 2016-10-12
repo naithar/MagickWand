@@ -89,6 +89,7 @@ class MagickWandTests: XCTestCase {
                 print(color?.colors.yellow)
                 print(color?.colors.cyan)
                 print(color?.colors.magenta)
+
                 print(color?.colors.info)
 
                 print(color?.colors.string)
@@ -98,21 +99,30 @@ class MagickWandTests: XCTestCase {
                 print(color?.colors.fuzz)
             }
 
+            func showQuantums(_ color: PixelWand?) {
+                print(color?.index)
+                
+                print(color?.quantums.rgb)
+                print(color?.quantums.alpha)
+                print(color?.quantums.black)
+
+                print(color?.quantums.info)
+            }
+
             print("background")
             print(wand.background)
             showColors(wand.background)
+            showQuantums(wand.background)
 
-            print(wand.background?.quantums.rgb)
             print("border")
             print(wand.border)
             showColors(wand.border)
+            showQuantums(wand.border)
 
-            print(wand.border?.quantums.rgb)
             print("matte")
             print(wand.matte)
             showColors(wand.matte)
-
-            print(wand.matte?.quantums.rgb)
+            showQuantums(wand.matte)
         }
 
         #if os(Linux) //IsMagicInstantiated() method returns false

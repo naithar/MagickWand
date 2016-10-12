@@ -28,8 +28,8 @@
 
 extension MagickWand {
 
-    public struct PixelInfo {
-        
+    public struct ColorInfo {
+
         private(set) public var colorspace: MagickWand.Colorspace
         private(set) public var isMatte: Bool
         private(set) public var fuzz: Double

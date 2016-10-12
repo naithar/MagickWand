@@ -41,18 +41,52 @@ public struct Quantums {
         self.pointer = pointer
     }
 
-    var rgb: (Quantum, Quantum, Quantum) {
+    public var rgb: (Quantum, Quantum, Quantum) {
         let red = PixelGetRedQuantum(self.pointer)
         let green = PixelGetGreenQuantum(self.pointer)
         let blue = PixelGetBlueQuantum(self.pointer)
         return (red, green, blue)
     }
 
+    public var alpha: Quantum {
+        let alpha = PixelGetAlphaQuantum(self.pointer)
 
-    // PixelGetBlackQuantum
-    // PixelGetQuantumPacket
-    // PixelGetQuantumPixel
-    // PixelSetAlphaQuantum
+        return alpha
+    }
+
+    public var black: Quantum {
+        let black = PixelGetBlackQuantum(self.pointer)
+
+        return black
+    }
+
+    public var yellow: Quantum {
+        let yellow = PixelGetYellowQuantum(self.pointer)
+
+        return yellow
+    }
+
+    public var cyan: Quantum {
+        let cyan = PixelGetCyanQuantum(self.pointer)
+
+        return cyan
+    }
+
+    public var magenta: Quantum {
+        let magenta = PixelGetMagentaQuantum(self.pointer)
+
+        return magenta
+    }
+
+    public var info: PixelPacket {
+        var infoPacket = PixelPacket()
+
+        //PixelGetQuantumPacket
+        PixelGetQuantumColor(self.pointer, &infoPacket)
+
+        return infoPacket//MagickWand.PixelInfo(infoPacket)
+    }
+
     //Quantum PixelGetYellowQuantum(const PixelWand *wand)
     //Quantum PixelGetCyanQuantum(const PixelWand *wand)
     //Quantum PixelGetIndex(const PixelWand *wand)
