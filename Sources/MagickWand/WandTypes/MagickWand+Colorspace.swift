@@ -37,7 +37,7 @@ extension MagickWand {
         case HSB, HSI, HSL, HSV
         case HWB
         case lab
-        case LCH, LCHab, LCHub
+        case LCH, LCHab, LCHuv
         case log
         case LMS
         case luv
@@ -78,7 +78,7 @@ extension MagickWand {
             case LCHabColorspace:
                 self = .LCHab
             case LCHuvColorspace:
-                self = .LCHub
+                self = .LCHuv
             case LogColorspace:
                 self = .log
             case LMSColorspace:
@@ -150,7 +150,7 @@ extension MagickWand {
                 return LCHColorspace
             case .LCHab:
                 return LCHabColorspace
-            case .LCHub:
+            case .LCHuv:
                 return LCHuvColorspace
             case .log:
                 return LogColorspace

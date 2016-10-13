@@ -81,6 +81,8 @@ class MagickWandTests: XCTestCase {
             print(wand.gravity)
             print(wand.colorspace)
 
+            print(wand.getOption(.type))
+
             func showColors(_ color: PixelWand?) {
                 print(color?.colors.rgb)
                 print(color?.colors.hsl)
