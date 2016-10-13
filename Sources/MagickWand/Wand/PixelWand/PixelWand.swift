@@ -36,6 +36,10 @@ public class PixelWand: Wand {
         return IsPixelWand(self.pointer).bool
     }
 
+    deinit {
+        self.destroy()
+    }
+
     public required init?() {
         guard let pointer = NewPixelWand() else { return nil }
         self.pointer = pointer
