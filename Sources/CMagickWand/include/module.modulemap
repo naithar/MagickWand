@@ -1,0 +1,13 @@
+module CMagickWandOSX [system] {
+	header "/usr/local/include/MagickWand/MagickWand.h"
+	link "MagickWand-7.Q16HDRI"
+	link "MagickCore-7.Q16HDRI"
+	export *
+}
+
+module CMagickWandLinux [system] {
+	header "/usr/include/ImageMagick/wand/MagickWand.h"
+	link "MagickWand"
+	link "MagickCore"
+	export *
+}

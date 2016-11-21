@@ -99,13 +99,13 @@ public struct Colors {
         return PixelGetFuzz(self.pointer)
     }
 
-    public var info: MagickWand.ColorInfo {
-        var infoPacket = MagickPixelPacket()
-
-        PixelGetMagickColor(self.pointer, &infoPacket)
-
-        return MagickWand.ColorInfo(infoPacket)
-    }
+    // public var info: MagickWand.ColorInfo {
+    //     var infoPacket = MagickPixelPacket()
+    //
+    //     PixelGetMagickColor(self.pointer, &infoPacket)
+    //
+    //     return MagickWand.ColorInfo(infoPacket)
+    // }
 }
 
 extension PixelWand {

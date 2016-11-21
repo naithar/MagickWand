@@ -1,0 +1,4 @@
+#ifndef CMAGICKWAND_SWIFT
+#define CMAGICKWAND_SWIFT
+
+#endif

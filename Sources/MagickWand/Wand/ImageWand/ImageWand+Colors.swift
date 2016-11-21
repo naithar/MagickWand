@@ -50,13 +50,14 @@ extension ImageWand {
         return border
     }
 
-    var matte: PixelWand? {
-        let matte = PixelWand()
-
-        guard MagickGetImageMatteColor(self.pointer, matte?.pointer).bool else {
-            return nil
-        }
-
-        return matte
-    }
+    //TODO
+    // var matte: PixelWand? {
+    //     let matte = PixelWand()
+    //
+    //     guard MagickGetImageMatteColor(self.pointer, matte?.pointer).bool else {
+    //         return nil
+    //     }
+    //
+    //     return matte
+    // }
 }
