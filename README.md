@@ -1,5 +1,8 @@
 # Swift MagickWand
 
+This package supports 6.9.6 version of ImageMagick. 
+
+
 ## Installing
 
 ### Linux and Mac OSX
