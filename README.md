@@ -15,13 +15,7 @@ sudo make install
 
 ## Building
 
-### Linux
-
-```
-swift build -Xcc -I/usr/include/ImageMagick
-```
-
-### Mac OSX
+### Linux and Mac OSX
 
 ```
 swift build -Xcc -I/usr/local/include/ImageMagick-6/ -Xlinker -L/usr/local/lib/ -Xcc -DMAGICKCORE_HDRI_ENABLE=0 -Xcc -DMAGICKCORE_QUANTUM_DEPTH=16
