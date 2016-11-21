@@ -1,7 +1,7 @@
 module CMagickWandOSX [system] {
-	header "/usr/local/include/MagickWand/MagickWand.h"
-	link "MagickWand-7.Q16HDRI"
-	link "MagickCore-7.Q16HDRI"
+	header "/usr/local/include/ImageMagick-6/wand/MagickWand.h"
+	link "MagickWand-6.Q16"
+	link "MagickCore-6.Q16"
 	export *
 }
 

@@ -74,14 +74,13 @@ public struct Quantums {
         return magenta
     }
 
-    //TODO
-    // public var info: MagickWand.PixelInfo {
-    //     var infoPacket = PixelPacket()
-    //
-    //     PixelGetQuantumPacket(self.pointer, &infoPacket)
-    //
-    //     return MagickWand.PixelInfo(infoPacket)
-    // }
+    public var info: MagickWand.PixelInfo {
+        var infoPacket = PixelPacket()
+
+        PixelGetQuantumColor(self.pointer, &infoPacket)
+
+        return MagickWand.PixelInfo(infoPacket)
+    }
 }
 extension PixelWand {
 

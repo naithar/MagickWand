@@ -30,31 +30,31 @@ extension MagickWand {
 
     public struct ColorInfo {
 
-        // private(set) public var colorspace: MagickWand.Colorspace
-        // private(set) public var isMatte: Bool
-        // private(set) public var fuzz: Double
-        // private(set) public var depth: Int
-        // private(set) public var red: Double
-        // private(set) public var green: Double
-        // private(set) public var blue: Double
-        // private(set) public var opacity: Double
-        // private(set) public var index: Double
-        //
-        // init(_ info: MagickPixelPacket) {
-        //     self.colorspace = MagickWand.Colorspace(info.colorspace)
-        //
-        //     self.isMatte = info.matte.bool
-        //
-        //     self.fuzz = Double(info.fuzz)
-        //
-        //     self.depth = info.depth
-        //
-        //     self.red = Double(info.red)
-        //     self.green = Double(info.green)
-        //     self.blue = Double(info.blue)
-        //     self.opacity = Double(info.opacity)
-        //
-        //     self.index = Double(info.index)
-        // }
+        private(set) public var colorspace: MagickWand.Colorspace
+        private(set) public var isMatte: Bool
+        private(set) public var fuzz: Double
+        private(set) public var depth: Int
+        private(set) public var red: Double
+        private(set) public var green: Double
+        private(set) public var blue: Double
+        private(set) public var opacity: Double
+        private(set) public var index: Double
+
+        init(_ info: MagickPixelPacket) {
+            self.colorspace = MagickWand.Colorspace(info.colorspace)
+
+            self.isMatte = info.matte.bool
+
+            self.fuzz = Double(info.fuzz)
+
+            self.depth = info.depth
+
+            self.red = Double(info.red)
+            self.green = Double(info.green)
+            self.blue = Double(info.blue)
+            self.opacity = Double(info.opacity)
+
+            self.index = Double(info.index)
+        }
     }
 }

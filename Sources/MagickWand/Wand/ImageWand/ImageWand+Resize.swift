@@ -30,8 +30,8 @@ import Foundation
 
 extension ImageWand {
 
-    public func resize(width: Int, height: Int, filter: MagickWand.Filter) {
-        MagickResizeImage(self.pointer, width, height, filter.filter)
+    public func resize(width: Int, height: Int, filter: MagickWand.Filter, blur: Double = 1.0) {
+        MagickResizeImage(self.pointer, width, height, filter.filter, blur)
     }
 
     public func adaptiveResize(width: Int, height: Int) {

@@ -34,7 +34,7 @@ extension MagickWand {
         case box
         case catrom
         case gaussian
-        case hann
+        case hanning
         case hermite
         case lanczos
         case mitchell
@@ -42,9 +42,9 @@ extension MagickWand {
         case triangle
         case kaiser
         case sentinel
-        case welch
+        case welsh
 
-        var filter: FilterType {
+        var filter: FilterTypes {
             switch self {
             case .blackman:
                 return BlackmanFilter
@@ -54,8 +54,8 @@ extension MagickWand {
                 return CatromFilter
             case .gaussian:
                 return GaussianFilter
-            case .hann:
-                return HannFilter
+            case .hanning:
+                return HanningFilter
             case .hermite:
                 return HermiteFilter
             case .lanczos:
@@ -70,8 +70,8 @@ extension MagickWand {
                 return KaiserFilter
             case .sentinel:
                 return SentinelFilter
-            case .welch:
-                return WelchFilter
+            case .welsh:
+                return WelshFilter
             }
         }
     }

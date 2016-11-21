@@ -30,17 +30,17 @@ extension MagickWand {
 
     public struct PixelInfo {
 
-        private(set) var red: UInt32
-        private(set) var green: UInt32
-        private(set) var blue: UInt32
+        private(set) var red: Quantum
+        private(set) var green: Quantum
+        private(set) var blue: Quantum
 
-        private(set) var alpha: UInt32
+        private(set) var opacity: Quantum
 
-        init(_ info: PixelInfo) {
+        init(_ info: PixelPacket) {
             self.red = info.red
             self.green = info.green
             self.blue = info.blue
-            self.alpha = info.alpha
+            self.opacity = info.opacity
         }
     }
 }
