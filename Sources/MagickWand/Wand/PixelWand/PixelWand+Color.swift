@@ -102,7 +102,9 @@ public struct Colors {
     public var info: MagickWand.ColorInfo {
         var infoPacket = MagickPixelPacket()
 
+#if !os(Linux)
         PixelGetMagickColor(self.pointer, &infoPacket)
+#endif
 
         return MagickWand.ColorInfo(infoPacket)
     }
