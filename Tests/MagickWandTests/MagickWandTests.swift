@@ -91,7 +91,7 @@ class MagickWandTests: XCTestCase {
                 print(color?.colors.cyan)
                 print(color?.colors.magenta)
 
-                print(color?.colors.info)
+//                print(color?.colors.info)
 
                 print(color?.colors.string)
                 print(color?.colors.normalizedString)
