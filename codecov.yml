@@ -8,11 +8,22 @@ coverage:
   range: "0...100"
 
   status:
-    project: yes
-    patch: yes
-    changes: no
+    project:
+      default:
+        target: auto
+        threshold: null
+        branches: null
 
-ignore:
-  - "*Tests*"
-  - "*Sources/CMagickWand*"
+    patch:
+      default:
+        target: auto
+        branches: null
+
+    changes:
+      default:
+        branches: null
+
+  ignore:
+    - "Tests/*"
+    - "Sources/CMagickWand/*"
 
