@@ -37,7 +37,7 @@ Or run an [install-script.sh](common/install-imagemagick.sh) which also installs
 Add this package to `dependencies` in your `Package.swift` file.
 
 ```
-.Package(url: "https://github.com/naithar/MagickWand.git", majorVersion: 0, minor: 2)
+.Package(url: "https://github.com/naithar/MagickWand.git", majorVersion: 0)
 ```
 
 ## Building and Testing
