@@ -29,35 +29,35 @@ import Foundation
 #endif
 
 public class PixelWand: Wand {
-
+    
     private(set) internal var pointer: OpaquePointer
-
+    
     public var isPixelWand: Bool {
         return IsPixelWand(self.pointer).bool
     }
-
+    
     deinit {
         self.destroy()
     }
-
+    
     public required init?() {
         guard let pointer = NewPixelWand() else { return nil }
         self.pointer = pointer
     }
-
+    
     public required init(pointer: OpaquePointer) {
         self.pointer = pointer
     }
-
+    
     public func clear() {
         ClearPixelWand(self.pointer)
     }
-
+    
     public func clone() -> Self? {
         guard let pointer = ClonePixelWand(self.pointer) else { return nil }
         return type(of: self).init(pointer: pointer)
     }
-
+    
     public func destroy() {
         DestroyPixelWand(self.pointer)
     }

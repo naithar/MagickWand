@@ -29,34 +29,71 @@ import Foundation
 #endif
 
 extension ImageWand {
-
-    var background: PixelWand? {
-        let background = PixelWand()
-
-        guard MagickGetImageBackgroundColor(self.pointer, background?.pointer).bool else {
-            return nil
+    
+    public var background: PixelWand? {
+        get {
+            let background = PixelWand()
+            
+            guard MagickGetImageBackgroundColor(self.pointer, background?.pointer).bool else {
+                return nil
+            }
+            
+            return background
         }
-
-        return background
+        set {
+            guard let newValue = newValue else {
+                return
+            }
+            
+            MagickGetImageBackgroundColor(self.pointer, newValue.pointer)
+        }
     }
-
-    var border: PixelWand? {
-        let border = PixelWand()
-
-        guard MagickGetImageBackgroundColor(self.pointer, border?.pointer).bool else {
-            return nil
+    
+    public var border: PixelWand? {
+        get {
+            let border = PixelWand()
+            
+            guard MagickGetImageBorderColor(self.pointer, border?.pointer).bool else {
+                return nil
+            }
+            
+            return border
         }
-
-        return border
+        set {
+            guard let newValue = newValue else {
+                return
+            }
+            
+            MagickSetImageBorderColor(self.pointer, newValue.pointer)
+        }
     }
-
-    var matte: PixelWand? {
-        let matte = PixelWand()
-
-        guard MagickGetImageMatteColor(self.pointer, matte?.pointer).bool else {
+    
+    public var matte: PixelWand? {
+        get {
+            let matte = PixelWand()
+            
+            guard MagickGetImageMatteColor(self.pointer, matte?.pointer).bool else {
+                return nil
+            }
+            
+            return matte
+        }
+        set {
+            guard let newValue = newValue else {
+                return
+            }
+            
+            MagickSetImageMatteColor(self.pointer, newValue.pointer)
+        }
+    }
+    
+    public func pixel(x: Int, y: Int) -> PixelWand? {
+        let pixel = PixelWand()
+        
+        guard MagickGetImagePixelColor(self.pointer, x, y, pixel?.pointer).bool else {
             return nil
         }
-
-        return matte
+        
+        return pixel
     }
 }

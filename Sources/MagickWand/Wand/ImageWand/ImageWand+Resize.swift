@@ -29,15 +29,27 @@ import Foundation
 #endif
 
 extension ImageWand {
-
+    
+    public func resize(width: Double, height: Double, filter: MagickWand.Filter, blur: Double = 1.0) {
+        self.resize(width: Int(width), height: Int(width), filter: filter, blur: blur)
+    }
+    
     public func resize(width: Int, height: Int, filter: MagickWand.Filter, blur: Double = 1.0) {
         MagickResizeImage(self.pointer, width, height, filter.filter, blur)
     }
-
+    
+    public func adaptiveResize(width: Double, height: Double) {
+        self.adaptiveResize(width: Int(width), height: Int(height))
+    }
+    
     public func adaptiveResize(width: Int, height: Int) {
         MagickAdaptiveResizeImage(self.pointer, width, height)
     }
-
+    
+    public func scale(width: Double, height: Double) {
+        self.scale(width: Int(width), height: Int(width))
+    }
+    
     public func scale(width: Int, height: Int) {
         MagickScaleImage(self.pointer, width, height)
     }

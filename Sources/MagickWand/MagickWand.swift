@@ -28,11 +28,6 @@
 
 public struct MagickWand {
 
-    public typealias Size = (width: Int, height: Int)
-    public typealias Resolution = (width: Double, height: Double)
-
-    public typealias HSL = (hue: Double, saturation: Double, lightness: Double)
-
     static let unknownVersion = "unknown"
 
     public static func genesis() {
@@ -58,16 +53,20 @@ public struct MagickWand {
 
         return String(cString: pointer)
     }
+}
 
-    internal static func getString(from wandPointer: OpaquePointer, using method: (OpaquePointer!) -> (UnsafeMutablePointer<Int8>!)) -> String? {
+extension MagickWand {
+    
+    internal static func getString(from wandPointer: OpaquePointer?,
+                                   using method: (OpaquePointer!) -> (UnsafeMutablePointer<Int8>!)) -> String? {
         guard let pointer = method(wandPointer) else {
             return nil
         }
-
+        
         defer {
             MagickRelinquishMemory(pointer)
         }
-
+        
         return String(cString: pointer)
     }
 }

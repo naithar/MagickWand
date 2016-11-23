@@ -29,36 +29,36 @@ import Foundation
 #endif
 
 extension ImageWand {
-
+    
     public var size: MagickWand.Size {
         let (width, height) = (
             Int(MagickGetImageWidth(self.pointer)),
             Int(MagickGetImageHeight(self.pointer))
         )
-
-        return (width, height)
+        
+        return MagickWand.Size(width: width, height: height)
     }
-
+    
     public var resolution: MagickWand.Resolution {
         var width: Double = 0
         var height: Double = 0
-
+        
         MagickGetImageResolution(self.pointer, &width, &height)
-
-        return (width, height)
+        
+        return MagickWand.Resolution(width: width, height: height)
     }
-
+    
     public func size(for dimension: Int) -> MagickWand.Size {
         let size = self.size
-        var result = (width: 0, height: 0)
-
+        var result = MagickWand.Size(width: 0, height: 0)
+        
         if size.width == 0
             || size.height == 0 {
-            return (0, 0)
+            return .zero
         }
-
+        
         let ratio = Double(size.height) / Double(size.width)
-
+        
         if ratio > 1 {
             result.height = dimension
             result.width = Int(Double(result.height) / ratio)
@@ -69,7 +69,7 @@ extension ImageWand {
             result.width = dimension
             result.height = dimension
         }
-
+        
         return result
     }
 }

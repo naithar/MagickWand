@@ -29,94 +29,121 @@ import Foundation
 #endif
 
 public struct Colors {
-
+    
     private var pointer: OpaquePointer
-
+    
     init(_ wand: PixelWand) {
         self.init(wand.pointer)
     }
-
+    
     init(_ pointer: OpaquePointer) {
         self.pointer = pointer
     }
-
-    public var rgb: MagickWand.RGB {
-        let red = PixelGetRed(self.pointer)
-        let green = PixelGetGreen(self.pointer)
-        let blue = PixelGetBlue(self.pointer)
-        let alpha = PixelGetAlpha(self.pointer)
-
-        return MagickWand.RGB(red, green, blue, alpha)
+    
+    public var rgba: MagickWand.RGBA {
+        get {
+            let red = PixelGetRed(self.pointer)
+            let green = PixelGetGreen(self.pointer)
+            let blue = PixelGetBlue(self.pointer)
+            let alpha = PixelGetAlpha(self.pointer)
+            
+            return MagickWand.RGBA(red, green, blue, alpha)
+        }
+        set {
+            PixelSetRed(self.pointer, newValue.red)
+            PixelSetGreen(self.pointer, newValue.green)
+            PixelSetBlue(self.pointer, newValue.blue)
+            PixelSetAlpha(self.pointer, newValue.alpha)
+        }
     }
-
+    
     public var hsl: MagickWand.HSL {
-        var hue: Double = 0
-        var saturation: Double = 0
-        var lightness: Double = 0
-
-        PixelGetHSL(self.pointer, &hue, &saturation, &lightness)
-
-        return (hue, saturation, lightness)
+        get {
+            var hue: Double = 0
+            var saturation: Double = 0
+            var lightness: Double = 0
+            
+            PixelGetHSL(self.pointer, &hue, &saturation, &lightness)
+            
+            return MagickWand.HSL(hue, saturation, lightness)
+        }
+        set {
+            PixelSetHSL(self.pointer, newValue.hue, newValue.saturation, newValue.lightness)
+        }
     }
-
+    
+    public var cmy: MagickWand.CMY {
+        get {
+            let (cyan, magenta, yellow) = (
+                PixelGetCyan(self.pointer),
+                PixelGetMagenta(self.pointer),
+                PixelGetYellow(self.pointer)
+            )
+            
+            return MagickWand.CMY(cyan, magenta, yellow)
+        }
+        set {
+            PixelSetCyan(self.pointer, newValue.cyan)
+            PixelSetMagenta(self.pointer, newValue.magenta)
+            PixelSetYellow(self.pointer, newValue.yellow)
+        }
+    }
+    
     public var black: Double {
-        let black = PixelGetBlack(self.pointer)
-
-        return black
+        get {
+            return PixelGetBlack(self.pointer)
+        }
+        set {
+            PixelSetBlack(self.pointer, newValue)
+        }
     }
-
-    public var yellow: Double {
-        let yellow = PixelGetYellow(self.pointer)
-
-        return yellow
-    }
-
-    public var cyan: Double {
-        let cyan = PixelGetCyan(self.pointer)
-
-        return cyan
-    }
-
-    public var magenta: Double {
-        let magenta = PixelGetMagenta(self.pointer)
-
-        return magenta
-    }
-
+    
     public var string: String? {
         return MagickWand.getString(from: self.pointer, using: PixelGetColorAsString)
     }
-
+    
     public var normalizedString: String? {
         return MagickWand.getString(from: self.pointer, using: PixelGetColorAsNormalizedString)
     }
-
+    
     public var count: Int {
-        return PixelGetColorCount(self.pointer)
+        get {
+            return PixelGetColorCount(self.pointer)
+        }
+        set {
+            PixelSetColorCount(self.pointer, newValue)
+        }
     }
-
-    public var fuzz: Double {
-        return PixelGetFuzz(self.pointer)
-    }
-
+    
     public var info: MagickWand.ColorInfo {
-        var infoPacket = MagickPixelPacket()
-
-#if !os(Linux)
-        PixelGetMagickColor(self.pointer, &infoPacket)
-#endif
-
-        return MagickWand.ColorInfo(infoPacket)
+        get {
+            var infoPacket = MagickPixelPacket()
+            
+            #if !os(Linux)
+                PixelGetMagickColor(self.pointer, &infoPacket)
+            #endif
+            
+            return MagickWand.ColorInfo(infoPacket)
+        }
+        set {
+            var packet = newValue.info
+            PixelSetMagickColor(self.pointer, &packet)
+        }
     }
 }
 
 extension PixelWand {
-
+    
     public var colors: Colors {
         return Colors(self)
     }
-
+    
     public var index: Quantum {
-        return PixelGetIndex(self.pointer)
+        get {
+            return PixelGetIndex(self.pointer)
+        }
+        set {
+            PixelSetIndex(self.pointer, newValue)
+        }
     }
 }

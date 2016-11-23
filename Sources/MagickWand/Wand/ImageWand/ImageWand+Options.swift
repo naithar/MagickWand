@@ -113,22 +113,35 @@ typedef enum
 
 extension ImageWand {
 
-    enum Option: String {
-        case resolution = "resolution"
-        case interlace = "interlace"
-        case color = "color"
-        case type = "type"
+    public enum Option {
+//        case resolution = "resolution"
+//        case interlace = "interlace"
+//        case color = "color"
+//        case type = "type"
+        
+        case custom(String)
+        
+        var value: String {
+            switch self {
+            case .custom(let value):
+                return value
+            }
+        }
     }
 
-    func getOption(_ option: ImageWand.Option) -> String? {
-        guard let pointer = MagickGetOption(self.pointer, option.rawValue) else {
-            return nil
+    public subscript(option key: ImageWand.Option) -> String? {
+        get {
+            guard let pointer = MagickGetOption(self.pointer, key.value.cString(using: .utf8)) else {
+                return nil
+            }
+            
+            defer {
+                MagickRelinquishMemory(pointer)
+            }
+            
+            return String(cString: pointer)
+        } set {            
+            MagickSetOption(self.pointer, key.value.cString(using: .utf8), (newValue ?? "").cString(using: .utf8))
         }
-
-        defer {
-            MagickRelinquishMemory(pointer)
-        }
-
-        return String(cString: pointer)
     }
 }

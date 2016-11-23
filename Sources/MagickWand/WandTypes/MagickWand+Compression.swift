@@ -28,8 +28,6 @@
 
 extension MagickWand {
 
-    public typealias CompressionInfo = (type: Compression, quality: Int)
-
     public enum Compression {
 
         case undefined

@@ -69,27 +69,28 @@ class MagickWandTests: XCTestCase {
             XCTAssertEqual(size.width, 80, "wrong size for dimension")
             XCTAssertEqual(size.height, 40, "wrong size for dimension")
 
+            print(wand[option: .custom("jpeg:perserve")])
 
-            print(wand.identify())
+            print(wand.identity)
+            print(wand.format)
+            wand.format = "jpeg"
             print(wand.format)
             print(wand.filename)
             print(wand.interlace)
             print(wand.orientation)
             print(wand.size)
+            print("resolution")
             print(wand.resolution)
             print(wand.compression)
             print(wand.gravity)
             print(wand.colorspace)
 
-            print(wand.getOption(.type))
+            
 
             func showColors(_ color: PixelWand?) {
-                print(color?.colors.rgb)
+                print(color?.colors.rgba)
                 print(color?.colors.hsl)
-                print(color?.colors.black)
-                print(color?.colors.yellow)
-                print(color?.colors.cyan)
-                print(color?.colors.magenta)
+                print(color?.colors.cmy)
 
                 print(color?.colors.info)
 
@@ -97,27 +98,22 @@ class MagickWandTests: XCTestCase {
                 print(color?.colors.normalizedString)
 
                 print(color?.colors.count)
-                print(color?.colors.fuzz)
-            }
-
-            func showQuantums(_ color: PixelWand?) {
-                print(color?.index)
-
-                print(color?.quantums.rgba)
-                print(color?.quantums.black)
-
-                print(color?.quantums.info)
             }
 
             print("background")
             print(wand.background)
             showColors(wand.background)
-            showQuantums(wand.background)
 
             print("border")
             print(wand.border)
             showColors(wand.border)
-            showQuantums(wand.border)
+            
+            print("matte")
+            print(wand.matte)
+            showColors(wand.matte)
+            
+            print("pixel")
+            showColors(wand.pixel(x: 0, y: 0))
 
         }
 

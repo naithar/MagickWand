@@ -29,38 +29,74 @@ import Foundation
 #endif
 
 extension ImageWand {
-
-    func identify() -> String? {
+    
+    var identity: String? {
         return MagickWand.getString(from: self.pointer, using: MagickIdentifyImage)
     }
-
+    
     var format: String? {
-        return MagickWand.getString(from: self.pointer, using: MagickGetFormat)
+        get {
+            return MagickWand.getString(from: self.pointer, using: MagickGetFormat)
+        }
+        set {
+            MagickSetFormat(self.pointer, (newValue ?? "").cString(using: .utf8))
+        }
     }
-
+    
     var filename: String? {
-        return MagickWand.getString(from: self.pointer, using: MagickGetFilename)
+        get {
+            return MagickWand.getString(from: self.pointer, using: MagickGetFilename)
+        }
+        set {
+            MagickSetFilename(self.pointer, (newValue ?? "").cString(using: .utf8))
+        }
     }
-
+    
     var interlace: MagickWand.Interlace {
-        return MagickWand.Interlace(MagickGetImageInterlaceScheme(self.pointer))
+        get {
+            return MagickWand.Interlace(MagickGetImageInterlaceScheme(self.pointer))
+        }
+        set {
+            MagickSetImageInterlaceScheme(self.pointer, newValue.type)
+        }
     }
-
+    
     var orientation: MagickWand.Orientation {
-        return MagickWand.Orientation(MagickGetOrientation(self.pointer))
+        get {
+            return MagickWand.Orientation(MagickGetOrientation(self.pointer))
+        }
+        set {
+            MagickSetOrientation(self.pointer, newValue.type)
+        }
     }
-
+    
     var compression: MagickWand.CompressionInfo {
-        let type = MagickWand.Compression(MagickGetCompression(self.pointer))
-        let quality = MagickGetCompressionQuality(self.pointer)
-        return (type, quality)
+        get {
+            let type = MagickWand.Compression(MagickGetCompression(self.pointer))
+            let quality = MagickGetCompressionQuality(self.pointer)
+            return MagickWand.CompressionInfo(compression: type, quality: quality)
+        }
+        set {
+            MagickSetCompression(self.pointer, newValue.compression.type)
+            MagickSetCompressionQuality(self.pointer, newValue.quality)
+        }
     }
-
+    
     var gravity: MagickWand.Gravity {
-        return MagickWand.Gravity(MagickGetGravity(self.pointer))
+        get {
+            return MagickWand.Gravity(MagickGetGravity(self.pointer))
+        }
+        set {
+            MagickSetGravity(self.pointer, newValue.type)
+        }
     }
-
+    
     var colorspace: MagickWand.Colorspace {
-        return MagickWand.Colorspace(MagickGetColorspace(self.pointer))
+        get {
+            return MagickWand.Colorspace(MagickGetColorspace(self.pointer))
+        }
+        set {
+            MagickSetColorspace(self.pointer, newValue.type)
+        }
     }
 }

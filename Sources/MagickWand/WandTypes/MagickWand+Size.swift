@@ -27,20 +27,34 @@
 #endif
 
 extension MagickWand {
-
-    public struct PixelInfo {
-
-        private(set) var red: Quantum
-        private(set) var green: Quantum
-        private(set) var blue: Quantum
-
-        private(set) var opacity: Quantum
-
-        init(_ info: PixelPacket) {
-            self.red = info.red
-            self.green = info.green
-            self.blue = info.blue
-            self.opacity = info.opacity
+    
+    public struct Size {
+        
+        public static let zero = Size()
+        
+        public var width: Int = 0
+        public var height: Int = 0
+        
+        public init() { }
+        
+        public init(width: Int, height: Int) {
+            self.width = width
+            self.height = height
+        }
+    }
+    
+    public struct Resolution {
+        
+        public static let zero = Resolution()
+        
+        public var width: Double = 0
+        public var height: Double = 0
+        
+        public init() { }
+        
+        public init(width: Double, height: Double) {
+            self.width = width
+            self.height = height
         }
     }
 }
