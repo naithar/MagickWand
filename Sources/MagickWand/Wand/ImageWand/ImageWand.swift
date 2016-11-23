@@ -60,6 +60,7 @@ public class ImageWand: Wand {
     }
     
     deinit {
+        self.clear()
         self.destroy()
     }
     
@@ -82,6 +83,7 @@ public class ImageWand: Wand {
     }
     
     public func destroy() {
+        guard MagickWand.isInstantiated else { return }
         DestroyMagickWand(self.pointer)
     }
 }

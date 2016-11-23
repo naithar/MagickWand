@@ -9,21 +9,19 @@ coverage:
 
   status:
     project:
-      default:
-        target: auto
-        threshold: null
-        branches: null
+      default: true
 
     patch:
-      default:
-        target: auto
-        branches: null
+      default: true
 
     changes:
-      default:
-        branches: null
+      default: true
 
   ignore:
     - "Tests/*"
     - "Sources/CMagickWand/*"
 
+comment:
+  layout: "header"
+  branches: null
+  behavior: default

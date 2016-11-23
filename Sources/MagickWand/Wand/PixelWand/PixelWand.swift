@@ -37,6 +37,7 @@ public class PixelWand: Wand {
     }
     
     deinit {
+        self.clear()
         self.destroy()
     }
     
@@ -59,6 +60,7 @@ public class PixelWand: Wand {
     }
     
     public func destroy() {
+        guard MagickWand.isInstantiated else { return }
         DestroyPixelWand(self.pointer)
     }
 }

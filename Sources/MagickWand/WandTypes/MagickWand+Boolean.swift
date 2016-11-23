@@ -29,6 +29,6 @@
 extension MagickBooleanType {
 
     var bool: Bool {
-        return self.rawValue == 1
+        return self.rawValue != 0
     }
 }
