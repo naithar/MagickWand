@@ -1,11 +1,21 @@
 # Swift MagickWand
 
-This package supports 6.9.6 version of ImageMagick. 
+[![Swift](https://img.shields.io/badge/swift-3.0-orange.svg?style=flat)](https://swift.org)
+[![imagemagick](https://img.shields.io/badge/ImageMagick-6.9.6-orange.svg?style=flat)](https://www.imagemagick.org/script/index.php)
+[![Build Status](https://travis-ci.org/naithar/MagickWand.svg?branch=master)](https://travis-ci.org/naithar/MagickWand)
+[![MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](/LICENSE)  
+![macOS](https://img.shields.io/badge/os-macOS-green.svg?style=flat)
+![Linux](https://img.shields.io/badge/os-linux-green.svg?style=flat)  
+![SPM](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange.svg?style=flat)
+
+This package supports 6.9.6 version of ImageMagick.
 
 
-## Installing
+## Intallation
 
 ### Linux and Mac OSX
+
+#### Install ImageMagick
 
 ```
 curl -OL http://www.imagemagick.org/download/ImageMagick-6.9.6-5.tar.gz
@@ -16,12 +26,23 @@ make
 sudo make install
 ```
 
-## Building
+You may also need to install dependencies for ImageMagick.  
+Or run an [install-script.sh](common/install-imagemagick.sh) which also installs `ZLIB` dependency.
+
+#### Add Package
+
+Add this package to `dependencies` in your `Package.swift` file.
+
+```
+.Package(url: "https://github.com/naithar/MagickWand.git", majorVersion: 0, minor: 2)
+```
+
+## Building and Testing
 
 ### Linux and Mac OSX
 
 ```
-swift build -Xcc -I/usr/local/include/ImageMagick-6/ -Xlinker -L/usr/local/lib/ -Xcc -DMAGICKCORE_HDRI_ENABLE=0 -Xcc -DMAGICKCORE_QUANTUM_DEPTH=16
+swift build -Xcc -I/usr/local/include/ImageMagick-6/ -Xlinker -L/usr/local/lib/ -Xcc -DMAGICKCORE_HDRI_ENABLE=0 -Xcc -DMAGICKCORE_QUANTUM_DEPTH=8
 
-swift test  -Xcc -I/usr/local/include/ImageMagick-6/ -Xlinker -L/usr/local/lib/ -Xcc -DMAGICKCORE_HDRI_ENABLE=0 -Xcc -DMAGICKCORE_QUANTUM_DEPTH=16
+swift test  -Xcc -I/usr/local/include/ImageMagick-6/ -Xlinker -L/usr/local/lib/ -Xcc -DMAGICKCORE_HDRI_ENABLE=0 -Xcc -DMAGICKCORE_QUANTUM_DEPTH=8
 ```
