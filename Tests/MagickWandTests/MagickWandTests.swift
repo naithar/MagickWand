@@ -14,7 +14,19 @@ class MagickWandTests: XCTestCase {
         MagickWand.genesis()
 
         //100x50
-        guard let data = try? Data(contentsOf: URL(fileURLWithPath: "rect.png")) else {
+        var fileData: Data?
+        
+        #if os(Linux)
+            fileData = try? Data(contentsOf: URL(fileURLWithPath: "rect.png"))
+        #else
+            if let path = Bundle(for: MagickWandTests.self).path(forResource: "rect", ofType: "png") {
+                fileData = try? Data(contentsOf: URL(fileURLWithPath: path))
+            } else {
+                fileData = try? Data(contentsOf: URL(fileURLWithPath: "rect.png"))
+            }
+        #endif
+        
+        guard let data = fileData else {
             XCTFail("data should not be nil")
             return
         }
