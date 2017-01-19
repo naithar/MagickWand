@@ -3,4 +3,6 @@ import XCTest
 
 XCTMain([
      testCase(MagickWandTests.allTests),
+     testCase(ImageWandTests.allTests),
+     testCase(PixelWandTests.allTests)
 ])

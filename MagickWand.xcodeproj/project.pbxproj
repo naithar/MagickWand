@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		900D18981E30C0BA0024766F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D18961E30C09A0024766F /* Utils.swift */; };
+		900D189B1E30C1190024766F /* ImageWandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D18991E30C1160024766F /* ImageWandTests.swift */; };
+		900D189F1E30C45A0024766F /* PixelWandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D189E1E30C45A0024766F /* PixelWandTests.swift */; };
 		903B3D111DE459F300CEDFA9 /* MagickWand+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903B3D101DE459F300CEDFA9 /* MagickWand+Size.swift */; };
 		904E6AE41DE5A4A9005FC323 /* rect.png in Resources */ = {isa = PBXBuildFile; fileRef = 904E6AE31DE5A4A9005FC323 /* rect.png */; };
 		OBJ_53 /* shim.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* shim.c */; };
@@ -61,6 +64,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		900D18961E30C09A0024766F /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		900D18991E30C1160024766F /* ImageWandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageWandTests.swift; sourceTree = "<group>"; };
+		900D189E1E30C45A0024766F /* PixelWandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PixelWandTests.swift; sourceTree = "<group>"; };
 		903B3D101DE459F300CEDFA9 /* MagickWand+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MagickWand+Size.swift"; sourceTree = "<group>"; };
 		904E6AE31DE5A4A9005FC323 /* rect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rect.png; sourceTree = "<group>"; };
 		OBJ_11 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Volumes/MacintoshHDFiles/Documents/Projects/MagickWand/Sources/CMagickWand/include/module.modulemap; sourceTree = "<group>"; };
@@ -201,6 +207,9 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_42 /* MagickWandTests.swift */,
+				900D18991E30C1160024766F /* ImageWandTests.swift */,
+				900D189E1E30C45A0024766F /* PixelWandTests.swift */,
+				900D18961E30C09A0024766F /* Utils.swift */,
 			);
 			name = MagickWandTests;
 			path = Tests/MagickWandTests;
@@ -310,6 +319,9 @@
 			attributes = {
 				LastUpgradeCheck = 9999;
 				TargetAttributes = {
+					OBJ_47 = {
+						LastSwiftMigration = 0810;
+					};
 					OBJ_55 = {
 						LastSwiftMigration = 0810;
 					};
@@ -398,7 +410,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				900D189B1E30C1190024766F /* ImageWandTests.swift in Sources */,
 				OBJ_91 /* MagickWandTests.swift in Sources */,
+				900D189F1E30C45A0024766F /* PixelWandTests.swift in Sources */,
+				900D18981E30C0BA0024766F /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +477,7 @@
 		OBJ_49 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
@@ -479,6 +495,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SUPPORTED_PLATFORMS = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGET_NAME = CMagickWand;
 			};
@@ -487,6 +504,7 @@
 		OBJ_50 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";

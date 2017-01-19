@@ -50,6 +50,17 @@ public class PixelWand: Wand {
         self.pointer = pointer
     }
     
+    public convenience init?(color: String) {
+        self.init()
+        
+        let result = PixelSetColor(self.pointer, color).bool
+        
+        guard result else {
+            DestroyPixelWand(self.pointer)
+            return nil
+        }
+    }
+    
     public func clear() {
         ClearPixelWand(self.pointer)
     }

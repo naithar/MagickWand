@@ -28,7 +28,7 @@
 
 extension MagickWand {
 
-    public struct RGBA {
+    public struct RGBA: Equatable {
 
         public var red: Double
         public var green: Double
@@ -45,9 +45,21 @@ extension MagickWand {
             self.blue = blue
             self.alpha = alpha
         }
+        
+        public static func ==(lhs: RGBA, rhs: RGBA) -> Bool {
+            return lhs.red == rhs.red
+                && lhs.green == rhs.green
+                && lhs.blue == rhs.blue
+                && lhs.alpha == rhs.alpha
+        }
+        
+        public static func !=(lhs: RGBA, rhs: RGBA) -> Bool {
+            return !(lhs == rhs)
+        }
     }
     
-    public struct HSL {
+    
+    public struct HSL: Equatable {
         
         public var hue: Double
         public var saturation: Double
@@ -58,9 +70,19 @@ extension MagickWand {
             self.saturation = saturation
             self.lightness = lightness
         }
+        
+        public static func ==(lhs: HSL, rhs: HSL) -> Bool {
+            return lhs.hue == rhs.hue
+                && lhs.saturation == rhs.saturation
+                && lhs.lightness == rhs.lightness
+        }
+        
+        public static func !=(lhs: HSL, rhs: HSL) -> Bool {
+            return !(lhs == rhs)
+        }
     }
     
-    public struct CMY {
+    public struct CMY: Equatable {
         
         public var cyan: Double
         public var magenta: Double
@@ -70,6 +92,16 @@ extension MagickWand {
             self.cyan = cyan
             self.magenta = magenta
             self.yellow = yellow
+        }
+        
+        public static func ==(lhs: CMY, rhs: CMY) -> Bool {
+            return lhs.cyan == rhs.cyan
+                && lhs.magenta == rhs.magenta
+                && lhs.yellow == rhs.yellow
+        }
+        
+        public static func !=(lhs: CMY, rhs: CMY) -> Bool {
+            return !(lhs == rhs)
         }
     }
 }
