@@ -131,7 +131,7 @@ extension ImageWand {
 
     public subscript(option key: ImageWand.Option) -> String? {
         get {
-            guard let pointer = MagickGetOption(self.pointer, key.value.cString(using: .utf8)) else {
+            guard let pointer = MagickGetOption(self.pointer, key.value) else {
                 return nil
             }
             
@@ -141,7 +141,7 @@ extension ImageWand {
             
             return String(cString: pointer)
         } set {            
-            MagickSetOption(self.pointer, key.value.cString(using: .utf8), (newValue ?? "").cString(using: .utf8))
+            MagickSetOption(self.pointer, key.value, newValue)
         }
     }
 }

@@ -57,15 +57,17 @@ extension MagickWand {
     
     public struct ColorInfo {
         
-        private(set) public var colorspace: MagickWand.Colorspace
-        private(set) public var isMatte: Bool
-        private(set) public var fuzz: Double
-        private(set) public var depth: Int
-        private(set) public var red: Double
-        private(set) public var green: Double
-        private(set) public var blue: Double
-        private(set) public var opacity: Double
-        private(set) public var index: Double
+        public static let empty = ColorInfo()
+        
+        private(set) public var colorspace = MagickWand.Colorspace.undefined
+        private(set) public var isMatte = false
+        private(set) public var fuzz: Double = 0
+        private(set) public var depth: Int = 0
+        private(set) public var red: Double = 0
+        private(set) public var green: Double = 0
+        private(set) public var blue: Double = 0
+        private(set) public var opacity: Double = 0
+        private(set) public var index: Double = -1
         
         internal var info: MagickPixelPacket {
             var result = MagickPixelPacket()
@@ -87,6 +89,8 @@ extension MagickWand {
             
             return result
         }
+        
+        init() { }
         
         init(_ info: MagickPixelPacket) {
             self.colorspace = MagickWand.Colorspace(info.colorspace)

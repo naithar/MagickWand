@@ -30,6 +30,7 @@ import Foundation
 
 extension ImageWand {
     
+    //TODO: Reimplement.
     public var background: PixelWand? {
         get {
             let background = PixelWand()
@@ -87,6 +88,7 @@ extension ImageWand {
         }
     }
     
+    // https://bugs.php.net/bug.php?id=73840
     public func pixel(x: Int, y: Int) -> PixelWand? {
         let pixel = PixelWand()
         

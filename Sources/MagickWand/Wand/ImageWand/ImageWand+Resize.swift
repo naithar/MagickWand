@@ -30,6 +30,9 @@ import Foundation
 
 extension ImageWand {
     
+    // TODO: Resize modes. like AspectFill, AspectFit.
+    // TODO: resized, rescaled -> ImageWand
+    
     public func resize(width: Double, height: Double, filter: MagickWand.Filter, blur: Double = 1.0) {
         self.resize(width: Int(width), height: Int(width), filter: filter, blur: blur)
     }

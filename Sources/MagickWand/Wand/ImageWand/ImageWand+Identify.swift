@@ -39,7 +39,7 @@ extension ImageWand {
             return MagickWand.getString(from: self.pointer, using: MagickGetFormat)
         }
         set {
-            MagickSetFormat(self.pointer, (newValue ?? "").cString(using: .utf8))
+            MagickSetFormat(self.pointer, newValue ?? "")
         }
     }
     
@@ -48,7 +48,7 @@ extension ImageWand {
             return MagickWand.getString(from: self.pointer, using: MagickGetFilename)
         }
         set {
-            MagickSetFilename(self.pointer, (newValue ?? "").cString(using: .utf8))
+            MagickSetFilename(self.pointer, newValue ?? "")
         }
     }
     

@@ -54,8 +54,11 @@ public class ImageWand: Wand {
         return result
     }
     
-    public var data: Data {
+    public var data: Data? {
         let array = self.imageBytes
+        
+        guard array.count > 0 else { return nil }
+        
         return Data(bytes: array)
     }
     
@@ -71,6 +74,18 @@ public class ImageWand: Wand {
     
     public required init(pointer: OpaquePointer) {
         self.pointer = pointer
+    }
+    
+    public convenience init?(color: String, size: MagickWand.Size, format: String = "png") {
+        self.init()
+        
+        guard let pixelWand = PixelWand(color: color) else {
+            self.destroy()
+            return nil
+        }
+        
+        MagickNewImage(self.pointer, size.width, size.height, pixelWand.pointer)
+        MagickSetFormat(self.pointer, format)
     }
     
     public func clear() {

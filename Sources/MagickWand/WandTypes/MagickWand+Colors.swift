@@ -30,6 +30,8 @@ extension MagickWand {
 
     public struct RGBA: Equatable {
 
+        static let clear = RGBA(0, 0, 0, 0)
+        
         public var red: Double
         public var green: Double
         public var blue: Double
@@ -60,6 +62,8 @@ extension MagickWand {
     
     
     public struct HSL: Equatable {
+      
+        static let clear = HSL(0, 0, 0)
         
         public var hue: Double
         public var saturation: Double
@@ -83,6 +87,8 @@ extension MagickWand {
     }
     
     public struct CMY: Equatable {
+        
+        static let clear = CMY(0, 0, 0)
         
         public var cyan: Double
         public var magenta: Double

@@ -28,7 +28,7 @@
 
 extension MagickWand {
     
-    public struct Size {
+    public struct Size: Equatable {
         
         public static let zero = Size()
         
@@ -41,9 +41,18 @@ extension MagickWand {
             self.width = width
             self.height = height
         }
+        
+        public static func ==(lhs: Size, rhs: Size) -> Bool {
+            return lhs.width == rhs.width
+                && lhs.height == rhs.height
+        }
+        
+        public static func !=(lhs: Size, rhs: Size) -> Bool {
+            return !(lhs == rhs)
+        }
     }
     
-    public struct Resolution {
+    public struct Resolution: Equatable {
         
         public static let zero = Resolution()
         
@@ -55,6 +64,15 @@ extension MagickWand {
         public init(width: Double, height: Double) {
             self.width = width
             self.height = height
+        }
+        
+        public static func ==(lhs: Resolution, rhs: Resolution) -> Bool {
+            return lhs.width == rhs.width
+                && lhs.height == rhs.height
+        }
+        
+        public static func !=(lhs: Resolution, rhs: Resolution) -> Bool {
+            return !(lhs == rhs)
         }
     }
 }

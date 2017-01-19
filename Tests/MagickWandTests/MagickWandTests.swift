@@ -15,11 +15,19 @@ class MagickWandTests: XCTestCase {
         
         XCTAssertFalse(MagickWand.isInstantiated)
     }
-
-
+    
+    func testWandVersion() {
+        MagickWand.genesis()
+        defer { MagickWand.terminus() }
+        
+        XCTAssertTrue(MagickWand.version.hasPrefix("ImageMagick 6"), "Actial version is \(MagickWand.version)")
+        // TODO: Take current version from some place.
+    }
+    
     static var allTests : [(String, (MagickWandTests) -> () throws -> Void)] {
         return [
-            ("Test Genesis - Terminus", testGenesisTerminus),
+            ("Magick Wand - Genesis and Terminus", testGenesisTerminus),
+            ("Magick Wand - Version", testWandVersion),
         ]
     }
 }
