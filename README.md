@@ -21,9 +21,9 @@ This package supports 6.9.6 version of ImageMagick.
 #### Install ImageMagick
 
 ```
-curl -OL http://www.imagemagick.org/download/ImageMagick-6.9.6-5.tar.gz
-tar -xzf ImageMagick-6.9.6-5.tar.gz
-cd ImageMagick-6.9.6-5
+curl -OL https://www.imagemagick.org/download/releases/ImageMagick-6.9.6-8.tar.xz
+tar xf ImageMagick-6.9.6-8.tar.xz
+cd ImageMagick-6.9.6-8
 ./configure --prefix=/usr/local --disable-static --with-modules --without-perl --without-magick-plus-plus --with-quantum-depth=8 --disable-openmp --with-gs-font-dir=/usr/local/share/ghostscript/fonts
 make
 sudo make install
