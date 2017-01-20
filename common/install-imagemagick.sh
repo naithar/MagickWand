@@ -18,4 +18,4 @@ cd ImageMagick-6.9.6-8
 make
 sudo make install
 cd ..
-rm -rf ImageMagick-6.9.6-5*
+rm -rf ImageMagick-6.9.6-8*
