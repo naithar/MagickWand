@@ -24,7 +24,11 @@ To install all required dependencies run:
 
 ##### Mac
 ```
-brew deps imagemagick@6 | while read item; do brew install $item; done
+brew install imagemagick@6
+```
+
+```
+swift build -Xcc -I/usr/local/opt/imagemagick@6/include/ImageMagick-6 -Xlinker -L/usr/local/opt/imagemagick@6/lib -Xcc -DMAGICKCORE_HDRI_ENABLE=0 -Xcc -DMAGICKCORE_QUANTUM_DEPTH=16
 ```
 
 ##### Linux
