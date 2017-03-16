@@ -1,24 +1,35 @@
 # Swift MagickWand
 
 [![Swift](https://img.shields.io/badge/swift-3.0-orange.svg?style=flat)](https://swift.org)
-[![imagemagick](https://img.shields.io/badge/ImageMagick-6.9.6-orange.svg?style=flat)](https://www.imagemagick.org/script/index.php)
+[![imagemagick](https://img.shields.io/badge/ImageMagick-6.9.x-orange.svg?style=flat)](https://www.imagemagick.org/script/index.php)
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](/LICENSE)  
 [![Build Status](https://travis-ci.org/naithar/MagickWand.svg?branch=master)](https://travis-ci.org/naithar/MagickWand)
 [![codebeat badge](https://codebeat.co/badges/fad61ebd-809c-4a22-995d-5633e314f119)](https://codebeat.co/projects/github-com-naithar-magickwand)
 [![Code Climate](https://codeclimate.com/github/naithar/MagickWand/badges/gpa.svg)](https://codeclimate.com/github/naithar/MagickWand)
 [![codecov](https://codecov.io/gh/naithar/MagickWand/branch/master/graph/badge.svg)](https://codecov.io/gh/naithar/MagickWand)  
-![macOS](https://img.shields.io/badge/os-macOS-green.svg?style=flat)
-![Linux](https://img.shields.io/badge/os-linux-green.svg?style=flat)  
+![platforms](https://img.shields.io/badge/platform-macOS%20Linux-green.svg?style=flat)
 ![SPM](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange.svg?style=flat)  
 
-This package supports 6.9.6 version of ImageMagick.
+This package supports 6.9.x version of ImageMagick.
 
 
 ## Intallation
 
-### Linux and Mac OSX
+### Mac OSX
 
-#### Install ImageMagick
+```
+brew install imagemagick@6
+```
+
+### Linux
+
+##### Install Dependencies
+
+```
+sudo apt-get -y build-dep imagemagick
+```
+
+##### Install ImageMagick
 
 ```
 curl -OL https://www.imagemagick.org/download/releases/ImageMagick-6.9.6-8.tar.xz
@@ -29,10 +40,7 @@ make
 sudo make install
 ```
 
-You may also need to install dependencies for ImageMagick.  
-Or run an [install-script.sh](common/install-imagemagick.sh) which also installs `ZLIB` dependency.
-
-#### Add Package
+### Add Package
 
 Add this package to `dependencies` in your `Package.swift` file.
 
@@ -42,10 +50,30 @@ Add this package to `dependencies` in your `Package.swift` file.
 
 ## Building and Testing
 
-### Linux and Mac OSX
+### Mac OSX
 
 ```
-swift build -Xcc -I/usr/local/include/ImageMagick-6/ -Xlinker -L/usr/local/lib/ -Xcc -DMAGICKCORE_HDRI_ENABLE=0 -Xcc -DMAGICKCORE_QUANTUM_DEPTH=8
+swift build -Xswiftc -I/usr/local/opt/imagemagick@6/include/ImageMagick-6 -Xlinker -L/usr/local/opt/imagemagick@6/lib -Xcc -DMAGICKCORE_HDRI_ENABLE=0 -Xcc -DMAGICKCORE_QUANTUM_DEPTH=16
 
-swift test  -Xcc -I/usr/local/include/ImageMagick-6/ -Xlinker -L/usr/local/lib/ -Xcc -DMAGICKCORE_HDRI_ENABLE=0 -Xcc -DMAGICKCORE_QUANTUM_DEPTH=8
+swift test -Xswiftc -I/usr/local/opt/imagemagick@6/include/ImageMagick-6 -Xlinker -L/usr/local/opt/imagemagick@6/lib -Xcc -DMAGICKCORE_HDRI_ENABLE=0 -Xcc -DMAGICKCORE_QUANTUM_DEPTH=16
 ```
+
+### Linux
+
+```
+swift build -Xswiftc -I/usr/local/include/ImageMagick-6/ -Xlinker -L/usr/local/lib/ -Xcc -DMAGICKCORE_HDRI_ENABLE=0 -Xcc -DMAGICKCORE_QUANTUM_DEPTH=8
+
+swift test  -Xswiftc -I/usr/local/include/ImageMagick-6/ -Xlinker -L/usr/local/lib/ -Xcc -DMAGICKCORE_HDRI_ENABLE=0 -Xcc -DMAGICKCORE_QUANTUM_DEPTH=8
+```
+
+## XCode Setup
+
+Generate XCode project using:
+```
+swift package -Xswiftc -I/usr/local/opt/imagemagick@6/include/ImageMagick-6 -Xlinker -L/usr/local/opt/imagemagick@6/lib -Xcc -DMAGICKCORE_HDRI_ENABLE=0 -Xcc -DMAGICKCORE_QUANTUM_DEPTH=16 generate-xcodeproj
+```
+This will add required flags to the project settings.
+
+If required add values manually to `Build Settings`:
+- `-I/usr/local/opt/imagemagick@6/include/ImageMagick-6` value to `Other Swift Flags`.
+- `-L/usr/local/opt/imagemagick@6/lib` value to `Other Linker Flags`.
