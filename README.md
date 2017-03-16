@@ -18,6 +18,21 @@ This package supports 6.9.6 version of ImageMagick.
 
 ### Linux and Mac OSX
 
+#### WARNING
+Currently not all ImageMagick dependencies is installed via script, so it could result in Package not working correctly.
+To install all required dependencies run:
+
+##### Mac
+```
+brew deps imagemagick@6 | while read item; do brew install $item; done
+```
+
+##### Linux
+```
+sudo apt-get -y build-dep imagemagick
+```
+
+
 #### Install ImageMagick
 
 ```
