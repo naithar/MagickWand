@@ -1,12 +1,12 @@
 module CMagickWandOSX [system] {
-	header "/usr/local/opt/imagemagick@6/include/ImageMagick-6/wand/MagickWand.h"
+	header "shim.h"
 	link "MagickWand-6.Q16"
 	link "MagickCore-6.Q16"
 	export *
 }
 
 module CMagickWandLinux [system] {
-	header "/usr/local/include/ImageMagick-6/wand/MagickWand.h"
+	header "shim.h"
 	link "MagickWand-6.Q16"
 	link "MagickCore-6.Q16"
 	export *

@@ -1,748 +1,549 @@
 // !$*UTF8*$!
 {
-   archiveVersion = "1";
-   objectVersion = "46";
-   objects = {
-      "MagickWand::CMagickWand" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_80";
-         buildPhases = (
-            "OBJ_83",
-            "OBJ_85",
-         );
-         dependencies = (
-         );
-         name = "CMagickWand";
-         productName = "CMagickWand";
-         productReference = "MagickWand::CMagickWand::Product";
-         productType = "com.apple.product-type.framework";
-      };
-      "MagickWand::CMagickWand::Product" = {
-         isa = "PBXFileReference";
-         path = "CMagickWand.framework";
-         sourceTree = "BUILT_PRODUCTS_DIR";
-      };
-      "MagickWand::MagickWand" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_51";
-         buildPhases = (
-            "OBJ_54",
-            "OBJ_76",
-         );
-         dependencies = (
-            "OBJ_78",
-         );
-         name = "MagickWand";
-         productName = "MagickWand";
-         productReference = "MagickWand::MagickWand::Product";
-         productType = "com.apple.product-type.framework";
-      };
-      "MagickWand::MagickWand::Product" = {
-         isa = "PBXFileReference";
-         path = "MagickWand.framework";
-         sourceTree = "BUILT_PRODUCTS_DIR";
-      };
-      "MagickWand::SwiftPMPackageDescription" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_45";
-         buildPhases = (
-            "OBJ_48",
-         );
-         dependencies = (
-         );
-         name = "MagickWandPackageDescription";
-         productName = "MagickWandPackageDescription";
-         productType = "com.apple.product-type.framework";
-      };
-      "OBJ_1" = {
-         isa = "PBXProject";
-         attributes = {
-            LastUpgradeCheck = "9999";
-         };
-         buildConfigurationList = "OBJ_2";
-         compatibilityVersion = "Xcode 3.2";
-         developmentRegion = "English";
-         hasScannedForEncodings = "0";
-         knownRegions = (
-            "en",
-         );
-         mainGroup = "OBJ_5";
-         productRefGroup = "OBJ_41";
-         projectDirPath = ".";
-         targets = (
-            "MagickWand::SwiftPMPackageDescription",
-            "MagickWand::MagickWand",
-            "MagickWand::CMagickWand",
-         );
-      };
-      "OBJ_10" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_11",
-         );
-         name = "include";
-         path = "include";
-         sourceTree = "<group>";
-      };
-      "OBJ_11" = {
-         isa = "PBXFileReference";
-         name = "module.modulemap";
-         path = "/Users/naithar/Projects/swift/MagickWand/Sources/CMagickWand/include/module.modulemap";
-         sourceTree = "<group>";
-      };
-      "OBJ_12" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_13",
-            "OBJ_14",
-            "OBJ_27",
-         );
-         name = "MagickWand";
-         path = "Sources/MagickWand";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_13" = {
-         isa = "PBXFileReference";
-         path = "MagickWand.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_14" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_15",
-            "OBJ_23",
-            "OBJ_26",
-         );
-         name = "Wand";
-         path = "Wand";
-         sourceTree = "<group>";
-      };
-      "OBJ_15" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_16",
-            "OBJ_17",
-            "OBJ_18",
-            "OBJ_19",
-            "OBJ_20",
-            "OBJ_21",
-            "OBJ_22",
-         );
-         name = "ImageWand";
-         path = "ImageWand";
-         sourceTree = "<group>";
-      };
-      "OBJ_16" = {
-         isa = "PBXFileReference";
-         path = "ImageWand+Colors.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_17" = {
-         isa = "PBXFileReference";
-         path = "ImageWand+Identify.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_18" = {
-         isa = "PBXFileReference";
-         path = "ImageWand+Options.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_19" = {
-         isa = "PBXFileReference";
-         path = "ImageWand+Read.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_2" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_3",
-            "OBJ_4",
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Debug";
-      };
-      "OBJ_20" = {
-         isa = "PBXFileReference";
-         path = "ImageWand+Resize.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_21" = {
-         isa = "PBXFileReference";
-         path = "ImageWand+Size.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_22" = {
-         isa = "PBXFileReference";
-         path = "ImageWand.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_23" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_24",
-            "OBJ_25",
-         );
-         name = "PixelWand";
-         path = "PixelWand";
-         sourceTree = "<group>";
-      };
-      "OBJ_24" = {
-         isa = "PBXFileReference";
-         path = "PixelWand+Color.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_25" = {
-         isa = "PBXFileReference";
-         path = "PixelWand.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_26" = {
-         isa = "PBXFileReference";
-         path = "Wand.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_27" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_28",
-            "OBJ_29",
-            "OBJ_30",
-            "OBJ_31",
-            "OBJ_32",
-            "OBJ_33",
-            "OBJ_34",
-            "OBJ_35",
-            "OBJ_36",
-            "OBJ_37",
-         );
-         name = "WandTypes";
-         path = "WandTypes";
-         sourceTree = "<group>";
-      };
-      "OBJ_28" = {
-         isa = "PBXFileReference";
-         path = "MagickWand+Boolean.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_29" = {
-         isa = "PBXFileReference";
-         path = "MagickWand+Colors.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_3" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            CLANG_ENABLE_OBJC_ARC = "YES";
-            COMBINE_HIDPI_IMAGES = "YES";
-            COPY_PHASE_STRIP = "NO";
-            DEBUG_INFORMATION_FORMAT = "dwarf";
-            DYLIB_INSTALL_NAME_BASE = "@rpath";
-            ENABLE_NS_ASSERTIONS = "YES";
-            GCC_OPTIMIZATION_LEVEL = "0";
-            MACOSX_DEPLOYMENT_TARGET = "10.10";
-            ONLY_ACTIVE_ARCH = "YES";
-            OTHER_SWIFT_FLAGS = (
-               "-DXcode",
-            );
-            PRODUCT_NAME = "$(TARGET_NAME)";
-            SDKROOT = "macosx";
-            SUPPORTED_PLATFORMS = (
-               "macosx",
-               "iphoneos",
-               "iphonesimulator",
-               "appletvos",
-               "appletvsimulator",
-               "watchos",
-               "watchsimulator",
-            );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = "SWIFT_PACKAGE";
-            SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-            USE_HEADERMAP = "NO";
-         };
-         name = "Debug";
-      };
-      "OBJ_30" = {
-         isa = "PBXFileReference";
-         path = "MagickWand+Colorspace.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_31" = {
-         isa = "PBXFileReference";
-         path = "MagickWand+Compression.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_32" = {
-         isa = "PBXFileReference";
-         path = "MagickWand+Filter.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_33" = {
-         isa = "PBXFileReference";
-         path = "MagickWand+Gravity.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_34" = {
-         isa = "PBXFileReference";
-         path = "MagickWand+Info.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_35" = {
-         isa = "PBXFileReference";
-         path = "MagickWand+Interlace.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_36" = {
-         isa = "PBXFileReference";
-         path = "MagickWand+Orientation.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_37" = {
-         isa = "PBXFileReference";
-         path = "MagickWand+Size.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_38" = {
-         isa = "PBXGroup";
-         children = (
-         );
-         name = "Tests";
-         path = "";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_39" = {
-         isa = "PBXFileReference";
-         path = "Package-Builder";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_4" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            CLANG_ENABLE_OBJC_ARC = "YES";
-            COMBINE_HIDPI_IMAGES = "YES";
-            COPY_PHASE_STRIP = "YES";
-            DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-            DYLIB_INSTALL_NAME_BASE = "@rpath";
-            GCC_OPTIMIZATION_LEVEL = "s";
-            MACOSX_DEPLOYMENT_TARGET = "10.10";
-            OTHER_SWIFT_FLAGS = (
-               "-DXcode",
-            );
-            PRODUCT_NAME = "$(TARGET_NAME)";
-            SDKROOT = "macosx";
-            SUPPORTED_PLATFORMS = (
-               "macosx",
-               "iphoneos",
-               "iphonesimulator",
-               "appletvos",
-               "appletvsimulator",
-               "watchos",
-               "watchsimulator",
-            );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = "SWIFT_PACKAGE";
-            SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-            USE_HEADERMAP = "NO";
-         };
-         name = "Release";
-      };
-      "OBJ_40" = {
-         isa = "PBXFileReference";
-         path = "common";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_41" = {
-         isa = "PBXGroup";
-         children = (
-            "MagickWand::MagickWand::Product",
-            "MagickWand::CMagickWand::Product",
-         );
-         name = "Products";
-         path = "";
-         sourceTree = "BUILT_PRODUCTS_DIR";
-      };
-      "OBJ_45" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_46",
-            "OBJ_47",
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Debug";
-      };
-      "OBJ_46" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            LD = "/usr/bin/true";
-            OTHER_SWIFT_FLAGS = (
-               "-swift-version",
-               "4",
-               "-I",
-               "/Library/Developer/Toolchains/swift-4.0-RELEASE.xctoolchain/usr/lib/swift/pm/4",
-               "-target",
-               "x86_64-apple-macosx10.10",
-               "-sdk",
-               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk",
-            );
-            SWIFT_VERSION = "4.0";
-         };
-         name = "Debug";
-      };
-      "OBJ_47" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            LD = "/usr/bin/true";
-            OTHER_SWIFT_FLAGS = (
-               "-swift-version",
-               "4",
-               "-I",
-               "/Library/Developer/Toolchains/swift-4.0-RELEASE.xctoolchain/usr/lib/swift/pm/4",
-               "-target",
-               "x86_64-apple-macosx10.10",
-               "-sdk",
-               "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk",
-            );
-            SWIFT_VERSION = "4.0";
-         };
-         name = "Release";
-      };
-      "OBJ_48" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_49",
-         );
-      };
-      "OBJ_49" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_6";
-      };
-      "OBJ_5" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_6",
-            "OBJ_7",
-            "OBJ_38",
-            "OBJ_39",
-            "OBJ_40",
-            "OBJ_41",
-         );
-         path = "";
-         sourceTree = "<group>";
-      };
-      "OBJ_51" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_52",
-            "OBJ_53",
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Debug";
-      };
-      "OBJ_52" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            ENABLE_TESTABILITY = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(SRCROOT)/Sources/CMagickWand/include",
-            );
-            INFOPLIST_FILE = "MagickWand.xcodeproj/MagickWand_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)",
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)",
-               "-Xcc",
-               "-fmodule-map-file=$(SRCROOT)/Sources/CMagickWand/include/module.modulemap",
-            );
-            PRODUCT_BUNDLE_IDENTIFIER = "MagickWand";
-            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-            SKIP_INSTALL = "YES";
-            SWIFT_VERSION = "4.0";
-            TARGET_NAME = "MagickWand";
-         };
-         name = "Debug";
-      };
-      "OBJ_53" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            ENABLE_TESTABILITY = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(SRCROOT)/Sources/CMagickWand/include",
-            );
-            INFOPLIST_FILE = "MagickWand.xcodeproj/MagickWand_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)",
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)",
-               "-Xcc",
-               "-fmodule-map-file=$(SRCROOT)/Sources/CMagickWand/include/module.modulemap",
-            );
-            PRODUCT_BUNDLE_IDENTIFIER = "MagickWand";
-            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-            SKIP_INSTALL = "YES";
-            SWIFT_VERSION = "4.0";
-            TARGET_NAME = "MagickWand";
-         };
-         name = "Release";
-      };
-      "OBJ_54" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_55",
-            "OBJ_56",
-            "OBJ_57",
-            "OBJ_58",
-            "OBJ_59",
-            "OBJ_60",
-            "OBJ_61",
-            "OBJ_62",
-            "OBJ_63",
-            "OBJ_64",
-            "OBJ_65",
-            "OBJ_66",
-            "OBJ_67",
-            "OBJ_68",
-            "OBJ_69",
-            "OBJ_70",
-            "OBJ_71",
-            "OBJ_72",
-            "OBJ_73",
-            "OBJ_74",
-            "OBJ_75",
-         );
-      };
-      "OBJ_55" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_13";
-      };
-      "OBJ_56" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_16";
-      };
-      "OBJ_57" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_17";
-      };
-      "OBJ_58" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_18";
-      };
-      "OBJ_59" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_19";
-      };
-      "OBJ_6" = {
-         isa = "PBXFileReference";
-         explicitFileType = "sourcecode.swift";
-         path = "Package.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_60" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_20";
-      };
-      "OBJ_61" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_21";
-      };
-      "OBJ_62" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_22";
-      };
-      "OBJ_63" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_24";
-      };
-      "OBJ_64" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_25";
-      };
-      "OBJ_65" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_26";
-      };
-      "OBJ_66" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_28";
-      };
-      "OBJ_67" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_29";
-      };
-      "OBJ_68" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_30";
-      };
-      "OBJ_69" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_31";
-      };
-      "OBJ_7" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_8",
-            "OBJ_12",
-         );
-         name = "Sources";
-         path = "";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_70" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_32";
-      };
-      "OBJ_71" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_33";
-      };
-      "OBJ_72" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_34";
-      };
-      "OBJ_73" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_35";
-      };
-      "OBJ_74" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_36";
-      };
-      "OBJ_75" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_37";
-      };
-      "OBJ_76" = {
-         isa = "PBXFrameworksBuildPhase";
-         files = (
-            "OBJ_77",
-         );
-      };
-      "OBJ_77" = {
-         isa = "PBXBuildFile";
-         fileRef = "MagickWand::CMagickWand::Product";
-      };
-      "OBJ_78" = {
-         isa = "PBXTargetDependency";
-         target = "MagickWand::CMagickWand";
-      };
-      "OBJ_8" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_9",
-            "OBJ_10",
-         );
-         name = "CMagickWand";
-         path = "Sources/CMagickWand";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_80" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_81",
-            "OBJ_82",
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Debug";
-      };
-      "OBJ_81" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            DEFINES_MODULE = "NO";
-            ENABLE_TESTABILITY = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(SRCROOT)/Sources/CMagickWand/include",
-            );
-            INFOPLIST_FILE = "MagickWand.xcodeproj/CMagickWand_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)",
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)",
-            );
-            PRODUCT_BUNDLE_IDENTIFIER = "CMagickWand";
-            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-            SKIP_INSTALL = "YES";
-            TARGET_NAME = "CMagickWand";
-         };
-         name = "Debug";
-      };
-      "OBJ_82" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            DEFINES_MODULE = "NO";
-            ENABLE_TESTABILITY = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks",
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(SRCROOT)/Sources/CMagickWand/include",
-            );
-            INFOPLIST_FILE = "MagickWand.xcodeproj/CMagickWand_Info.plist";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx",
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)",
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)",
-            );
-            PRODUCT_BUNDLE_IDENTIFIER = "CMagickWand";
-            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-            SKIP_INSTALL = "YES";
-            TARGET_NAME = "CMagickWand";
-         };
-         name = "Release";
-      };
-      "OBJ_83" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_84",
-         );
-      };
-      "OBJ_84" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_9";
-      };
-      "OBJ_85" = {
-         isa = "PBXFrameworksBuildPhase";
-         files = (
-         );
-      };
-      "OBJ_9" = {
-         isa = "PBXFileReference";
-         path = "shim.c";
-         sourceTree = "<group>";
-      };
-   };
-   rootObject = "OBJ_1";
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		OBJ_49 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_55 /* MagickWand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* MagickWand.swift */; };
+		OBJ_56 /* ImageWand+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* ImageWand+Colors.swift */; };
+		OBJ_57 /* ImageWand+Identify.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* ImageWand+Identify.swift */; };
+		OBJ_58 /* ImageWand+Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* ImageWand+Options.swift */; };
+		OBJ_59 /* ImageWand+Read.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* ImageWand+Read.swift */; };
+		OBJ_60 /* ImageWand+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* ImageWand+Resize.swift */; };
+		OBJ_61 /* ImageWand+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* ImageWand+Size.swift */; };
+		OBJ_62 /* ImageWand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* ImageWand.swift */; };
+		OBJ_63 /* PixelWand+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* PixelWand+Color.swift */; };
+		OBJ_64 /* PixelWand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* PixelWand.swift */; };
+		OBJ_65 /* Wand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* Wand.swift */; };
+		OBJ_66 /* MagickWand+Boolean.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* MagickWand+Boolean.swift */; };
+		OBJ_67 /* MagickWand+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* MagickWand+Colors.swift */; };
+		OBJ_68 /* MagickWand+Colorspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* MagickWand+Colorspace.swift */; };
+		OBJ_69 /* MagickWand+Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* MagickWand+Compression.swift */; };
+		OBJ_70 /* MagickWand+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* MagickWand+Filter.swift */; };
+		OBJ_71 /* MagickWand+Gravity.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* MagickWand+Gravity.swift */; };
+		OBJ_72 /* MagickWand+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* MagickWand+Info.swift */; };
+		OBJ_73 /* MagickWand+Interlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* MagickWand+Interlace.swift */; };
+		OBJ_74 /* MagickWand+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* MagickWand+Orientation.swift */; };
+		OBJ_75 /* MagickWand+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* MagickWand+Size.swift */; };
+		OBJ_77 /* CMagickWand.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "MagickWand::CMagickWand::Product" /* CMagickWand.framework */; };
+		OBJ_84 /* shim.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* shim.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		90829377200CDAAF00CB56B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "MagickWand::CMagickWand";
+			remoteInfo = CMagickWand;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		90829378200D131E00CB56B1 /* shim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shim.h; sourceTree = "<group>"; };
+		"MagickWand::CMagickWand::Product" /* CMagickWand.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CMagickWand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"MagickWand::MagickWand::Product" /* MagickWand.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MagickWand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_11 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Users/naithar/Projects/swift/MagickWand/Sources/CMagickWand/include/module.modulemap; sourceTree = "<group>"; };
+		OBJ_13 /* MagickWand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagickWand.swift; sourceTree = "<group>"; };
+		OBJ_16 /* ImageWand+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageWand+Colors.swift"; sourceTree = "<group>"; };
+		OBJ_17 /* ImageWand+Identify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageWand+Identify.swift"; sourceTree = "<group>"; };
+		OBJ_18 /* ImageWand+Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageWand+Options.swift"; sourceTree = "<group>"; };
+		OBJ_19 /* ImageWand+Read.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageWand+Read.swift"; sourceTree = "<group>"; };
+		OBJ_20 /* ImageWand+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageWand+Resize.swift"; sourceTree = "<group>"; };
+		OBJ_21 /* ImageWand+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageWand+Size.swift"; sourceTree = "<group>"; };
+		OBJ_22 /* ImageWand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWand.swift; sourceTree = "<group>"; };
+		OBJ_24 /* PixelWand+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PixelWand+Color.swift"; sourceTree = "<group>"; };
+		OBJ_25 /* PixelWand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelWand.swift; sourceTree = "<group>"; };
+		OBJ_26 /* Wand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wand.swift; sourceTree = "<group>"; };
+		OBJ_28 /* MagickWand+Boolean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Boolean.swift"; sourceTree = "<group>"; };
+		OBJ_29 /* MagickWand+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Colors.swift"; sourceTree = "<group>"; };
+		OBJ_30 /* MagickWand+Colorspace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Colorspace.swift"; sourceTree = "<group>"; };
+		OBJ_31 /* MagickWand+Compression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Compression.swift"; sourceTree = "<group>"; };
+		OBJ_32 /* MagickWand+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Filter.swift"; sourceTree = "<group>"; };
+		OBJ_33 /* MagickWand+Gravity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Gravity.swift"; sourceTree = "<group>"; };
+		OBJ_34 /* MagickWand+Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Info.swift"; sourceTree = "<group>"; };
+		OBJ_35 /* MagickWand+Interlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Interlace.swift"; sourceTree = "<group>"; };
+		OBJ_36 /* MagickWand+Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Orientation.swift"; sourceTree = "<group>"; };
+		OBJ_37 /* MagickWand+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Size.swift"; sourceTree = "<group>"; };
+		OBJ_39 /* Package-Builder */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Package-Builder"; sourceTree = SOURCE_ROOT; };
+		OBJ_40 /* common */ = {isa = PBXFileReference; lastKnownFileType = folder; path = common; sourceTree = SOURCE_ROOT; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_9 /* shim.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = shim.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_77 /* CMagickWand.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		OBJ_10 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_11 /* module.modulemap */,
+				90829378200D131E00CB56B1 /* shim.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		OBJ_12 /* MagickWand */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_13 /* MagickWand.swift */,
+				OBJ_14 /* Wand */,
+				OBJ_27 /* WandTypes */,
+			);
+			name = MagickWand;
+			path = Sources/MagickWand;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_14 /* Wand */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_15 /* ImageWand */,
+				OBJ_23 /* PixelWand */,
+				OBJ_26 /* Wand.swift */,
+			);
+			path = Wand;
+			sourceTree = "<group>";
+		};
+		OBJ_15 /* ImageWand */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_16 /* ImageWand+Colors.swift */,
+				OBJ_17 /* ImageWand+Identify.swift */,
+				OBJ_18 /* ImageWand+Options.swift */,
+				OBJ_19 /* ImageWand+Read.swift */,
+				OBJ_20 /* ImageWand+Resize.swift */,
+				OBJ_21 /* ImageWand+Size.swift */,
+				OBJ_22 /* ImageWand.swift */,
+			);
+			path = ImageWand;
+			sourceTree = "<group>";
+		};
+		OBJ_23 /* PixelWand */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_24 /* PixelWand+Color.swift */,
+				OBJ_25 /* PixelWand.swift */,
+			);
+			path = PixelWand;
+			sourceTree = "<group>";
+		};
+		OBJ_27 /* WandTypes */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_28 /* MagickWand+Boolean.swift */,
+				OBJ_29 /* MagickWand+Colors.swift */,
+				OBJ_30 /* MagickWand+Colorspace.swift */,
+				OBJ_31 /* MagickWand+Compression.swift */,
+				OBJ_32 /* MagickWand+Filter.swift */,
+				OBJ_33 /* MagickWand+Gravity.swift */,
+				OBJ_34 /* MagickWand+Info.swift */,
+				OBJ_35 /* MagickWand+Interlace.swift */,
+				OBJ_36 /* MagickWand+Orientation.swift */,
+				OBJ_37 /* MagickWand+Size.swift */,
+			);
+			path = WandTypes;
+			sourceTree = "<group>";
+		};
+		OBJ_38 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_41 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"MagickWand::MagickWand::Product" /* MagickWand.framework */,
+				"MagickWand::CMagickWand::Product" /* CMagickWand.framework */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_38 /* Tests */,
+				OBJ_39 /* Package-Builder */,
+				OBJ_40 /* common */,
+				OBJ_41 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* CMagickWand */,
+				OBJ_12 /* MagickWand */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* CMagickWand */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_9 /* shim.c */,
+				OBJ_10 /* include */,
+			);
+			name = CMagickWand;
+			path = Sources/CMagickWand;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"MagickWand::CMagickWand" /* CMagickWand */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_80 /* Build configuration list for PBXNativeTarget "CMagickWand" */;
+			buildPhases = (
+				OBJ_83 /* Sources */,
+				OBJ_85 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CMagickWand;
+			productName = CMagickWand;
+			productReference = "MagickWand::CMagickWand::Product" /* CMagickWand.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"MagickWand::MagickWand" /* MagickWand */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_51 /* Build configuration list for PBXNativeTarget "MagickWand" */;
+			buildPhases = (
+				OBJ_54 /* Sources */,
+				OBJ_76 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_78 /* PBXTargetDependency */,
+			);
+			name = MagickWand;
+			productName = MagickWand;
+			productReference = "MagickWand::MagickWand::Product" /* MagickWand.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"MagickWand::SwiftPMPackageDescription" /* MagickWandPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_45 /* Build configuration list for PBXNativeTarget "MagickWandPackageDescription" */;
+			buildPhases = (
+				OBJ_48 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MagickWandPackageDescription;
+			productName = MagickWandPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "MagickWand" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_41 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"MagickWand::SwiftPMPackageDescription" /* MagickWandPackageDescription */,
+				"MagickWand::MagickWand" /* MagickWand */,
+				"MagickWand::CMagickWand" /* CMagickWand */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_49 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_55 /* MagickWand.swift in Sources */,
+				OBJ_56 /* ImageWand+Colors.swift in Sources */,
+				OBJ_57 /* ImageWand+Identify.swift in Sources */,
+				OBJ_58 /* ImageWand+Options.swift in Sources */,
+				OBJ_59 /* ImageWand+Read.swift in Sources */,
+				OBJ_60 /* ImageWand+Resize.swift in Sources */,
+				OBJ_61 /* ImageWand+Size.swift in Sources */,
+				OBJ_62 /* ImageWand.swift in Sources */,
+				OBJ_63 /* PixelWand+Color.swift in Sources */,
+				OBJ_64 /* PixelWand.swift in Sources */,
+				OBJ_65 /* Wand.swift in Sources */,
+				OBJ_66 /* MagickWand+Boolean.swift in Sources */,
+				OBJ_67 /* MagickWand+Colors.swift in Sources */,
+				OBJ_68 /* MagickWand+Colorspace.swift in Sources */,
+				OBJ_69 /* MagickWand+Compression.swift in Sources */,
+				OBJ_70 /* MagickWand+Filter.swift in Sources */,
+				OBJ_71 /* MagickWand+Gravity.swift in Sources */,
+				OBJ_72 /* MagickWand+Info.swift in Sources */,
+				OBJ_73 /* MagickWand+Interlace.swift in Sources */,
+				OBJ_74 /* MagickWand+Orientation.swift in Sources */,
+				OBJ_75 /* MagickWand+Size.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_84 /* shim.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "MagickWand::CMagickWand" /* CMagickWand */;
+			targetProxy = 90829377200CDAAF00CB56B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Library/Developer/Toolchains/swift-4.0-RELEASE.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Library/Developer/Toolchains/swift-4.0-RELEASE.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/CMagickWand/include",
+				);
+				INFOPLIST_FILE = MagickWand.xcodeproj/MagickWand_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Sources/CMagickWand/include/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = MagickWand;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = MagickWand;
+			};
+			name = Debug;
+		};
+		OBJ_53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/CMagickWand/include",
+				);
+				INFOPLIST_FILE = MagickWand.xcodeproj/MagickWand_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Sources/CMagickWand/include/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = MagickWand;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = MagickWand;
+			};
+			name = Release;
+		};
+		OBJ_81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/CMagickWand/include",
+				);
+				INFOPLIST_FILE = MagickWand.xcodeproj/CMagickWand_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = CMagickWand;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGET_NAME = CMagickWand;
+			};
+			name = Debug;
+		};
+		OBJ_82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/CMagickWand/include",
+				);
+				INFOPLIST_FILE = MagickWand.xcodeproj/CMagickWand_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = CMagickWand;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGET_NAME = CMagickWand;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_2 /* Build configuration list for PBXProject "MagickWand" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_45 /* Build configuration list for PBXNativeTarget "MagickWandPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_46 /* Debug */,
+				OBJ_47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_51 /* Build configuration list for PBXNativeTarget "MagickWand" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_52 /* Debug */,
+				OBJ_53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_80 /* Build configuration list for PBXNativeTarget "CMagickWand" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_81 /* Debug */,
+				OBJ_82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
 }
