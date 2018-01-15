@@ -1,3 +1,9 @@
+# Disclaimer
+
+Project is currently under development.  
+Some feature may not work as expected or may not work at all.  
+Use at your own risk.
+
 # Swift MagickWand
 
 [![Swift](https://img.shields.io/badge/swift-4.0-orange.svg?style=flat)](https://swift.org)
@@ -14,6 +20,15 @@ This package supports 6.9.x version of ImageMagick.
 
 
 ## Intallation
+
+### Shared
+
+It should be possible it install `MagickWand` with required dependencies using script at `/common/install-imagemagick.sh`
+
+```
+curl -O -L https://github.com/naithar/MagickWand/raw/master/common/install-imagemagick.sh
+bash install-imagemagick.sh
+```
 
 ### Mac OSX
 
@@ -50,8 +65,12 @@ Add this package to `dependencies` in your `Package.swift` file.
 
 ## Building and Testing
 
+### Shared
+
 ```
 eval $(echo 'swift build -Xlinker -L/usr/local/lib/' `Magick-config --cflags` | sed 's/\(-[DI]\)/-Xcc \1/g')
+
+eval $(echo 'swift test -Xlinker -L/usr/local/lib/' `Magick-config --cflags` | sed 's/\(-[DI]\)/-Xcc \1/g')
 ```
 
 ### Mac OSX
