@@ -34,7 +34,7 @@ extension ImageWand {
     // TODO: resized, rescaled -> ImageWand
     
     public func resize(width: Double, height: Double, filter: MagickWand.Filter, blur: Double = 1.0) {
-        self.resize(width: Int(width), height: Int(width), filter: filter, blur: blur)
+        self.resize(width: Int(width), height: Int(height), filter: filter, blur: blur)
     }
     
     public func resize(width: Int, height: Int, filter: MagickWand.Filter, blur: Double = 1.0) {
@@ -50,7 +50,7 @@ extension ImageWand {
     }
     
     public func scale(width: Double, height: Double) {
-        self.scale(width: Int(width), height: Int(width))
+        self.scale(width: Int(width), height: Int(height))
     }
     
     public func scale(width: Int, height: Int) {
