@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [uname -s == "Linux" ]; then 
+if [ "$(uname -s)" == "Linux" ]; then 
       apt-get update && \
       apt-get install -y build-essential \
             curl \
