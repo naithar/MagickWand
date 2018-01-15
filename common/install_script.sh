@@ -43,7 +43,7 @@ cd libjpeg-turbo-1.5.3
 make install
 cd ./.. && rm -rf libjpeg-turbo-1.5.3*
 
-echo ":::::::::::::::: JASPER»
+echo ":::::::::::::::: JASPER"
 curl -O -L  http://www.ece.uvic.ca/~frodo/jasper/software/jasper-2.0.14.tar.gz
 tar xvfz jasper-2.0.14.tar.gz
 cd jasper-2.0.14
