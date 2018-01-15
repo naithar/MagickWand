@@ -1,6 +1,6 @@
 # Swift MagickWand
 
-[![Swift](https://img.shields.io/badge/swift-3.0-orange.svg?style=flat)](https://swift.org)
+[![Swift](https://img.shields.io/badge/swift-4.0-orange.svg?style=flat)](https://swift.org)
 [![imagemagick](https://img.shields.io/badge/ImageMagick-6.9.x-orange.svg?style=flat)](https://www.imagemagick.org/script/index.php)
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](/LICENSE)  
 [![Build Status](https://travis-ci.org/naithar/MagickWand.svg?branch=master)](https://travis-ci.org/naithar/MagickWand)

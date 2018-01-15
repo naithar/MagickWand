@@ -1,10 +1,14 @@
+// swift-tools-version:4.0
+
 import PackageDescription
 
 let package = Package(
     name: "MagickWand",
+    products: [
+        .library(name: "MagickWand", targets: ["MagickWand"])
+    ],
     targets: [
-        Target(name: "MagickWand", dependencies: ["CMagickWand"]),
-        Target(name: "CMagickWand", dependencies: [])
-    ], dependencies: [
+        .target(name: "CMagickWand", dependencies: []),
+        .target(name: "MagickWand", dependencies: ["CMagickWand"]),
     ]
 )
