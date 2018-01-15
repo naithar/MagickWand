@@ -8,7 +8,7 @@ matrix:
       sudo: required
 
 before_install:
-  - sh ./common/install-imagemagick.sh
+  - bash ./common/install-imagemagick.sh
   - git submodule update --init --remote --merge --recursive
 
 script:
