@@ -10,5 +10,9 @@ let package = Package(
     targets: [
         .target(name: "CMagickWand", dependencies: []),
         .target(name: "MagickWand", dependencies: ["CMagickWand"]),
+        .testTarget(
+            name: "MagickWandTests",
+            dependencies: ["MagickWand"]
+        ),
     ]
 )
