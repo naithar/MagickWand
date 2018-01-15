@@ -4,6 +4,8 @@ Project is currently under development.
 Some feature may not work as expected or may not work at all.  
 Use at your own risk.
 
+PRs and bugreports are more than welcome.
+
 # Swift MagickWand
 
 [![Swift](https://img.shields.io/badge/swift-4.0-orange.svg?style=flat)](https://swift.org)
