@@ -7,119 +7,87 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		900D18981E30C0BA0024766F /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D18961E30C09A0024766F /* Utils.swift */; };
-		900D189B1E30C1190024766F /* ImageWandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D18991E30C1160024766F /* ImageWandTests.swift */; };
-		900D189F1E30C45A0024766F /* PixelWandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D189E1E30C45A0024766F /* PixelWandTests.swift */; };
-		903B3D111DE459F300CEDFA9 /* MagickWand+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903B3D101DE459F300CEDFA9 /* MagickWand+Size.swift */; };
-		904E6AE41DE5A4A9005FC323 /* rect.png in Resources */ = {isa = PBXBuildFile; fileRef = 904E6AE31DE5A4A9005FC323 /* rect.png */; };
-		OBJ_53 /* shim.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* shim.c */; };
-		OBJ_60 /* MagickWand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* MagickWand.swift */; };
-		OBJ_61 /* Wand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Wand.swift */; };
-		OBJ_62 /* MagickWand+Boolean.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* MagickWand+Boolean.swift */; };
-		OBJ_64 /* MagickWand+Colorspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* MagickWand+Colorspace.swift */; };
-		OBJ_65 /* MagickWand+Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* MagickWand+Compression.swift */; };
-		OBJ_66 /* MagickWand+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* MagickWand+Filter.swift */; };
-		OBJ_67 /* MagickWand+Gravity.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* MagickWand+Gravity.swift */; };
-		OBJ_68 /* MagickWand+Interlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* MagickWand+Interlace.swift */; };
-		OBJ_69 /* MagickWand+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* MagickWand+Orientation.swift */; };
-		OBJ_70 /* MagickWand+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* MagickWand+Colors.swift */; };
-		OBJ_72 /* MagickWand+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* MagickWand+Info.swift */; };
-		OBJ_73 /* ImageWand+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* ImageWand+Colors.swift */; };
-		OBJ_74 /* ImageWand+Identify.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* ImageWand+Identify.swift */; };
-		OBJ_75 /* ImageWand+Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* ImageWand+Options.swift */; };
-		OBJ_76 /* ImageWand+Read.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* ImageWand+Read.swift */; };
-		OBJ_77 /* ImageWand+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* ImageWand+Resize.swift */; };
-		OBJ_78 /* ImageWand+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* ImageWand+Size.swift */; };
-		OBJ_79 /* ImageWand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* ImageWand.swift */; };
-		OBJ_80 /* PixelWand+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* PixelWand+Color.swift */; };
-		OBJ_82 /* PixelWand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* PixelWand.swift */; };
-		OBJ_84 /* CMagickWand.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* CMagickWand.framework */; };
-		OBJ_91 /* MagickWandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* MagickWandTests.swift */; };
-		OBJ_93 /* CMagickWand.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* CMagickWand.framework */; };
-		OBJ_94 /* MagickWand.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* MagickWand.framework */; };
+		OBJ_49 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_55 /* MagickWand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* MagickWand.swift */; };
+		OBJ_56 /* ImageWand+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* ImageWand+Colors.swift */; };
+		OBJ_57 /* ImageWand+Identify.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* ImageWand+Identify.swift */; };
+		OBJ_58 /* ImageWand+Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* ImageWand+Options.swift */; };
+		OBJ_59 /* ImageWand+Read.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* ImageWand+Read.swift */; };
+		OBJ_60 /* ImageWand+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* ImageWand+Resize.swift */; };
+		OBJ_61 /* ImageWand+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* ImageWand+Size.swift */; };
+		OBJ_62 /* ImageWand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* ImageWand.swift */; };
+		OBJ_63 /* PixelWand+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* PixelWand+Color.swift */; };
+		OBJ_64 /* PixelWand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* PixelWand.swift */; };
+		OBJ_65 /* Wand.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* Wand.swift */; };
+		OBJ_66 /* MagickWand+Boolean.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* MagickWand+Boolean.swift */; };
+		OBJ_67 /* MagickWand+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* MagickWand+Colors.swift */; };
+		OBJ_68 /* MagickWand+Colorspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* MagickWand+Colorspace.swift */; };
+		OBJ_69 /* MagickWand+Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* MagickWand+Compression.swift */; };
+		OBJ_70 /* MagickWand+Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* MagickWand+Filter.swift */; };
+		OBJ_71 /* MagickWand+Gravity.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* MagickWand+Gravity.swift */; };
+		OBJ_72 /* MagickWand+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* MagickWand+Info.swift */; };
+		OBJ_73 /* MagickWand+Interlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* MagickWand+Interlace.swift */; };
+		OBJ_74 /* MagickWand+Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* MagickWand+Orientation.swift */; };
+		OBJ_75 /* MagickWand+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* MagickWand+Size.swift */; };
+		OBJ_77 /* CMagickWand.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "MagickWand::CMagickWand::Product" /* CMagickWand.framework */; };
+		OBJ_84 /* shim.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* shim.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		903B3D091DE4574700CEDFA9 /* PBXContainerItemProxy */ = {
+		90829377200CDAAF00CB56B1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = OBJ_47;
+			remoteGlobalIDString = "MagickWand::CMagickWand";
 			remoteInfo = CMagickWand;
-		};
-		903B3D0A1DE4574700CEDFA9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = OBJ_47;
-			remoteInfo = CMagickWand;
-		};
-		903B3D0B1DE4574700CEDFA9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = OBJ_55;
-			remoteInfo = MagickWand;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		900D18961E30C09A0024766F /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		900D18991E30C1160024766F /* ImageWandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageWandTests.swift; sourceTree = "<group>"; };
-		900D189E1E30C45A0024766F /* PixelWandTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PixelWandTests.swift; sourceTree = "<group>"; };
-		903B3D101DE459F300CEDFA9 /* MagickWand+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MagickWand+Size.swift"; sourceTree = "<group>"; };
-		904E6AE31DE5A4A9005FC323 /* rect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rect.png; sourceTree = "<group>"; };
-		OBJ_11 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Volumes/MacintoshHDFiles/Documents/Projects/MagickWand/Sources/CMagickWand/include/module.modulemap; sourceTree = "<group>"; };
+		90829378200D131E00CB56B1 /* shim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shim.h; sourceTree = "<group>"; };
+		"MagickWand::CMagickWand::Product" /* CMagickWand.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CMagickWand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"MagickWand::MagickWand::Product" /* MagickWand.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MagickWand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_11 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = /Users/naithar/Projects/swift/MagickWand/Sources/CMagickWand/include/module.modulemap; sourceTree = "<group>"; };
 		OBJ_13 /* MagickWand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagickWand.swift; sourceTree = "<group>"; };
-		OBJ_15 /* Wand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wand.swift; sourceTree = "<group>"; };
-		OBJ_17 /* ImageWand+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageWand+Colors.swift"; sourceTree = "<group>"; };
-		OBJ_18 /* ImageWand+Identify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageWand+Identify.swift"; sourceTree = "<group>"; };
-		OBJ_19 /* ImageWand+Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageWand+Options.swift"; sourceTree = "<group>"; };
-		OBJ_20 /* ImageWand+Read.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageWand+Read.swift"; sourceTree = "<group>"; };
-		OBJ_21 /* ImageWand+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageWand+Resize.swift"; sourceTree = "<group>"; };
-		OBJ_22 /* ImageWand+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageWand+Size.swift"; sourceTree = "<group>"; };
-		OBJ_23 /* ImageWand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWand.swift; sourceTree = "<group>"; };
-		OBJ_25 /* PixelWand+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PixelWand+Color.swift"; sourceTree = "<group>"; };
-		OBJ_27 /* PixelWand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelWand.swift; sourceTree = "<group>"; };
-		OBJ_29 /* MagickWand+Boolean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Boolean.swift"; sourceTree = "<group>"; };
-		OBJ_31 /* MagickWand+Colorspace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Colorspace.swift"; sourceTree = "<group>"; };
-		OBJ_32 /* MagickWand+Compression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Compression.swift"; sourceTree = "<group>"; };
-		OBJ_33 /* MagickWand+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Filter.swift"; sourceTree = "<group>"; };
-		OBJ_34 /* MagickWand+Gravity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Gravity.swift"; sourceTree = "<group>"; };
+		OBJ_16 /* ImageWand+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageWand+Colors.swift"; sourceTree = "<group>"; };
+		OBJ_17 /* ImageWand+Identify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageWand+Identify.swift"; sourceTree = "<group>"; };
+		OBJ_18 /* ImageWand+Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageWand+Options.swift"; sourceTree = "<group>"; };
+		OBJ_19 /* ImageWand+Read.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageWand+Read.swift"; sourceTree = "<group>"; };
+		OBJ_20 /* ImageWand+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageWand+Resize.swift"; sourceTree = "<group>"; };
+		OBJ_21 /* ImageWand+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageWand+Size.swift"; sourceTree = "<group>"; };
+		OBJ_22 /* ImageWand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWand.swift; sourceTree = "<group>"; };
+		OBJ_24 /* PixelWand+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PixelWand+Color.swift"; sourceTree = "<group>"; };
+		OBJ_25 /* PixelWand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelWand.swift; sourceTree = "<group>"; };
+		OBJ_26 /* Wand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wand.swift; sourceTree = "<group>"; };
+		OBJ_28 /* MagickWand+Boolean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Boolean.swift"; sourceTree = "<group>"; };
+		OBJ_29 /* MagickWand+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Colors.swift"; sourceTree = "<group>"; };
+		OBJ_30 /* MagickWand+Colorspace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Colorspace.swift"; sourceTree = "<group>"; };
+		OBJ_31 /* MagickWand+Compression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Compression.swift"; sourceTree = "<group>"; };
+		OBJ_32 /* MagickWand+Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Filter.swift"; sourceTree = "<group>"; };
+		OBJ_33 /* MagickWand+Gravity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Gravity.swift"; sourceTree = "<group>"; };
+		OBJ_34 /* MagickWand+Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Info.swift"; sourceTree = "<group>"; };
 		OBJ_35 /* MagickWand+Interlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Interlace.swift"; sourceTree = "<group>"; };
 		OBJ_36 /* MagickWand+Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Orientation.swift"; sourceTree = "<group>"; };
-		OBJ_37 /* MagickWand+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Colors.swift"; sourceTree = "<group>"; };
-		OBJ_39 /* MagickWand+Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Info.swift"; sourceTree = "<group>"; };
-		OBJ_42 /* MagickWandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagickWandTests.swift; sourceTree = "<group>"; };
-		OBJ_44 /* CMagickWand.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CMagickWand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_45 /* MagickWand.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MagickWand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_46 /* MagickWandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = MagickWandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_37 /* MagickWand+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagickWand+Size.swift"; sourceTree = "<group>"; };
+		OBJ_39 /* Package-Builder */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Package-Builder"; sourceTree = SOURCE_ROOT; };
+		OBJ_40 /* common */ = {isa = PBXFileReference; lastKnownFileType = folder; path = common; sourceTree = SOURCE_ROOT; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* shim.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = shim.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_54 /* Frameworks */ = {
+		OBJ_76 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
+				OBJ_77 /* CMagickWand.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_83 /* Frameworks */ = {
+		OBJ_85 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_84 /* CMagickWand.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_92 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_93 /* CMagickWand.framework in Frameworks */,
-				OBJ_94 /* MagickWand.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_11 /* module.modulemap */,
+				90829378200D131E00CB56B1 /* shim.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -139,7 +108,7 @@
 			children = (
 				OBJ_13 /* MagickWand.swift */,
 				OBJ_14 /* Wand */,
-				OBJ_28 /* WandTypes */,
+				OBJ_27 /* WandTypes */,
 			);
 			name = MagickWand;
 			path = Sources/MagickWand;
@@ -148,79 +117,65 @@
 		OBJ_14 /* Wand */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_15 /* Wand.swift */,
-				OBJ_16 /* ImageWand */,
-				OBJ_24 /* PixelWand */,
+				OBJ_15 /* ImageWand */,
+				OBJ_23 /* PixelWand */,
+				OBJ_26 /* Wand.swift */,
 			);
 			path = Wand;
 			sourceTree = "<group>";
 		};
-		OBJ_16 /* ImageWand */ = {
+		OBJ_15 /* ImageWand */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_23 /* ImageWand.swift */,
-				OBJ_20 /* ImageWand+Read.swift */,
-				OBJ_21 /* ImageWand+Resize.swift */,
-				OBJ_22 /* ImageWand+Size.swift */,
-				OBJ_18 /* ImageWand+Identify.swift */,
-				OBJ_17 /* ImageWand+Colors.swift */,
-				OBJ_19 /* ImageWand+Options.swift */,
+				OBJ_16 /* ImageWand+Colors.swift */,
+				OBJ_17 /* ImageWand+Identify.swift */,
+				OBJ_18 /* ImageWand+Options.swift */,
+				OBJ_19 /* ImageWand+Read.swift */,
+				OBJ_20 /* ImageWand+Resize.swift */,
+				OBJ_21 /* ImageWand+Size.swift */,
+				OBJ_22 /* ImageWand.swift */,
 			);
 			path = ImageWand;
 			sourceTree = "<group>";
 		};
-		OBJ_24 /* PixelWand */ = {
+		OBJ_23 /* PixelWand */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_25 /* PixelWand+Color.swift */,
-				OBJ_27 /* PixelWand.swift */,
+				OBJ_24 /* PixelWand+Color.swift */,
+				OBJ_25 /* PixelWand.swift */,
 			);
 			path = PixelWand;
 			sourceTree = "<group>";
 		};
-		OBJ_28 /* WandTypes */ = {
+		OBJ_27 /* WandTypes */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_29 /* MagickWand+Boolean.swift */,
-				OBJ_37 /* MagickWand+Colors.swift */,
-				903B3D101DE459F300CEDFA9 /* MagickWand+Size.swift */,
-				OBJ_39 /* MagickWand+Info.swift */,
-				OBJ_31 /* MagickWand+Colorspace.swift */,
-				OBJ_32 /* MagickWand+Compression.swift */,
-				OBJ_33 /* MagickWand+Filter.swift */,
-				OBJ_34 /* MagickWand+Gravity.swift */,
+				OBJ_28 /* MagickWand+Boolean.swift */,
+				OBJ_29 /* MagickWand+Colors.swift */,
+				OBJ_30 /* MagickWand+Colorspace.swift */,
+				OBJ_31 /* MagickWand+Compression.swift */,
+				OBJ_32 /* MagickWand+Filter.swift */,
+				OBJ_33 /* MagickWand+Gravity.swift */,
+				OBJ_34 /* MagickWand+Info.swift */,
 				OBJ_35 /* MagickWand+Interlace.swift */,
 				OBJ_36 /* MagickWand+Orientation.swift */,
+				OBJ_37 /* MagickWand+Size.swift */,
 			);
 			path = WandTypes;
 			sourceTree = "<group>";
 		};
-		OBJ_40 /* Tests */ = {
+		OBJ_38 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_41 /* MagickWandTests */,
 			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		OBJ_41 /* MagickWandTests */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_42 /* MagickWandTests.swift */,
-				900D18991E30C1160024766F /* ImageWandTests.swift */,
-				900D189E1E30C45A0024766F /* PixelWandTests.swift */,
-				900D18961E30C09A0024766F /* Utils.swift */,
-			);
-			name = MagickWandTests;
-			path = Tests/MagickWandTests;
+			name = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_43 /* Products */ = {
+		OBJ_41 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_44 /* CMagickWand.framework */,
-				OBJ_45 /* MagickWand.framework */,
-				OBJ_46 /* MagickWandTests.xctest */,
+				"MagickWand::MagickWand::Product" /* MagickWand.framework */,
+				"MagickWand::CMagickWand::Product" /* CMagickWand.framework */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -228,11 +183,12 @@
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
-				904E6AE31DE5A4A9005FC323 /* rect.png */,
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
-				OBJ_40 /* Tests */,
-				OBJ_43 /* Products */,
+				OBJ_38 /* Tests */,
+				OBJ_39 /* Package-Builder */,
+				OBJ_40 /* common */,
+				OBJ_41 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -242,8 +198,8 @@
 				OBJ_8 /* CMagickWand */,
 				OBJ_12 /* MagickWand */,
 			);
-			path = Sources;
-			sourceTree = "<group>";
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
 		};
 		OBJ_8 /* CMagickWand */ = {
 			isa = PBXGroup;
@@ -258,13 +214,12 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		OBJ_47 /* CMagickWand */ = {
+		"MagickWand::CMagickWand" /* CMagickWand */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_48 /* Build configuration list for PBXNativeTarget "CMagickWand" */;
+			buildConfigurationList = OBJ_80 /* Build configuration list for PBXNativeTarget "CMagickWand" */;
 			buildPhases = (
-				OBJ_51 /* ShellScript */,
-				OBJ_52 /* Sources */,
-				OBJ_54 /* Frameworks */,
+				OBJ_83 /* Sources */,
+				OBJ_85 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,44 +227,39 @@
 			);
 			name = CMagickWand;
 			productName = CMagickWand;
-			productReference = OBJ_44 /* CMagickWand.framework */;
+			productReference = "MagickWand::CMagickWand::Product" /* CMagickWand.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		OBJ_55 /* MagickWand */ = {
+		"MagickWand::MagickWand" /* MagickWand */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_56 /* Build configuration list for PBXNativeTarget "MagickWand" */;
+			buildConfigurationList = OBJ_51 /* Build configuration list for PBXNativeTarget "MagickWand" */;
 			buildPhases = (
-				OBJ_59 /* Sources */,
-				OBJ_83 /* Frameworks */,
+				OBJ_54 /* Sources */,
+				OBJ_76 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_85 /* PBXTargetDependency */,
+				OBJ_78 /* PBXTargetDependency */,
 			);
 			name = MagickWand;
 			productName = MagickWand;
-			productReference = OBJ_45 /* MagickWand.framework */;
+			productReference = "MagickWand::MagickWand::Product" /* MagickWand.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		OBJ_86 /* MagickWandTests */ = {
+		"MagickWand::SwiftPMPackageDescription" /* MagickWandPackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_87 /* Build configuration list for PBXNativeTarget "MagickWandTests" */;
+			buildConfigurationList = OBJ_45 /* Build configuration list for PBXNativeTarget "MagickWandPackageDescription" */;
 			buildPhases = (
-				904E6AE11DE59AF5005FC323 /* Resources */,
-				OBJ_90 /* Sources */,
-				OBJ_92 /* Frameworks */,
+				OBJ_48 /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_95 /* PBXTargetDependency */,
-				OBJ_96 /* PBXTargetDependency */,
 			);
-			name = MagickWandTests;
-			productName = MagickWandTests;
-			productReference = OBJ_46 /* MagickWandTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = MagickWandPackageDescription;
+			productName = MagickWandPackageDescription;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -318,14 +268,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 9999;
-				TargetAttributes = {
-					OBJ_47 = {
-						LastSwiftMigration = 0810;
-					};
-					OBJ_55 = {
-						LastSwiftMigration = 0810;
-					};
-				};
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "MagickWand" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -335,105 +277,69 @@
 				en,
 			);
 			mainGroup = OBJ_5;
-			productRefGroup = OBJ_43 /* Products */;
+			productRefGroup = OBJ_41 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				OBJ_47 /* CMagickWand */,
-				OBJ_55 /* MagickWand */,
-				OBJ_86 /* MagickWandTests */,
+				"MagickWand::SwiftPMPackageDescription" /* MagickWandPackageDescription */,
+				"MagickWand::MagickWand" /* MagickWand */,
+				"MagickWand::CMagickWand" /* CMagickWand */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		904E6AE11DE59AF5005FC323 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				904E6AE41DE5A4A9005FC323 /* rect.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		OBJ_51 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "mkdir -p \"${PROJECT_TEMP_DIR}/SymlinkLibs\"\nln -sf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${PROJECT_TEMP_DIR}/SymlinkLibs/lib${EXECUTABLE_NAME}.dylib\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_52 /* Sources */ = {
+		OBJ_48 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_53 /* shim.c in Sources */,
+				OBJ_49 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_59 /* Sources */ = {
+		OBJ_54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_60 /* MagickWand.swift in Sources */,
-				OBJ_61 /* Wand.swift in Sources */,
-				OBJ_62 /* MagickWand+Boolean.swift in Sources */,
-				OBJ_64 /* MagickWand+Colorspace.swift in Sources */,
-				OBJ_65 /* MagickWand+Compression.swift in Sources */,
-				OBJ_66 /* MagickWand+Filter.swift in Sources */,
-				OBJ_67 /* MagickWand+Gravity.swift in Sources */,
-				OBJ_68 /* MagickWand+Interlace.swift in Sources */,
-				OBJ_69 /* MagickWand+Orientation.swift in Sources */,
-				OBJ_70 /* MagickWand+Colors.swift in Sources */,
+				OBJ_55 /* MagickWand.swift in Sources */,
+				OBJ_56 /* ImageWand+Colors.swift in Sources */,
+				OBJ_57 /* ImageWand+Identify.swift in Sources */,
+				OBJ_58 /* ImageWand+Options.swift in Sources */,
+				OBJ_59 /* ImageWand+Read.swift in Sources */,
+				OBJ_60 /* ImageWand+Resize.swift in Sources */,
+				OBJ_61 /* ImageWand+Size.swift in Sources */,
+				OBJ_62 /* ImageWand.swift in Sources */,
+				OBJ_63 /* PixelWand+Color.swift in Sources */,
+				OBJ_64 /* PixelWand.swift in Sources */,
+				OBJ_65 /* Wand.swift in Sources */,
+				OBJ_66 /* MagickWand+Boolean.swift in Sources */,
+				OBJ_67 /* MagickWand+Colors.swift in Sources */,
+				OBJ_68 /* MagickWand+Colorspace.swift in Sources */,
+				OBJ_69 /* MagickWand+Compression.swift in Sources */,
+				OBJ_70 /* MagickWand+Filter.swift in Sources */,
+				OBJ_71 /* MagickWand+Gravity.swift in Sources */,
 				OBJ_72 /* MagickWand+Info.swift in Sources */,
-				OBJ_73 /* ImageWand+Colors.swift in Sources */,
-				OBJ_74 /* ImageWand+Identify.swift in Sources */,
-				OBJ_75 /* ImageWand+Options.swift in Sources */,
-				OBJ_76 /* ImageWand+Read.swift in Sources */,
-				OBJ_77 /* ImageWand+Resize.swift in Sources */,
-				OBJ_78 /* ImageWand+Size.swift in Sources */,
-				OBJ_79 /* ImageWand.swift in Sources */,
-				903B3D111DE459F300CEDFA9 /* MagickWand+Size.swift in Sources */,
-				OBJ_80 /* PixelWand+Color.swift in Sources */,
-				OBJ_82 /* PixelWand.swift in Sources */,
+				OBJ_73 /* MagickWand+Interlace.swift in Sources */,
+				OBJ_74 /* MagickWand+Orientation.swift in Sources */,
+				OBJ_75 /* MagickWand+Size.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_90 /* Sources */ = {
+		OBJ_83 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				900D189B1E30C1190024766F /* ImageWandTests.swift in Sources */,
-				OBJ_91 /* MagickWandTests.swift in Sources */,
-				900D189F1E30C45A0024766F /* PixelWandTests.swift in Sources */,
-				900D18981E30C0BA0024766F /* Utils.swift in Sources */,
+				OBJ_84 /* shim.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_85 /* PBXTargetDependency */ = {
+		OBJ_78 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = OBJ_47 /* CMagickWand */;
-			targetProxy = 903B3D091DE4574700CEDFA9 /* PBXContainerItemProxy */;
-		};
-		OBJ_95 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = OBJ_47 /* CMagickWand */;
-			targetProxy = 903B3D0A1DE4574700CEDFA9 /* PBXContainerItemProxy */;
-		};
-		OBJ_96 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = OBJ_55 /* MagickWand */;
-			targetProxy = 903B3D0B1DE4574700CEDFA9 /* PBXContainerItemProxy */;
+			target = "MagickWand::CMagickWand" /* CMagickWand */;
+			targetProxy = 90829377200CDAAF00CB56B1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -441,6 +347,7 @@
 		OBJ_3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -451,7 +358,9 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USE_HEADERMAP = NO;
 			};
@@ -460,6 +369,7 @@
 		OBJ_4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -468,169 +378,129 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				OTHER_SWIFT_FLAGS = "-DXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				USE_HEADERMAP = NO;
 			};
 			name = Release;
 		};
-		OBJ_49 /* Debug */ = {
+		OBJ_46 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Library/Developer/Toolchains/swift-4.0-RELEASE.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Library/Developer/Toolchains/swift-4.0-RELEASE.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
 				HEADER_SEARCH_PATHS = (
-					Sources/CMagickWand/include,
-					"/usr/local/include/ImageMagick-6/",
+					"$(inherited)",
+					"$(SRCROOT)/Sources/CMagickWand/include",
+				);
+				INFOPLIST_FILE = MagickWand.xcodeproj/MagickWand_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Sources/CMagickWand/include/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = MagickWand;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = MagickWand;
+			};
+			name = Debug;
+		};
+		OBJ_53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/CMagickWand/include",
+				);
+				INFOPLIST_FILE = MagickWand.xcodeproj/MagickWand_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited) -Xcc -fmodule-map-file=$(SRCROOT)/Sources/CMagickWand/include/module.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = MagickWand;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = MagickWand;
+			};
+			name = Release;
+		};
+		OBJ_81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = NO;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Sources/CMagickWand/include",
 				);
 				INFOPLIST_FILE = MagickWand.xcodeproj/CMagickWand_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				MODULEMAP_FILE = Sources/CMagickWand/include/module.modulemap;
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = CMagickWand;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SUPPORTED_PLATFORMS = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SKIP_INSTALL = YES;
 				TARGET_NAME = CMagickWand;
 			};
 			name = Debug;
 		};
-		OBJ_50 /* Release */ = {
+		OBJ_82 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
 				HEADER_SEARCH_PATHS = (
-					Sources/CMagickWand/include,
-					"/usr/local/include/ImageMagick-6/",
+					"$(inherited)",
+					"$(SRCROOT)/Sources/CMagickWand/include",
 				);
 				INFOPLIST_FILE = MagickWand.xcodeproj/CMagickWand_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				MODULEMAP_FILE = Sources/CMagickWand/include/module.modulemap;
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = CMagickWand;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SUPPORTED_PLATFORMS = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
-				SWIFT_VERSION = 3.0;
+				SKIP_INSTALL = YES;
 				TARGET_NAME = CMagickWand;
-			};
-			name = Release;
-		};
-		OBJ_57 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				HEADER_SEARCH_PATHS = (
-					Sources/CMagickWand/include,
-					"/usr/local/include/ImageMagick-6/",
-				);
-				INFOPLIST_FILE = MagickWand.xcodeproj/MagickWand_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				LIBRARY_SEARCH_PATHS = (
-					"$(PROJECT_TEMP_DIR)/SymlinkLibs/",
-					/usr/local/lib/,
-				);
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = MagickWand;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SUPPORTED_PLATFORMS = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGET_NAME = MagickWand;
-			};
-			name = Debug;
-		};
-		OBJ_58 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				HEADER_SEARCH_PATHS = (
-					Sources/CMagickWand/include,
-					"/usr/local/include/ImageMagick-6/",
-				);
-				INFOPLIST_FILE = MagickWand.xcodeproj/MagickWand_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				LIBRARY_SEARCH_PATHS = (
-					"$(PROJECT_TEMP_DIR)/SymlinkLibs/",
-					/usr/local/lib/,
-				);
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = MagickWand;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SUPPORTED_PLATFORMS = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
-				SWIFT_VERSION = 3.0;
-				TARGET_NAME = MagickWand;
-			};
-			name = Release;
-		};
-		OBJ_88 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				HEADER_SEARCH_PATHS = (
-					Sources/CMagickWand/include,
-					"/usr/local/include/ImageMagick-6/",
-				);
-				INFOPLIST_FILE = MagickWand.xcodeproj/MagickWandTests_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(PROJECT_TEMP_DIR)/SymlinkLibs/",
-					/usr/local/lib/,
-				);
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SUPPORTED_PLATFORMS = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
-				SWIFT_VERSION = 3.0;
-				TARGET_NAME = MagickWandTests;
-			};
-			name = Debug;
-		};
-		OBJ_89 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				HEADER_SEARCH_PATHS = (
-					Sources/CMagickWand/include,
-					"/usr/local/include/ImageMagick-6/",
-				);
-				INFOPLIST_FILE = MagickWand.xcodeproj/MagickWandTests_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(PROJECT_TEMP_DIR)/SymlinkLibs/",
-					/usr/local/lib/,
-				);
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SUPPORTED_PLATFORMS = macosx;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
-				SWIFT_VERSION = 3.0;
-				TARGET_NAME = MagickWandTests;
 			};
 			name = Release;
 		};
@@ -646,29 +516,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_48 /* Build configuration list for PBXNativeTarget "CMagickWand" */ = {
+		OBJ_45 /* Build configuration list for PBXNativeTarget "MagickWandPackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_49 /* Debug */,
-				OBJ_50 /* Release */,
+				OBJ_46 /* Debug */,
+				OBJ_47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_56 /* Build configuration list for PBXNativeTarget "MagickWand" */ = {
+		OBJ_51 /* Build configuration list for PBXNativeTarget "MagickWand" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_57 /* Debug */,
-				OBJ_58 /* Release */,
+				OBJ_52 /* Debug */,
+				OBJ_53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_87 /* Build configuration list for PBXNativeTarget "MagickWandTests" */ = {
+		OBJ_80 /* Build configuration list for PBXNativeTarget "CMagickWand" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_88 /* Debug */,
-				OBJ_89 /* Release */,
+				OBJ_81 /* Debug */,
+				OBJ_82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

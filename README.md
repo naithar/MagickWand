@@ -1,6 +1,12 @@
+# Disclaimer
+
+Project is currently under development.  
+Some feature may not work as expected or may not work at all.  
+Use at your own risk.
+
 # Swift MagickWand
 
-[![Swift](https://img.shields.io/badge/swift-3.0-orange.svg?style=flat)](https://swift.org)
+[![Swift](https://img.shields.io/badge/swift-4.0-orange.svg?style=flat)](https://swift.org)
 [![imagemagick](https://img.shields.io/badge/ImageMagick-6.9.x-orange.svg?style=flat)](https://www.imagemagick.org/script/index.php)
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](/LICENSE)  
 [![Build Status](https://travis-ci.org/naithar/MagickWand.svg?branch=master)](https://travis-ci.org/naithar/MagickWand)
@@ -14,6 +20,15 @@ This package supports 6.9.x version of ImageMagick.
 
 
 ## Intallation
+
+### Shared
+
+It should be possible it install `MagickWand` with required dependencies using script at `/common/install-imagemagick.sh`
+
+```
+curl -O -L https://github.com/naithar/MagickWand/raw/master/common/install-imagemagick.sh
+bash install-imagemagick.sh
+```
 
 ### Mac OSX
 
@@ -50,6 +65,14 @@ Add this package to `dependencies` in your `Package.swift` file.
 
 ## Building and Testing
 
+### Shared
+
+```
+eval $(echo 'swift build -Xlinker -L/usr/local/lib/' `Magick-config --cflags` | sed 's/\(-[DI]\)/-Xcc \1/g')
+
+eval $(echo 'swift test -Xlinker -L/usr/local/lib/' `Magick-config --cflags` | sed 's/\(-[DI]\)/-Xcc \1/g')
+```
+
 ### Mac OSX
 
 ```
@@ -61,9 +84,9 @@ swift test -Xswiftc -I/usr/local/opt/imagemagick@6/include/ImageMagick-6 -Xlinke
 ### Linux
 
 ```
-swift build -Xswiftc -I/usr/local/include/ImageMagick-6/ -Xlinker -L/usr/local/lib/ -Xcc -DMAGICKCORE_HDRI_ENABLE=0 -Xcc -DMAGICKCORE_QUANTUM_DEPTH=8
+swift build -Xcc -I/usr/local/include/ImageMagick-6/ -Xlinker -L/usr/local/lib/ -Xcc -DMAGICKCORE_HDRI_ENABLE=0 -Xcc -DMAGICKCORE_QUANTUM_DEPTH=16
 
-swift test  -Xswiftc -I/usr/local/include/ImageMagick-6/ -Xlinker -L/usr/local/lib/ -Xcc -DMAGICKCORE_HDRI_ENABLE=0 -Xcc -DMAGICKCORE_QUANTUM_DEPTH=8
+swift test  -Xcc -I/usr/local/include/ImageMagick-6/ -Xlinker -L/usr/local/lib/ -Xcc -DMAGICKCORE_HDRI_ENABLE=0 -Xcc -DMAGICKCORE_QUANTUM_DEPTH=16
 ```
 
 ## XCode Setup
