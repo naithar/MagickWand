@@ -51,11 +51,7 @@ Add this package to `dependencies` in your `Package.swift` file.
 ## Building and Testing
 
 ```
-eval $(echo 'swift build' `Magick-config --cflags` | sed 's/\(-[DI]\)/-Xcc \1/g')
-```
-
-```
-eval $(echo 'swift build'  `Magick-config --cflags` | sed -r 's/(-[DI])/-Xcc \1/g')
+eval $(echo 'swift build -Xlinker -L/usr/local/lib/' `Magick-config --cflags` | sed 's/\(-[DI]\)/-Xcc \1/g')
 ```
 
 ### Mac OSX
