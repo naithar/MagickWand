@@ -22,11 +22,7 @@
 
 import Foundation
 
-#if os(Linux)
-    import CMagickWandLinux
-#else
-    import CMagickWandOSX
-#endif
+import CMagickWand
 
 public class PixelWand: Wand {
     
