@@ -1,1 +1,1 @@
-eval $(echo 'swift text -Xlinker -L/usr/local/lib/ ' `Magick-config --cflags` | sed 's/\(-[DI]\)/-Xcc \1/g')
+eval $(echo 'swift test -Xlinker -L/usr/local/lib/ ' `Magick-config --cflags` | sed 's/\(-[DI]\)/-Xcc \1/g')
