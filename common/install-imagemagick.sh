@@ -1,8 +1,8 @@
 #!/bin/sh
 
 if [[ "$(uname -s)" == "Linux" ]]; then 
-      sudo apt-get update && \
-      apt-get install -y build-essential \
+      sudo apt-get update
+      sudo apt-get install -y build-essential \
             curl \
             cmake \
             zlib1g-dev \
