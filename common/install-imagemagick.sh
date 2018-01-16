@@ -142,7 +142,9 @@ cd ghostscript-9.22
 
 # removing dependencies
 if [[ ${CI} == "true" ]]; then
+echo ':::: not removing dependencies to ensure correct installation'
 else
+echo ':::: removing dependencies that are already installed'
 rm -rf freetype lcms2 jpeg libpng zlib
 fi
 
