@@ -8,17 +8,35 @@
 
 import Foundation
 
-func open(file: String, ofType type: String) -> Data? {
-    var fileData: Data?
-    #if os(Linux)
-        fileData = try? Data(contentsOf: URL(fileURLWithPath: "\(file).\(type)"))
-    #else
-        if let path = Bundle(for: MagickWandTests.self).path(forResource: file, ofType: type) {
-            fileData = try? Data(contentsOf: URL(fileURLWithPath: path))
-        } else {
-            fileData = try? Data(contentsOf: URL(fileURLWithPath: "\(file).\(type)"))
-        }
-    #endif
+internal enum Utils {
     
-    return fileData
+    static func delete(fileName: String, filePath: String = #file) {
+        let path = filePath.components(separatedBy: "/").dropLast(3).joined(separator: "/")
+        let url = URL(fileURLWithPath: "\(path)/\(fileName)")
+        try? FileManager.default.removeItem(at: url)
+    }
+    
+    static func save(fileName: String, data: Data, filePath: String = #file) -> Bool {
+        do {
+            let path = filePath.components(separatedBy: "/").dropLast(3).joined(separator: "/")
+            let url = URL(fileURLWithPath: "\(path)/\(fileName)")
+            try data.write(to: url)
+            return true
+        } catch {
+            return false
+        }
+    }
+    
+    static func open(file: String, ofType type: String, filePath: String = #file) -> Data? {
+        var fileData: Data?
+        
+        if let data = try? Data(contentsOf: URL(fileURLWithPath: "\(file).\(type)")) {
+            fileData = data
+        } else {
+            let path = filePath.components(separatedBy: "/").dropLast(3).joined(separator: "/")
+            fileData = try? Data(contentsOf: URL(fileURLWithPath: "\(path)/\(file).\(type)"))
+        }
+        
+        return fileData
+    }
 }

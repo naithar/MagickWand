@@ -22,7 +22,7 @@
 
 import CMagickWand
 
-extension MagickWand {
+//extension MagickWand {
 
     public struct RGBA: Equatable {
 
@@ -106,4 +106,5 @@ extension MagickWand {
             return !(lhs == rhs)
         }
     }
-}
+//}
+

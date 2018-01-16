@@ -22,7 +22,7 @@
 
 import CMagickWand
 
-extension MagickWand {
+//extension MagickWand {
 
     public enum Colorspace {
 
@@ -187,4 +187,5 @@ extension MagickWand {
             }
         }
     }
-}
+//}
+

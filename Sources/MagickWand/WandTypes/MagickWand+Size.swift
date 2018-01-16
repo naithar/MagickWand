@@ -22,8 +22,8 @@
 
 import CMagickWand
 
-extension MagickWand {
-    
+//extension MagickWand {
+
     public struct Size: Equatable {
         
         public static let zero = Size()
@@ -71,4 +71,5 @@ extension MagickWand {
             return !(lhs == rhs)
         }
     }
-}
+//}
+

@@ -20,60 +20,59 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-    import CMagickWand
-public struct MagickWand {
+import CMagickWand
 
-    static let unknownVersion = "unknown"
+extension String {
     
-#if os(Linux)
-    static private var wandInstantiated = false
-#endif
-
-    public static func genesis() {
-        MagickWandGenesis()
-        
-        #if os(Linux)
-            self.wandInstantiated = true
-        #endif
-    }
-
-    public static func terminus() {
-        MagickWandTerminus()
-        
-        #if os(Linux)
-            self.wandInstantiated = false
-        #endif
-    }
-
-    public static var isInstantiated: Bool {
-        #if os(Linux)
-            return IsMagickInstantiated().bool || self.wandInstantiated
-        #else
-            return IsMagickWandInstantiated().bool
-        #endif
-    }
-
-    public static var version: String {
-        guard let pointer = MagickGetVersion(nil) else {
-            return MagickWand.unknownVersion
-        }
-
-        return String(cString: pointer)
-    }
+    fileprivate static let unknownVersion = "unknown"
 }
 
-extension MagickWand {
+
+#if os(Linux)
+    fileprivate var wandInstantiated = false
+#endif
+
+public func genesis() {
+    MagickWandGenesis()
     
-    internal static func getString(from wandPointer: OpaquePointer?,
-                                   using method: (OpaquePointer!) -> (UnsafeMutablePointer<Int8>!)) -> String? {
-        guard let pointer = method(wandPointer) else {
-            return nil
-        }
-        
-        defer {
-            MagickRelinquishMemory(pointer)
-        }
-        
-        return String(cString: pointer)
+    #if os(Linux)
+        self.wandInstantiated = true
+    #endif
+}
+
+public func terminus() {
+    MagickWandTerminus()
+    
+    #if os(Linux)
+        self.wandInstantiated = false
+    #endif
+}
+
+public var isInstantiated: Bool {
+    #if os(Linux)
+        return IsMagickInstantiated().bool || self.wandInstantiated
+    #else
+        return IsMagickWandInstantiated().bool
+    #endif
+}
+
+public var version: String {
+    guard let pointer = MagickGetVersion(nil) else {
+        return String.unknownVersion
     }
+
+    return String(cString: pointer)
+}
+    
+internal func getString(from wandPointer: OpaquePointer?,
+                               using method: (OpaquePointer!) -> (UnsafeMutablePointer<Int8>!)) -> String? {
+    guard let pointer = method(wandPointer) else {
+        return nil
+    }
+    
+    defer {
+        MagickRelinquishMemory(pointer)
+    }
+    
+    return String(cString: pointer)
 }

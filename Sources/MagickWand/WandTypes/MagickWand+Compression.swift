@@ -22,7 +22,7 @@
 
 import CMagickWand
 
-extension MagickWand {
+//extension MagickWand {
 
     public enum Compression {
 
@@ -140,4 +140,5 @@ extension MagickWand {
             }
         }
     }
-}
+//}
+

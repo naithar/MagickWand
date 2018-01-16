@@ -22,7 +22,7 @@
 
 import CMagickWand
 
-extension MagickWand {
+//extension MagickWand {
 
     public struct CompressionInfo {
         
@@ -105,4 +105,5 @@ extension MagickWand {
             self.index = Double(info.index)
         }
     }
-}
+//}
+

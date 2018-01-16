@@ -67,7 +67,7 @@ public class PixelWand: Wand {
     }
     
     public func destroy() {
-        guard MagickWand.isInstantiated else { return }
+        guard isInstantiated else { return }
         DestroyPixelWand(self.pointer)
     }
 }

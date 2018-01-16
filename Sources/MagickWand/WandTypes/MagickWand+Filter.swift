@@ -22,7 +22,7 @@
 
 import CMagickWand
 
-extension MagickWand {
+//extension MagickWand {
 
     public enum Filter {
 
@@ -71,4 +71,5 @@ extension MagickWand {
             }
         }
     }
-}
+//}
+

@@ -22,7 +22,7 @@
 
 import CMagickWand
 
-extension MagickWand {
+//extension MagickWand {
 
     public enum Interlace {
 
@@ -74,4 +74,5 @@ extension MagickWand {
             }
         }
     }
-}
+//}
+
