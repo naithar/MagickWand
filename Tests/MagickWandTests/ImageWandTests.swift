@@ -114,7 +114,7 @@ class ImageWandTests: XCTestCase {
     private let variants: [(name: String, type: String)] = [
         ("PNG", "png"),
         ("JPEG", "jpeg"),
-//        ("PDF", "pdf"), //FIXME: does not work on linux
+        ("PDF", "pdf"), //FIXME: does not work on linux
         ("GIF", "gif"),
         //("SVG", "svg"), //FIXME: cannot create or read
         ("TIFF", "tiff"),

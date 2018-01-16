@@ -121,7 +121,6 @@ extension PixelWand {
                 #if !os(Linux)
                     PixelGetMagickColor(self.pointer, &infoPacket)
                 #endif
-                
                 return MagickWand.ColorInfo(infoPacket)
             }
             set {
