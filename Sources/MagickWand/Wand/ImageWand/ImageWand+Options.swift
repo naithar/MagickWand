@@ -127,17 +127,9 @@ extension ImageWand {
 
     public subscript(option key: ImageWand.Option) -> String? {
         get {
-            guard let pointer = MagickGetOption(self.pointer, key.value) else {
-                return nil
-            }
-            
-            defer {
-                MagickRelinquishMemory(pointer)
-            }
-            
-            return String(cString: pointer)
+            return nil
         } set {            
-            MagickSetOption(self.pointer, key.value, newValue)
+            
         }
     }
 }

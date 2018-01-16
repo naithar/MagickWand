@@ -49,6 +49,8 @@ class ImageWandTests: XCTestCase {
             return
         }
         
+        Utils.delete(fileName: "images/testInitWithColor.png")
+        
         XCTAssertTrue(Utils.save(fileName: "images/testInitWithColor.png", data: data))
         
         guard let savedImageWand = self.open(file: "images/testInitWithColor", ofType: "png") else { return }

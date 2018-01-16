@@ -43,29 +43,4 @@ extension ImageWand {
         
         return MagickWand.Resolution(width: width, height: height)
     }
-    
-    public func size(for dimension: Int) -> MagickWand.Size {
-        let size = self.size
-        var result = MagickWand.Size(width: 0, height: 0)
-        
-        if size.width == 0
-            || size.height == 0 {
-            return .zero
-        }
-        
-        let ratio = Double(size.height) / Double(size.width)
-        
-        if ratio > 1 {
-            result.height = dimension
-            result.width = Int(Double(result.height) / ratio)
-        } else if ratio < 1 {
-            result.width = dimension
-            result.height = Int(ratio * Double(result.width))
-        } else {
-            result.width = dimension
-            result.height = dimension
-        }
-        
-        return result
-    }
 }

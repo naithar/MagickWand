@@ -81,7 +81,7 @@ public class ImageWand: Wand {
         }
         
         MagickNewImage(self.pointer, size.width, size.height, pixelWand.pointer)
-        MagickSetFormat(self.pointer, format)
+        self.format = "png"
     }
     
     public func clear() {

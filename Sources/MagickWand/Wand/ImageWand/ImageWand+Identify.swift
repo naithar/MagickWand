@@ -32,19 +32,19 @@ extension ImageWand {
     
     var format: String? {
         get {
-            return MagickWand.getString(from: self.pointer, using: MagickGetFormat)
+            return MagickWand.getString(from: self.pointer, using: MagickGetImageFormat)
         }
         set {
-            MagickSetFormat(self.pointer, newValue ?? "")
+            MagickSetImageFormat(self.pointer, newValue ?? "")
         }
     }
     
     var filename: String? {
         get {
-            return MagickWand.getString(from: self.pointer, using: MagickGetFilename)
+            return MagickWand.getString(from: self.pointer, using: MagickGetImageFilename)
         }
         set {
-            MagickSetFilename(self.pointer, newValue ?? "")
+            MagickSetImageFilename(self.pointer, newValue ?? "")
         }
     }
     
@@ -59,40 +59,40 @@ extension ImageWand {
     
     var orientation: MagickWand.Orientation {
         get {
-            return MagickWand.Orientation(MagickGetOrientation(self.pointer))
+            return MagickWand.Orientation(MagickGetImageOrientation(self.pointer))
         }
         set {
-            MagickSetOrientation(self.pointer, newValue.type)
+            MagickSetImageOrientation(self.pointer, newValue.type)
         }
     }
     
     var compression: MagickWand.CompressionInfo {
         get {
-            let type = MagickWand.Compression(MagickGetCompression(self.pointer))
-            let quality = MagickGetCompressionQuality(self.pointer)
+            let type = MagickWand.Compression(MagickGetImageCompression(self.pointer))
+            let quality = MagickGetImageCompressionQuality(self.pointer)
             return MagickWand.CompressionInfo(compression: type, quality: quality)
         }
         set {
-            MagickSetCompression(self.pointer, newValue.compression.type)
-            MagickSetCompressionQuality(self.pointer, newValue.quality)
+            MagickSetImageCompression(self.pointer, newValue.compression.type)
+            MagickSetImageCompressionQuality(self.pointer, newValue.quality)
         }
     }
     
     var gravity: MagickWand.Gravity {
         get {
-            return MagickWand.Gravity(MagickGetGravity(self.pointer))
+            return MagickWand.Gravity(MagickGetImageGravity(self.pointer))
         }
         set {
-            MagickSetGravity(self.pointer, newValue.type)
+            MagickSetImageGravity(self.pointer, newValue.type)
         }
     }
     
     var colorspace: MagickWand.Colorspace {
         get {
-            return MagickWand.Colorspace(MagickGetColorspace(self.pointer))
+            return MagickWand.Colorspace(MagickGetImageColorspace(self.pointer))
         }
         set {
-            MagickSetColorspace(self.pointer, newValue.type)
+            MagickSetImageColorspace(self.pointer, newValue.type)
         }
     }
 }
