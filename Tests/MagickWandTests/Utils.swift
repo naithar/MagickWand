@@ -10,6 +10,11 @@ import Foundation
 
 internal enum Utils {
     
+    static func path(filePath: String = #file) -> String {
+        let path = filePath.components(separatedBy: "/").dropLast(3).joined(separator: "/")
+        return path
+    }
+    
     static func delete(fileName: String, filePath: String = #file) {
         let path = filePath.components(separatedBy: "/").dropLast(3).joined(separator: "/")
         let url = URL(fileURLWithPath: "\(path)/\(fileName)")

@@ -59,6 +59,21 @@ class ImageWandTests: XCTestCase {
         Utils.delete(fileName: "images/testInitWithColor.png")
     }
     
+    func testInitWithImage() {
+        guard let imageWand = ImageWand.init(filePath: Utils.path() + "/images/source.png") else {
+            XCTFail("`ImageWand` should have been created")
+            return
+        }
+        
+        Utils.delete(fileName: "images/testInitWithImage.png")
+        
+        XCTAssertTrue(Utils.save(fileName: "images/testInitWithImage.png", data: imageWand.data!))
+        
+        self.basicChecks(forWand: imageWand, size: Size(width: 100, height: 50))
+        
+        Utils.delete(fileName: "images/testInitWithImage.png")
+    }
+    
     private func initWithData(file: String, ofType type: String) {
         guard let imageWand = self.open(file: file, ofType: type) else { return }
         self.basicChecks(forWand: imageWand, size: Size.init(width: 100, height: 50))

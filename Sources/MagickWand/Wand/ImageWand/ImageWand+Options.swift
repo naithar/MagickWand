@@ -107,29 +107,30 @@ typedef enum
 } CommandOption;
 */
 
-extension ImageWand {
+//extension ImageWand {
+//
+//    public enum Option {
+////        case resolution = "resolution"
+////        case interlace = "interlace"
+////        case color = "color"
+////        case type = "type"
+//        
+//        case custom(String)
+//        
+//        var value: String {
+//            switch self {
+//            case .custom(let value):
+//                return value
+//            }
+//        }
+//    }
+//
+//    public subscript(option key: ImageWand.Option) -> String? {
+//        get {
+//            return nil
+//        } set {            
+//            
+//        }
+//    }
+//}
 
-    public enum Option {
-//        case resolution = "resolution"
-//        case interlace = "interlace"
-//        case color = "color"
-//        case type = "type"
-        
-        case custom(String)
-        
-        var value: String {
-            switch self {
-            case .custom(let value):
-                return value
-            }
-        }
-    }
-
-    public subscript(option key: ImageWand.Option) -> String? {
-        get {
-            return nil
-        } set {            
-            
-        }
-    }
-}

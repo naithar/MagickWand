@@ -26,11 +26,11 @@ import CMagickWand
 
 extension ImageWand {
     
-    var identity: String? {
+    public var identity: String? {
         return MagickWand.getString(from: self.pointer, using: MagickIdentifyImage)
     }
     
-    var format: String? {
+    public var format: String? {
         get {
             return MagickWand.getString(from: self.pointer, using: MagickGetImageFormat)
         }
@@ -39,7 +39,7 @@ extension ImageWand {
         }
     }
     
-    var filename: String? {
+    public var filename: String? {
         get {
             return MagickWand.getString(from: self.pointer, using: MagickGetImageFilename)
         }
@@ -48,7 +48,7 @@ extension ImageWand {
         }
     }
     
-    var interlace: MagickWand.Interlace {
+    public var interlace: MagickWand.Interlace {
         get {
             return MagickWand.Interlace(MagickGetImageInterlaceScheme(self.pointer))
         }
@@ -57,7 +57,7 @@ extension ImageWand {
         }
     }
     
-    var orientation: MagickWand.Orientation {
+    public var orientation: MagickWand.Orientation {
         get {
             return MagickWand.Orientation(MagickGetImageOrientation(self.pointer))
         }
@@ -66,7 +66,7 @@ extension ImageWand {
         }
     }
     
-    var compression: MagickWand.CompressionInfo {
+    public var compression: MagickWand.CompressionInfo {
         get {
             let type = MagickWand.Compression(MagickGetImageCompression(self.pointer))
             let quality = MagickGetImageCompressionQuality(self.pointer)
@@ -78,7 +78,7 @@ extension ImageWand {
         }
     }
     
-    var gravity: MagickWand.Gravity {
+    public var gravity: MagickWand.Gravity {
         get {
             return MagickWand.Gravity(MagickGetImageGravity(self.pointer))
         }
@@ -87,7 +87,7 @@ extension ImageWand {
         }
     }
     
-    var colorspace: MagickWand.Colorspace {
+    public var colorspace: MagickWand.Colorspace {
         get {
             return MagickWand.Colorspace(MagickGetImageColorspace(self.pointer))
         }

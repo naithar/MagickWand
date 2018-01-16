@@ -26,6 +26,7 @@ import CMagickWand
 
 extension ImageWand {
     
+    // https://www.imagemagick.org/api/magick-image.php
     // TODO: Resize modes. like AspectFill, AspectFit.
     // TODO: resized, rescaled -> ImageWand
     

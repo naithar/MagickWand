@@ -84,6 +84,11 @@ public class ImageWand: Wand {
         self.format = format
     }
     
+    public convenience init?(filePath: String) {
+        self.init()
+        MagickReadImage(self.pointer, filePath)
+    }
+    
     public func clear() {
         ClearMagickWand(self.pointer)
     }
