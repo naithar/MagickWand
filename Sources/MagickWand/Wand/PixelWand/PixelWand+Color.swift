@@ -43,9 +43,11 @@ extension PixelWand {
                 let red = PixelGetRed(self.pointer)
                 let green = PixelGetGreen(self.pointer)
                 let blue = PixelGetBlue(self.pointer)
-                let alpha = PixelGetAlpha(self.pointer)
                 
-                return MagickWand.RGBA(red, green, blue, alpha)
+                //TODO: use alpha on new version
+                let opacity = PixelGetOpacity(self.pointer)
+                
+                return MagickWand.RGBA(red, green, blue, 1.0 - opacity)
             }
             set {
                 PixelSetRed(self.pointer, newValue.red)
