@@ -61,7 +61,6 @@ extension PixelWand {
                 let red = PixelGetRed(self.pointer)
                 let green = PixelGetGreen(self.pointer)
                 let blue = PixelGetBlue(self.pointer)
-//                MagickGetImageAlphaChannel
                 
                 let alpha = PixelGetAlpha(self.pointer)
                 

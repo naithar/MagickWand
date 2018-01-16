@@ -84,7 +84,9 @@ extension ImageWand {
         }
     }
     
-    //TODO: alpha channel
+    public var hasAlphaChannel: Bool {
+        return MagickGetImageAlphaChannel(self.pointer).bool
+    }
     
     // https://bugs.php.net/bug.php?id=73840
     public func pixel(x: Int, y: Int) -> PixelWand? {
