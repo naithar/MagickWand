@@ -4,6 +4,30 @@ import XCTest
 
 class ImageWandTests: XCTestCase {
     
+    private func open(file: String, ofType type: String) -> ImageWand? {
+        guard let data = Utils.open(file: file, ofType: type) else {
+            XCTFail("File should exist")
+            return nil
+        }
+        
+        guard let imageWand = ImageWand(data: data) else {
+            XCTFail("`ImageWand` should have been created")
+            return nil
+        }
+        
+        return imageWand
+    }
+    
+    private func basicChecks(forWand imageWand: ImageWand, size: MagickWand.Size) {
+        XCTAssertNotNil(imageWand.data, "`ImageWand` should have Data")
+        
+        XCTAssertEqual(imageWand.size.width, size.width, "Created `ImageWand` has wrong size")
+        XCTAssertEqual(imageWand.size.height, size.height, "Created `ImageWand` has wrong size")
+        XCTAssertEqual(imageWand.size,
+                       MagickWand.Size(width: size.width, height: size.height),
+                       "Created `ImageWand` has wrong size")
+    }
+    
     override func setUp() {
         MagickWand.genesis()
     }
@@ -33,37 +57,13 @@ class ImageWandTests: XCTestCase {
         Utils.delete(fileName: "images/testInitWithColor.png")
     }
     
-    private func open(file: String, ofType type: String) -> ImageWand? {
-        guard let data = Utils.open(file: file, ofType: type) else {
-            XCTFail("File should exist")
-            return nil
-        }
-        
-        guard let imageWand = ImageWand(data: data) else {
-            XCTFail("`ImageWand` should have been created")
-            return nil
-        }
-        
-        return imageWand
-    }
-    
-    private func basicChecks(forWand imageWand: ImageWand, size: MagickWand.Size) {
-        XCTAssertNotNil(imageWand.data, "`ImageWand` should have Data")
-        
-        XCTAssertEqual(imageWand.size.width, size.width, "Created `ImageWand` has wrong size")
-        XCTAssertEqual(imageWand.size.height, size.height, "Created `ImageWand` has wrong size")
-        XCTAssertEqual(imageWand.size,
-                       MagickWand.Size(width: size.width, height: size.height),
-                       "Created `ImageWand` has wrong size")
-    }
-    
-    func testInitWithData() {
-        guard let imageWand = self.open(file: "images/source", ofType: "png") else { return }
+    private func initWithData(file: String, ofType type: String) {
+        guard let imageWand = self.open(file: file, ofType: type) else { return }
         self.basicChecks(forWand: imageWand, size: Size.init(width: 100, height: 50))
     }
     
-    func testClone() {
-        guard let imageWand = self.open(file: "images/source", ofType: "png") else { return }
+    private func clone(file: String, ofType type: String) {
+        guard let imageWand = self.open(file: file, ofType: type) else { return }
         XCTAssertNotNil(imageWand.data, "`ImageWand` should have Data")
         
         guard let imageClone = imageWand.clone() else {
@@ -74,8 +74,8 @@ class ImageWandTests: XCTestCase {
         self.basicChecks(forWand: imageClone, size: Size.init(width: 100, height: 50))
     }
     
-    func testResize() {
-        guard let imageWand = self.open(file: "images/source", ofType: "png") else { return }
+    private func resize(file: String, ofType type: String) {
+        guard let imageWand = self.open(file: file, ofType: type) else { return }
         XCTAssertNotNil(imageWand, "`ImageWand` should have been created")
         XCTAssertNotNil(imageWand.data, "`ImageWand` should have Data")
         
@@ -84,13 +84,47 @@ class ImageWandTests: XCTestCase {
         self.basicChecks(forWand: imageWand, size: Size.init(width: 50, height: 10))
     }
     
-    func testScale() {
-        guard let imageWand = self.open(file: "images/source", ofType: "png") else { return }
+    private func scale(file: String, ofType type: String) {
+        guard let imageWand = self.open(file: file, ofType: type) else { return }
         XCTAssertNotNil(imageWand.data, "`ImageWand` should have Data")
         
         imageWand.scale(width: 100, height: 5)
         
         self.basicChecks(forWand: imageWand, size: Size.init(width: 100, height: 5))
+    }
+    
+    private let variants: [(name: String, type: String)] = [
+        ("PNG", "png"),
+        ("JPEG", "jpeg"),
+        ("PDF", "pdf"),
+        ("GIF", "gif"),
+        //("SVG", "svg"), //FIXME: cannot create or read
+        ("TIFF", "tiff"),
+    ]
+    
+    private func performVariants(action: (String, String) -> Void) {
+        let folder = "images/converted/"
+        self.variants.forEach {
+            let file = folder + $0.name
+            print("Running test for file at \(file).\($0.type)")
+            action(file, $0.type)
+        }
+    }
+    
+    func testInitWithData() {
+        self.performVariants(action: self.initWithData(file:ofType:))
+    }
+    
+    func testClone() {
+        self.performVariants(action: self.clone(file:ofType:))
+    }
+    
+    func testResize() {
+        self.performVariants(action: self.resize(file:ofType:))
+    }
+    
+    func testScale() {
+        self.performVariants(action: self.scale(file:ofType:))
     }
     
     static var allTests : [(String, (ImageWandTests) -> () throws -> Void)] {
