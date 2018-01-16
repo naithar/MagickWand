@@ -44,11 +44,6 @@ extension PixelWand {
                 let green = PixelGetGreen(self.pointer)
                 let blue = PixelGetBlue(self.pointer)
                 
-//                let alpha: Double
-                
-//                #if os(Linux)
-//                    alpha = 1.0 - PixelGetAlpha(self.pointer)
-//                #else
                 let alpha = PixelGetAlpha(self.pointer)
                 
                 return MagickWand.RGBA(red, green, blue, alpha)

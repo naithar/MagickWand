@@ -138,12 +138,12 @@ echo "::::::::::::::::: Ghostscript"
 curl -O -L https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs922/ghostscript-9.22.tar.gz
 tar zxvf ghostscript-9.22.tar.gz
 cd ghostscript-9.22
-rm -rf freetype lcms2 jpeg libpng zlib
+#rm -rf freetype lcms2 jpeg libpng zlib
 ./configure --prefix=/usr/local           \
             --disable-compile-inits \
             --enable-dynamic        \
             --with-system-libtiff   && make
-make so
+sudo make so
 sudo make install
 sudo make soinstall &&
 install -v -m644 base/*.h /usr/local/include/ghostscript &&
