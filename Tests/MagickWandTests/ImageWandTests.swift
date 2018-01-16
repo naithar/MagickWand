@@ -149,6 +149,18 @@ class ImageWandTests: XCTestCase {
                         rgba: RGBA.init(227 / 255.0, 16.0 / 255.0, 16.0 / 255.0))
     }
     
+    func testClear() {
+        guard let imageWand = self.open(file: "images/source", ofType: "png") else { return }
+        self.checkPixel(forWand: imageWand,
+                        at: CGPoint.init(x: 0, y: 0),
+                        rgba: RGBA.init(13.0 / 255.0, 13.0 / 255.0, 13.0 / 255.0))
+        
+        imageWand.clear()
+        
+        XCTAssertNil(imageWand.data)
+        XCTAssertEqual(imageWand.size, Size.init(width: 0, height: 0))
+    }
+    
     static var allTests : [(String, (ImageWandTests) -> () throws -> Void)] {
         return [
             ("Image Wand - Init with color", testInitWithColor),
@@ -157,6 +169,7 @@ class ImageWandTests: XCTestCase {
             ("Image Wand - Resize", testResize),
             ("Image Wand - Scale", testScale),
             ("Image Wand - Color", testColor),
+            ("Image Wand - Clear", testClear),
         ]
     }
 }

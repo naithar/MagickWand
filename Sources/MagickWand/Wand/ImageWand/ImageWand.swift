@@ -81,7 +81,7 @@ public class ImageWand: Wand {
         }
         
         MagickNewImage(self.pointer, size.width, size.height, pixelWand.pointer)
-        self.format = "png"
+        self.format = format
     }
     
     public func clear() {
@@ -95,6 +95,7 @@ public class ImageWand: Wand {
     
     public func destroy() {
         guard MagickWand.isInstantiated else { return }
+        self.clear()
         DestroyMagickWand(self.pointer)
     }
 }

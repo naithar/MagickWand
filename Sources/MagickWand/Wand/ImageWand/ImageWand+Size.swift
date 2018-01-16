@@ -36,11 +36,16 @@ extension ImageWand {
     }
     
     public var resolution: MagickWand.Resolution {
-        var width: Double = 0
-        var height: Double = 0
-        
-        MagickGetImageResolution(self.pointer, &width, &height)
-        
-        return MagickWand.Resolution(width: width, height: height)
+        get {
+            var width: Double = 0
+            var height: Double = 0
+            
+            MagickGetImageResolution(self.pointer, &width, &height)
+            
+            return MagickWand.Resolution(width: width, height: height)
+        }
+        set {
+            MagickSetImageResolution(self.pointer, newValue.width, newValue.height)
+        }
     }
 }
