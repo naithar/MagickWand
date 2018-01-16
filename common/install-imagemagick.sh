@@ -138,7 +138,14 @@ echo "::::::::::::::::: Ghostscript"
 curl -O -L https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs922/ghostscript-9.22.tar.gz
 tar zxvf ghostscript-9.22.tar.gz
 cd ghostscript-9.22
-#rm -rf freetype lcms2 jpeg libpng zlib
+
+
+# removing dependencies
+if [[ ${CI} == "true" ]]; then
+else
+rm -rf freetype lcms2 jpeg libpng zlib
+fi
+
 ./configure --prefix=/usr/local           \
             --disable-compile-inits \
             --enable-dynamic        \
