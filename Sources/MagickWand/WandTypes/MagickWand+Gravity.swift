@@ -24,66 +24,66 @@ import CMagickWand
 
 //extension MagickWand {
 
-    public enum Gravity {
-
-        case undefined
-        case forget
-        case center
-        case south, north, west, east, northWest, northEast, southWest, southEast
-
-        init(_ type: GravityType) {
-            switch type {
-            case ForgetGravity:
-                self = .forget
-            case NorthWestGravity:
-                self = .northWest
-            case NorthGravity:
-                self = .north
-            case NorthEastGravity:
-                self = .northEast
-            case WestGravity:
-                self = .west
-            case CenterGravity:
-                self = .center
-            case EastGravity:
-                self = .east
-            case SouthWestGravity:
-                self = .southWest
-            case SouthGravity:
-                self = .south
-            case SouthEastGravity:
-                self = .southEast
-            default:
-                self = .undefined
-            }
-        }
-
-        var type: GravityType {
-            switch self {
-            case .undefined:
-                return UndefinedGravity
-            case .forget:
-                return ForgetGravity
-            case .northWest:
-                return NorthWestGravity
-            case .north:
-                return NorthGravity
-            case .northEast:
-                return NorthEastGravity
-            case .west:
-                return WestGravity
-            case .center:
-                return CenterGravity
-            case .east:
-                return EastGravity
-            case .southWest:
-                return SouthWestGravity
-            case .south:
-                return SouthGravity
-            case .southEast:
-                return SouthEastGravity
-            }
+public enum Gravity {
+    
+    case undefined
+    case forget
+    case center
+    case south, north, west, east, northWest, northEast, southWest, southEast
+    
+    init(_ type: GravityType) {
+        switch type {
+        case ForgetGravity:
+            self = .forget
+        case NorthWestGravity:
+            self = .northWest
+        case NorthGravity:
+            self = .north
+        case NorthEastGravity:
+            self = .northEast
+        case WestGravity:
+            self = .west
+        case CenterGravity:
+            self = .center
+        case EastGravity:
+            self = .east
+        case SouthWestGravity:
+            self = .southWest
+        case SouthGravity:
+            self = .south
+        case SouthEastGravity:
+            self = .southEast
+        default:
+            self = .undefined
         }
     }
+    
+    var type: GravityType {
+        switch self {
+        case .undefined:
+            return UndefinedGravity
+        case .forget:
+            return ForgetGravity
+        case .northWest:
+            return NorthWestGravity
+        case .north:
+            return NorthGravity
+        case .northEast:
+            return NorthEastGravity
+        case .west:
+            return WestGravity
+        case .center:
+            return CenterGravity
+        case .east:
+            return EastGravity
+        case .southWest:
+            return SouthWestGravity
+        case .south:
+            return SouthGravity
+        case .southEast:
+            return SouthEastGravity
+        }
+    }
+}
 //}
 

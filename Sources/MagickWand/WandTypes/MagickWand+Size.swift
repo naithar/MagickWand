@@ -24,52 +24,52 @@ import CMagickWand
 
 //extension MagickWand {
 
-    public struct Size: Equatable {
-        
-        public static let zero = Size()
-        
-        public var width: Int = 0
-        public var height: Int = 0
-        
-        public init() { }
-        
-        public init(width: Int, height: Int) {
-            self.width = width
-            self.height = height
-        }
-        
-        public static func ==(lhs: Size, rhs: Size) -> Bool {
-            return lhs.width == rhs.width
-                && lhs.height == rhs.height
-        }
-        
-        public static func !=(lhs: Size, rhs: Size) -> Bool {
-            return !(lhs == rhs)
-        }
+public struct Size: Equatable {
+    
+    public static let zero = Size()
+    
+    public var width: Int = 0
+    public var height: Int = 0
+    
+    public init() { }
+    
+    public init(width: Int, height: Int) {
+        self.width = width
+        self.height = height
     }
     
-    public struct Resolution: Equatable {
-        
-        public static let zero = Resolution()
-        
-        public var width: Double = 0
-        public var height: Double = 0
-        
-        public init() { }
-        
-        public init(width: Double, height: Double) {
-            self.width = width
-            self.height = height
-        }
-        
-        public static func ==(lhs: Resolution, rhs: Resolution) -> Bool {
-            return lhs.width == rhs.width
-                && lhs.height == rhs.height
-        }
-        
-        public static func !=(lhs: Resolution, rhs: Resolution) -> Bool {
-            return !(lhs == rhs)
-        }
+    public static func ==(lhs: Size, rhs: Size) -> Bool {
+        return lhs.width == rhs.width
+            && lhs.height == rhs.height
     }
+    
+    public static func !=(lhs: Size, rhs: Size) -> Bool {
+        return !(lhs == rhs)
+    }
+}
+
+public struct Resolution: Equatable {
+    
+    public static let zero = Resolution()
+    
+    public var width: Double = 0
+    public var height: Double = 0
+    
+    public init() { }
+    
+    public init(width: Double, height: Double) {
+        self.width = width
+        self.height = height
+    }
+    
+    public static func ==(lhs: Resolution, rhs: Resolution) -> Bool {
+        return lhs.width == rhs.width
+            && lhs.height == rhs.height
+    }
+    
+    public static func !=(lhs: Resolution, rhs: Resolution) -> Bool {
+        return !(lhs == rhs)
+    }
+}
 //}
 

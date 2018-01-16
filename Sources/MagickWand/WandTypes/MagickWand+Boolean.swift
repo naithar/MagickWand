@@ -23,7 +23,7 @@
 import CMagickWand
 
 extension MagickBooleanType {
-
+    
     var bool: Bool {
         return self.rawValue != 0
     }

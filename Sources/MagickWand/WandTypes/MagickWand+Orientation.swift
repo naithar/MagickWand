@@ -24,59 +24,59 @@ import CMagickWand
 
 //extension MagickWand {
 
-    public enum Orientation {
-
-        case undefined
-        case topLeft, topRight
-        case bottomRight, bottomLeft
-        case leftTop, leftBottom
-        case rightTop, rightBottom
-
-        init(_ type: OrientationType) {
-            switch type {
-            case TopLeftOrientation:
-                self = .topLeft
-            case TopRightOrientation:
-                self = .topRight
-            case BottomRightOrientation:
-                self = .bottomRight
-            case BottomLeftOrientation:
-                self = .bottomLeft
-            case LeftTopOrientation:
-                self = .leftTop
-            case RightTopOrientation:
-                self = .rightTop
-            case RightBottomOrientation:
-                self = .rightBottom
-            case LeftBottomOrientation:
-                self = .leftBottom
-            default:
-                self = .undefined
-            }
-        }
-
-        var type: OrientationType {
-            switch self {
-            case .undefined:
-                return UndefinedOrientation
-            case .topLeft:
-                return TopLeftOrientation
-            case .topRight:
-                return TopRightOrientation
-            case .bottomRight:
-                return BottomRightOrientation
-            case .bottomLeft:
-                return BottomLeftOrientation
-            case .leftTop:
-                return LeftTopOrientation
-            case .rightTop:
-                return RightTopOrientation
-            case .rightBottom:
-                return RightBottomOrientation
-            case .leftBottom:
-                return LeftBottomOrientation
-            }
+public enum Orientation {
+    
+    case undefined
+    case topLeft, topRight
+    case bottomRight, bottomLeft
+    case leftTop, leftBottom
+    case rightTop, rightBottom
+    
+    init(_ type: OrientationType) {
+        switch type {
+        case TopLeftOrientation:
+            self = .topLeft
+        case TopRightOrientation:
+            self = .topRight
+        case BottomRightOrientation:
+            self = .bottomRight
+        case BottomLeftOrientation:
+            self = .bottomLeft
+        case LeftTopOrientation:
+            self = .leftTop
+        case RightTopOrientation:
+            self = .rightTop
+        case RightBottomOrientation:
+            self = .rightBottom
+        case LeftBottomOrientation:
+            self = .leftBottom
+        default:
+            self = .undefined
         }
     }
+    
+    var type: OrientationType {
+        switch self {
+        case .undefined:
+            return UndefinedOrientation
+        case .topLeft:
+            return TopLeftOrientation
+        case .topRight:
+            return TopRightOrientation
+        case .bottomRight:
+            return BottomRightOrientation
+        case .bottomLeft:
+            return BottomLeftOrientation
+        case .leftTop:
+            return LeftTopOrientation
+        case .rightTop:
+            return RightTopOrientation
+        case .rightBottom:
+            return RightBottomOrientation
+        case .leftBottom:
+            return LeftBottomOrientation
+        }
+    }
+}
 //}
 

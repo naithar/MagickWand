@@ -45,10 +45,17 @@ import CMagickWand
         }
         
         public static func ==(lhs: RGBA, rhs: RGBA) -> Bool {
-            return lhs.red == rhs.red
+            let result = lhs.red == rhs.red
                 && lhs.green == rhs.green
                 && lhs.blue == rhs.blue
-                && lhs.alpha == rhs.alpha
+            
+            #if os(Linux)
+                return result
+            #else
+                return result
+                    && lhs.alpha == rhs.alpha
+            #endif
+            
         }
         
         public static func !=(lhs: RGBA, rhs: RGBA) -> Bool {

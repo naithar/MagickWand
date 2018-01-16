@@ -161,8 +161,16 @@ class ImageWandTests: XCTestCase {
                         rgba: RGBA.init(13.0 / 255.0, 13.0 / 255.0, 13.0 / 255.0))
         
         self.checkPixel(forWand: imageWand,
-                        at: CGPoint.init(x: 50, y: 25),
+                        at: CGPoint.init(x: 35, y: 25),
                         rgba: RGBA.init(227 / 255.0, 16.0 / 255.0, 16.0 / 255.0))
+        
+        self.checkPixel(forWand: imageWand,
+                        at: CGPoint.init(x: 60, y: 25),
+                        rgba: RGBA.init(227 / 255.0, 16.0 / 255.0, 16.0 / 255.0, 128 / 255.0))
+        
+        self.checkPixel(forWand: imageWand,
+                        at: CGPoint.init(x: 80, y: 25),
+                        rgba: RGBA.init(0, 0, 0, 0))
     }
     
     func testClear() {

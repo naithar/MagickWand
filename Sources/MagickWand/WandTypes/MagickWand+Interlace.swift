@@ -24,55 +24,55 @@ import CMagickWand
 
 //extension MagickWand {
 
-    public enum Interlace {
-
-        case undefined
-        case none
-        case line, plane
-        case partition
-        case gif, jpeg, png
-
-        init(_ type: InterlaceType) {
-            switch type {
-            case NoInterlace:
-                self = .none
-            case LineInterlace:
-                self = .line
-            case PlaneInterlace:
-                self = .plane
-            case PartitionInterlace:
-                self = .partition
-            case GIFInterlace:
-                self = .gif
-            case JPEGInterlace:
-                self = .jpeg
-            case PNGInterlace:
-                self = .png
-            default:
-                self = .undefined
-            }
-        }
-
-        var type: InterlaceType {
-            switch self {
-            case .undefined:
-                return UndefinedInterlace
-            case .none:
-                return NoInterlace
-            case .line:
-                return LineInterlace
-            case .plane:
-                return PlaneInterlace
-            case .partition:
-                return PartitionInterlace
-            case .gif:
-                return GIFInterlace
-            case .jpeg:
-                return JPEGInterlace
-            case .png:
-                return PNGInterlace
-            }
+public enum Interlace {
+    
+    case undefined
+    case none
+    case line, plane
+    case partition
+    case gif, jpeg, png
+    
+    init(_ type: InterlaceType) {
+        switch type {
+        case NoInterlace:
+            self = .none
+        case LineInterlace:
+            self = .line
+        case PlaneInterlace:
+            self = .plane
+        case PartitionInterlace:
+            self = .partition
+        case GIFInterlace:
+            self = .gif
+        case JPEGInterlace:
+            self = .jpeg
+        case PNGInterlace:
+            self = .png
+        default:
+            self = .undefined
         }
     }
+    
+    var type: InterlaceType {
+        switch self {
+        case .undefined:
+            return UndefinedInterlace
+        case .none:
+            return NoInterlace
+        case .line:
+            return LineInterlace
+        case .plane:
+            return PlaneInterlace
+        case .partition:
+            return PartitionInterlace
+        case .gif:
+            return GIFInterlace
+        case .jpeg:
+            return JPEGInterlace
+        case .png:
+            return PNGInterlace
+        }
+    }
+}
 //}
 

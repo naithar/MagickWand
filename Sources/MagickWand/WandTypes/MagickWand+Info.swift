@@ -24,86 +24,86 @@ import CMagickWand
 
 //extension MagickWand {
 
-    public struct CompressionInfo {
+public struct CompressionInfo {
+    
+    public var compression: Compression
+    public var quality: Int
+    
+    public init(compression: Compression, quality: Int) {
+        self.compression = compression
+        self.quality = quality
+    }
+}
+
+public struct PixelInfo {
+    
+    private(set) var red: Quantum
+    private(set) var green: Quantum
+    private(set) var blue: Quantum
+    
+    private(set) var opacity: Quantum
+    
+    init(_ info: PixelPacket) {
+        self.red = info.red
+        self.green = info.green
+        self.blue = info.blue
+        self.opacity = info.opacity
+    }
+}
+
+public struct ColorInfo {
+    
+    public static let empty = ColorInfo()
+    
+    private(set) public var colorspace = MagickWand.Colorspace.undefined
+    private(set) public var isMatte = false
+    private(set) public var fuzz: Double = 0
+    private(set) public var depth: Int = 0
+    private(set) public var red: Double = 0
+    private(set) public var green: Double = 0
+    private(set) public var blue: Double = 0
+    private(set) public var opacity: Double = 0
+    private(set) public var index: Double = -1
+    
+    internal var info: MagickPixelPacket {
+        var result = MagickPixelPacket()
         
-        public var compression: Compression
-        public var quality: Int
+        result.colorspace = self.colorspace.type
         
-        public init(compression: Compression, quality: Int) {
-            self.compression = compression
-            self.quality = quality
-        }
+        result.matte = MagickBooleanType.init(self.isMatte ? 1 : 0)
+        
+        result.fuzz = self.fuzz
+        
+        result.depth = self.depth
+        
+        result.red = MagickRealType(self.red)
+        result.green = MagickRealType(self.green)
+        result.blue = MagickRealType(self.blue)
+        result.opacity = MagickRealType(self.opacity)
+        
+        result.index = MagickRealType(self.index)
+        
+        return result
     }
     
-    public struct PixelInfo {
-
-        private(set) var red: Quantum
-        private(set) var green: Quantum
-        private(set) var blue: Quantum
-
-        private(set) var opacity: Quantum
-
-        init(_ info: PixelPacket) {
-            self.red = info.red
-            self.green = info.green
-            self.blue = info.blue
-            self.opacity = info.opacity
-        }
-    }
+    init() { }
     
-    public struct ColorInfo {
+    init(_ info: MagickPixelPacket) {
+        self.colorspace = MagickWand.Colorspace(info.colorspace)
         
-        public static let empty = ColorInfo()
+        self.isMatte = info.matte.bool
         
-        private(set) public var colorspace = MagickWand.Colorspace.undefined
-        private(set) public var isMatte = false
-        private(set) public var fuzz: Double = 0
-        private(set) public var depth: Int = 0
-        private(set) public var red: Double = 0
-        private(set) public var green: Double = 0
-        private(set) public var blue: Double = 0
-        private(set) public var opacity: Double = 0
-        private(set) public var index: Double = -1
+        self.fuzz = Double(info.fuzz)
         
-        internal var info: MagickPixelPacket {
-            var result = MagickPixelPacket()
-            
-            result.colorspace = self.colorspace.type
-            
-            result.matte = MagickBooleanType.init(self.isMatte ? 1 : 0)
-            
-            result.fuzz = self.fuzz
-            
-            result.depth = self.depth
-            
-            result.red = MagickRealType(self.red)
-            result.green = MagickRealType(self.green)
-            result.blue = MagickRealType(self.blue)
-            result.opacity = MagickRealType(self.opacity)
-            
-            result.index = MagickRealType(self.index)
-            
-            return result
-        }
+        self.depth = info.depth
         
-        init() { }
+        self.red = Double(info.red)
+        self.green = Double(info.green)
+        self.blue = Double(info.blue)
+        self.opacity = Double(info.opacity)
         
-        init(_ info: MagickPixelPacket) {
-            self.colorspace = MagickWand.Colorspace(info.colorspace)
-            
-            self.isMatte = info.matte.bool
-            
-            self.fuzz = Double(info.fuzz)
-            
-            self.depth = info.depth
-            
-            self.red = Double(info.red)
-            self.green = Double(info.green)
-            self.blue = Double(info.blue)
-            self.opacity = Double(info.opacity)
-            
-            self.index = Double(info.index)
-        }
+        self.index = Double(info.index)
     }
+}
 //}
 

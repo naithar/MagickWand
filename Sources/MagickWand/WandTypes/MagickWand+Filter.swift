@@ -24,52 +24,52 @@ import CMagickWand
 
 //extension MagickWand {
 
-    public enum Filter {
-
-        case blackman
-        case box
-        case catrom
-        case gaussian
-        case hanning
-        case hermite
-        case lanczos
-        case mitchell
-        case sinc
-        case triangle
-        case kaiser
-        case sentinel
-        case welsh
-
-        var filter: FilterTypes {
-            switch self {
-            case .blackman:
-                return BlackmanFilter
-            case .box:
-                return BoxFilter
-            case .catrom:
-                return CatromFilter
-            case .gaussian:
-                return GaussianFilter
-            case .hanning:
-                return HanningFilter
-            case .hermite:
-                return HermiteFilter
-            case .lanczos:
-                return LanczosFilter
-            case .mitchell:
-                return MitchellFilter
-           	case .sinc:
-                return SincFilter
-            case .triangle:
-                return TriangleFilter
-            case .kaiser:
-                return KaiserFilter
-            case .sentinel:
-                return SentinelFilter
-            case .welsh:
-                return WelshFilter
-            }
+public enum Filter {
+    
+    case blackman
+    case box
+    case catrom
+    case gaussian
+    case hanning
+    case hermite
+    case lanczos
+    case mitchell
+    case sinc
+    case triangle
+    case kaiser
+    case sentinel
+    case welsh
+    
+    var filter: FilterTypes {
+        switch self {
+        case .blackman:
+            return BlackmanFilter
+        case .box:
+            return BoxFilter
+        case .catrom:
+            return CatromFilter
+        case .gaussian:
+            return GaussianFilter
+        case .hanning:
+            return HanningFilter
+        case .hermite:
+            return HermiteFilter
+        case .lanczos:
+            return LanczosFilter
+        case .mitchell:
+            return MitchellFilter
+        case .sinc:
+            return SincFilter
+        case .triangle:
+            return TriangleFilter
+        case .kaiser:
+            return KaiserFilter
+        case .sentinel:
+            return SentinelFilter
+        case .welsh:
+            return WelshFilter
         }
     }
+}
 //}
 

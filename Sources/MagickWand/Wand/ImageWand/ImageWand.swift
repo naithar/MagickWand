@@ -74,7 +74,7 @@ public class ImageWand: Wand {
     
     public convenience init?(color: String, size: MagickWand.Size, format: String = "png") {
         self.init()
-
+        
         guard let pixelWand = PixelWand(color: color) else {
             self.destroy()
             return nil
