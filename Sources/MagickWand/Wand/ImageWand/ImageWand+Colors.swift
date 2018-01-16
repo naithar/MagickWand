@@ -84,6 +84,8 @@ extension ImageWand {
         }
     }
     
+    //TODO: alpha channel
+    
     // https://bugs.php.net/bug.php?id=73840
     public func pixel(x: Int, y: Int) -> PixelWand? {
         let pixel = PixelWand()

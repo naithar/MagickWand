@@ -61,6 +61,7 @@ extension PixelWand {
                 let red = PixelGetRed(self.pointer)
                 let green = PixelGetGreen(self.pointer)
                 let blue = PixelGetBlue(self.pointer)
+//                MagickGetImageAlphaChannel
                 
                 let alpha = PixelGetAlpha(self.pointer)
                 
@@ -76,9 +77,7 @@ extension PixelWand {
         
         public var hsl: MagickWand.HSL {
             get {
-                var hue: Double = 0
-                var saturation: Double = 0
-                var lightness: Double = 0
+                var hue: Double = 0, saturation: Double = 0, lightness: Double = 0
                 
                 PixelGetHSL(self.pointer, &hue, &saturation, &lightness)
                 
