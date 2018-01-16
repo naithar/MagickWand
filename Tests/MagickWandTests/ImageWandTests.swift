@@ -129,6 +129,26 @@ class ImageWandTests: XCTestCase {
         self.performVariants(action: self.scale(file:ofType:))
     }
     
+    private func checkPixel(forWand imageWand: ImageWand, at location: CGPoint, rgba: RGBA) {
+        guard let pixelWand = imageWand.pixel(x: Int(location.x), y: Int(location.y)) else {
+            XCTFail("`Pixel Wand` should exist")
+            return
+        }
+        XCTAssertTrue(pixelWand.isPixelWand, "Should be `Pixel Wand`")
+        XCTAssertEqual(pixelWand.colors.rgba, rgba)
+    }
+    
+    func testColor() {
+        guard let imageWand = self.open(file: "images/source", ofType: "png") else { return }
+        self.checkPixel(forWand: imageWand,
+                        at: CGPoint.init(x: 0, y: 0),
+                        rgba: RGBA.init(13.0 / 255.0, 13.0 / 255.0, 13.0 / 255.0))
+        
+        self.checkPixel(forWand: imageWand,
+                        at: CGPoint.init(x: 50, y: 25),
+                        rgba: RGBA.init(227 / 255.0, 16.0 / 255.0, 16.0 / 255.0))
+    }
+    
     static var allTests : [(String, (ImageWandTests) -> () throws -> Void)] {
         return [
             ("Image Wand - Init with color", testInitWithColor),
@@ -136,6 +156,7 @@ class ImageWandTests: XCTestCase {
             ("Image Wand - Clone", testClone),
             ("Image Wand - Resize", testResize),
             ("Image Wand - Scale", testScale),
+            ("Image Wand - Color", testColor),
         ]
     }
 }
