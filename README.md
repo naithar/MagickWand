@@ -93,12 +93,9 @@ swift test  -Xcc -I/usr/local/include/ImageMagick-6/ -Xlinker -L/usr/local/lib/ 
 
 ## XCode Setup
 
-Generate XCode project using:
+Generate XCode project using this command:
 ```
-swift package -Xswiftc -I/usr/local/opt/imagemagick@6/include/ImageMagick-6 -Xlinker -L/usr/local/opt/imagemagick@6/lib -Xcc -DMAGICKCORE_HDRI_ENABLE=0 -Xcc -DMAGICKCORE_QUANTUM_DEPTH=16 generate-xcodeproj
+swift package -Xlinker -L/usr/local/lib/ -Xcc -DMAGICKCORE_HDRI_ENABLE=0 -Xcc -DMAGICKCORE_QUANTUM_DEPTH=16 -Xswiftc -I/usr/local/include/ImageMagick-6 -Xcc -I/usr/local/include/ImageMagick-6 generate-xcodeproj
 ```
-This will add required flags to the project settings.
+Both `-Xcc` and `-Xswiftc` flags can be requested using `Magick-config --cflags` command
 
-If required add values manually to `Build Settings`:
-- `-I/usr/local/opt/imagemagick@6/include/ImageMagick-6` value to `Other Swift Flags`.
-- `-L/usr/local/opt/imagemagick@6/lib` value to `Other Linker Flags`.
