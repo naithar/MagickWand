@@ -27,16 +27,15 @@ extension String {
     fileprivate static let unknownVersion = "unknown"
 }
 
-
 #if os(Linux)
-    fileprivate var wandInstantiated = false
+    fileprivate var isWandInstantiated = false
 #endif
 
 public func genesis() {
     MagickWandGenesis()
     
     #if os(Linux)
-        self.wandInstantiated = true
+        MagickWand.isWandInstantiated = true
     #endif
 }
 
@@ -44,13 +43,13 @@ public func terminus() {
     MagickWandTerminus()
     
     #if os(Linux)
-        self.wandInstantiated = false
+        MagickWand.isWandInstantiated = false
     #endif
 }
 
 public var isInstantiated: Bool {
     #if os(Linux)
-        return IsMagickInstantiated().bool || self.wandInstantiated
+        return IsMagickInstantiated().bool || MagickWand.isWandInstantiated
     #else
         return IsMagickWandInstantiated().bool
     #endif
