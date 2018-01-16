@@ -74,7 +74,7 @@ public class ImageWand: Wand {
     
     public convenience init?(color: String, size: MagickWand.Size, format: String = "png") {
         self.init()
-        
+
         guard let pixelWand = PixelWand(color: color) else {
             self.destroy()
             return nil
@@ -90,6 +90,7 @@ public class ImageWand: Wand {
     }
     
     public func clear() {
+        guard self.isMagickWand else { return }
         ClearMagickWand(self.pointer)
     }
     
@@ -100,7 +101,7 @@ public class ImageWand: Wand {
     
     public func destroy() {
         guard MagickWand.isInstantiated else { return }
-        self.clear()
+        guard self.isMagickWand else { return }
         DestroyMagickWand(self.pointer)
     }
 }

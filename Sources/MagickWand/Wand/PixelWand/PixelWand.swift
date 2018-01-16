@@ -52,12 +52,12 @@ public class PixelWand: Wand {
         let result = PixelSetColor(self.pointer, color).bool
         
         guard result else {
-            DestroyPixelWand(self.pointer)
             return nil
         }
     }
     
     public func clear() {
+        guard self.isPixelWand else { return }
         ClearPixelWand(self.pointer)
     }
     
@@ -68,6 +68,7 @@ public class PixelWand: Wand {
     
     public func destroy() {
         guard isInstantiated else { return }
+        guard self.isPixelWand else { return }
         DestroyPixelWand(self.pointer)
     }
 }
