@@ -28,14 +28,32 @@ extension PixelWand {
     
     public struct Colors {
         
-        private var pointer: OpaquePointer
-        
-        init(_ wand: PixelWand) {
-            self.init(wand.pointer)
+        private enum Container {
+            case pointer(OpaquePointer)
+            case wand(PixelWand)
+            
+            var pointer: OpaquePointer {
+                switch self {
+                case .pointer(let pointer): return pointer
+                case .wand(let wand): return wand.pointer
+                }
+            }
         }
         
-        init(_ pointer: OpaquePointer) {
-            self.pointer = pointer
+        private var container: Container
+        
+        private var pointer: OpaquePointer {
+            return self.container.pointer
+        }
+        
+        init(_ wand: PixelWand) {
+            self.container = .wand(wand)
+        }
+        
+        init?(_ pointer: OpaquePointer) {
+            guard IsPixelWand(pointer).bool else { return nil }
+            
+            self.container = .pointer(ClonePixelWand(pointer))
         }
         
         public var rgba: MagickWand.RGBA {
