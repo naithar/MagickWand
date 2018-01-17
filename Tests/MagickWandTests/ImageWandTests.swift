@@ -33,7 +33,29 @@ class ImageWandTests: XCTestCase {
         XCTAssertEqual(imageWand?.size.height, 50, "Created `ImageWand` has wrong size")
         XCTAssertEqual(imageWand?.size, MagickWand.Size(width: 100, height: 50), "Created `ImageWand` has wrong size")
         
-        print(imageWand!.resolution)
+        self.basicChecks(forWand: imageWand, size: Size.init(width: 100, height: 5))
+    }
+    
+    private let variants: [(name: String, type: String)] = [
+        ("PNG", "png"),
+        ("JPEG", "jpeg"),
+        ("PDF", "pdf"),
+        ("GIF", "gif"),
+        //("SVG", "svg"), //FIXME: cannot create or read
+        ("TIFF", "tiff"),
+    ]
+    
+    private func performVariants(action: (String, String) -> Void) {
+        let folder = "images/converted/"
+        self.variants.forEach {
+            let file = folder + $0.name
+            print("Running test for file at \(file).\($0.type)")
+            action(file, $0.type)
+        }
+    }
+    
+    func testInitWithData() {
+        self.performVariants(action: self.initWithData(file:ofType:))
     }
     
     func testClone() {

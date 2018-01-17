@@ -30,6 +30,11 @@ import Foundation
 
 extension ImageWand {
     
+    public func autoOrient() -> Bool {
+        return MagickAutoOrientImage(self.pointer).bool
+    }
+    
+    // https://www.imagemagick.org/api/magick-image.php
     // TODO: Resize modes. like AspectFill, AspectFit.
     // TODO: resized, rescaled -> ImageWand
     
